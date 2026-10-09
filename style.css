@@ -29,3 +29,28 @@
 .real-header-dropdown{position:absolute;top:57%;left:27%;width:min(470px,65vw);max-height:330px;overflow:auto;padding:18px;background:white;border:1px solid #f0dce6;border-radius:14px;box-shadow:0 20px 50px #30102433;z-index:30}.real-header-dropdown[hidden]{display:none}.real-header-dropdown h3{font-size:17px;margin:0 0 12px}.real-header-dropdown .menu-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.real-header-dropdown button{padding:11px;background:#fff6fa;color:#4d3b44;border:1px solid #f5e3eb;border-radius:8px;text-align:left}.real-header-dropdown button:hover{background:#fae3ef;color:#d90065}
 @media(max-width:800px){.real-header{height:auto;min-height:125px;position:relative}.reference-image{margin-top:-125px;pointer-events:none}.real-topbar{height:70px;padding:9px 12px;gap:7px;flex-wrap:wrap}.real-header .brand{width:24%;}.header-search-wrap{order:5;flex-basis:100%;height:36px}.header-register,.header-login{height:32px;padding:0 8px}.header-icon,.header-lang{display:none}.real-cats{overflow-x:auto;justify-content:flex-start;white-space:nowrap;padding:4px 10px;min-height:37px}.real-cats button{font-size:12px;padding:7px 10px}.real-header-dropdown{top:100%;left:8px;width:calc(100% - 16px);max-height:260px}}
 @media(max-width:600px){.real-topbar{height:auto;min-height:110px}.reference-image{margin-top:-110px}.real-header .brand{width:36%}.header-register,.header-login{font-size:11px}.real-header-dropdown{display:block!important}.real-header-dropdown[hidden]{display:none!important}}
+/* Rychlé vyplňování dotazníku */
+.feature{scroll-margin-top:12px}
+.feature-quick{margin:4px 0 12px}
+.feature-body .feature-note{min-height:44px;resize:none;transition:min-height .2s}
+.feature-body .feature-note:focus{min-height:84px}
+.feature-body .choices{margin:12px 0 6px}
+.feature-body .choice{padding:13px 8px;font-size:14px;flex:1 1 0;min-width:0;white-space:nowrap}
+.feature-more{margin-top:10px}
+.feature-more summary{cursor:pointer;font-size:13px;font-weight:700;color:#bf165d;padding:8px 0}
+.feature-more .feature-explain{margin-top:6px}
+.save-state{position:fixed;right:16px;bottom:16px;z-index:98;background:#fff;border:1px solid #eadfe6;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700;color:#6c646b;box-shadow:0 4px 14px rgba(0,0,0,.08);opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s;pointer-events:none}
+.save-state.show{opacity:1;transform:none}
+.save-state.ok{color:#1a8f4c}
+.save-state.off{color:#c62828}
+@media print{.save-state{display:none}.feature-more{display:block}}
+.feature-more.feature-dev{margin-top:0}
+.feature-more.feature-dev summary{color:#958794;font-weight:600}
+.feature-dev .feature-build li{font-size:13px;color:#85717b}
+/* Úvod na mobilu: celé logo, tlačítka jen jednou (pod obrázkem) */
+@media(max-width:600px){
+.reference{height:auto;display:flex;flex-direction:column;overflow:hidden}
+.real-header{order:0}
+.reference-image{order:1;position:relative;left:auto;top:auto;transform:none;align-self:center;flex-shrink:0;height:700px;width:auto;max-width:none;margin:-100px 0 -342px;clip-path:inset(100px 0 342px 0);pointer-events:none}
+.mobile-hero-controls{order:2;position:static;margin:14px 16px 18px}
+}
