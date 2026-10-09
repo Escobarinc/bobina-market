@@ -7,12 +7,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho vznikne jen katalog nebo inzertní portál, ne skutečné tržiště.",
     "example": "Anna vystaví svetr za 420 Kč, Petra jej koupí, aplikace zaznamená objednávku a po doručení dokončí obchod.",
     "build": [
-      "Konkrétní část: Umožní jednomu uživateli vystavit předmět a jinému jej koupit přímo v aplikaci.",
-      "Definovat varianty obchodního pravidla, výchozí nastavení a povolené hodnoty.",
-      "Uplatnit nastavení v katalogu, při vytváření nabídky i v objednávce.",
-      "Umožnit správci změny kontrolovat a zaznamenat bez zásahu programátora."
+      "Navrhnout databázi uživatelů, inzerátů a objednávek a vztahy mezi nimi.",
+      "Postavit celý tok: vystavení → nákup → platba → doručení → dokončení.",
+      "Napojit platby, dopravu a hodnocení do jednoho celku."
     ],
-    "category_note": "Provozovatel nastaví obchodní pravidlo a sleduje jeho dopad na nákup nebo prodej."
+    "category_note": "Provozovatel nastaví obchodní pravidlo a sleduje jeho dopad na nákup nebo prodej.",
+    "effort": "L"
   },
   {
     "id": "1.2",
@@ -22,12 +22,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho bude nutné profesionální prodej zakázat nebo řešit ručně a právně nečistě.",
     "example": "Obyčejná uživatelka prodává vlastní šatník; registrovaný obchodník může mít firemní údaje a jiné povinnosti.",
     "build": [
-      "Konkrétní část: Rozliší běžného uživatele a podnikatele, včetně odlišných pravidel, údajů a procesů.",
-      "Definovat varianty obchodního pravidla, výchozí nastavení a povolené hodnoty.",
-      "Uplatnit nastavení v katalogu, při vytváření nabídky i v objednávce.",
-      "Umožnit správci změny kontrolovat a zaznamenat bez zásahu programátora."
+      "Druhý typ účtu „PRO“ s firemními údaji (IČO, DIČ, sídlo).",
+      "Odlišná pravidla pro firmy: doklady, práva spotřebitele, limity.",
+      "Označení PRO prodejce u inzerátů a na profilu."
     ],
-    "category_note": "Provozovatel nastaví obchodní pravidlo a sleduje jeho dopad na nákup nebo prodej."
+    "category_note": "Provozovatel nastaví obchodní pravidlo a sleduje jeho dopad na nákup nebo prodej.",
+    "effort": "M"
   },
   {
     "id": "1.3",
@@ -35,14 +35,14 @@ window.BOBINA_FEATURES = [
     "category": "Základ produktu a obchodní model",
     "description": "Umožní provozovat módu, elektroniku, domácnost, sport, knihy a další segmenty v jednom systému.",
     "without": "Bez toho bude marketplace omezen jen na úzký typ zboží.",
-    "example": "Správce platformy použije možnost „Více kategorií zboží“: umožní provozovat módu, elektroniku, domácnost, sport, knihy a další segmenty v jednom systému.",
+    "example": "Vedle oblečení může Petra prodat i starou kávovarku, dětský kočárek nebo knihy – vše v jedné aplikaci.",
     "build": [
-      "Konkrétní část: Umožní provozovat módu, elektroniku, domácnost, sport, knihy a další segmenty v jednom systému.",
-      "Definovat varianty obchodního pravidla, výchozí nastavení a povolené hodnoty.",
-      "Uplatnit nastavení v katalogu, při vytváření nabídky i v objednávce.",
-      "Umožnit správci změny kontrolovat a zaznamenat bez zásahu programátora."
+      "Katalog tak, aby každá kategorie měla vlastní parametry (velikost, kapacita, rozměr).",
+      "Napojit kategorie na hledání, filtry i vystavení.",
+      "Připravit úvodní strom kategorií a jeho správu."
     ],
-    "category_note": "Provozovatel nastaví obchodní pravidlo a sleduje jeho dopad na nákup nebo prodej."
+    "category_note": "Provozovatel nastaví obchodní pravidlo a sleduje jeho dopad na nákup nebo prodej.",
+    "effort": "M"
   },
   {
     "id": "1.4",
@@ -52,12 +52,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho se aplikace může technicky spustit, ale nebude mít definovaný zdroj příjmů.",
     "example": "U objednávky za 800 Kč musí být jasné, zda Bobina vydělá na poplatku kupujícího, provizi prodejce, nebo na reklamě.",
     "build": [
-      "Konkrétní část: Nastaví, z čeho platforma vydělává: poplatek kupujícího, provize, placené zvýraznění, předplatné nebo kombinace.",
-      "Definovat varianty obchodního pravidla, výchozí nastavení a povolené hodnoty.",
-      "Uplatnit nastavení v katalogu, při vytváření nabídky i v objednávce.",
-      "Umožnit správci změny kontrolovat a zaznamenat bez zásahu programátora."
+      "Výpočet poplatků a provizí na jednom místě, nastavitelný bez programátora.",
+      "Zobrazení poplatků v košíku i v přehledu prodejce.",
+      "Účetní evidence příjmů platformy."
     ],
-    "category_note": "Provozovatel nastaví obchodní pravidlo a sleduje jeho dopad na nákup nebo prodej."
+    "category_note": "Provozovatel nastaví obchodní pravidlo a sleduje jeho dopad na nákup nebo prodej.",
+    "effort": "M"
   },
   {
     "id": "1.5",
@@ -65,29 +65,14 @@ window.BOBINA_FEATURES = [
     "category": "Základ produktu a obchodní model",
     "description": "Omezí, za jakou cenu lze předmět vystavit a koupit.",
     "without": "Bez limitů mohou vznikat nesmyslné nebo rizikové objednávky.",
-    "example": "Správce platformy použije možnost „Minimální a maximální cena předmětu“: omezí, za jakou cenu lze předmět vystavit a koupit.",
+    "example": "Nikdo nemůže vystavit tričko za 1 Kč ani za 500 000 Kč – aplikace takovou cenu nepustí.",
     "build": [
-      "Konkrétní část: Omezí, za jakou cenu lze předmět vystavit a koupit.",
-      "Definovat varianty obchodního pravidla, výchozí nastavení a povolené hodnoty.",
-      "Uplatnit nastavení v katalogu, při vytváření nabídky i v objednávce.",
-      "Umožnit správci změny kontrolovat a zaznamenat bez zásahu programátora."
+      "Kontrola ceny při vystavení a úpravě inzerátu.",
+      "Srozumitelná chybová hláška pro uživatele.",
+      "Nastavení limitů v administraci."
     ],
-    "category_note": "Provozovatel nastaví obchodní pravidlo a sleduje jeho dopad na nákup nebo prodej."
-  },
-  {
-    "id": "1.6",
-    "title": "Měny a země provozu",
-    "category": "Základ produktu a obchodní model",
-    "description": "Určí podporované státy, měny a kombinace nákupu mezi zeměmi.",
-    "without": "Bez rozhodnutí nelze spolehlivě navrhnout platby a přeshraniční logistiku.",
-    "example": "Správce platformy použije možnost „Měny a země provozu“: určí podporované státy, měny a kombinace nákupu mezi zeměmi.",
-    "build": [
-      "Konkrétní část: Určí podporované státy, měny a kombinace nákupu mezi zeměmi.",
-      "Definovat varianty obchodního pravidla, výchozí nastavení a povolené hodnoty.",
-      "Uplatnit nastavení v katalogu, při vytváření nabídky i v objednávce.",
-      "Umožnit správci změny kontrolovat a zaznamenat bez zásahu programátora."
-    ],
-    "category_note": "Provozovatel nastaví obchodní pravidlo a sleduje jeho dopad na nákup nebo prodej."
+    "category_note": "Provozovatel nastaví obchodní pravidlo a sleduje jeho dopad na nákup nebo prodej.",
+    "effort": "S"
   },
   {
     "id": "2.1",
@@ -97,12 +82,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez něj budou uživatelé odkázáni pouze na externí přihlášení.",
     "example": "Denisa zadá e-mail, heslo a potvrdí registraci. Aplikace musí odmítnout již používanou adresu.",
     "build": [
-      "Konkrétní část: Uživatel vytvoří účet pomocí e-mailu a hesla.",
-      "Vytvořit příslušnou obrazovku, jasné pokyny a ověřování vyplněných údajů.",
-      "Bezpečně řešit neplatné údaje, opakování požadavků, ztracený přístup a zneužití.",
-      "Propojit ověření s profilem a se stavem přihlášení na webu i mobilu."
+      "Registrační formulář s kontrolou e-mailu a síly hesla.",
+      "Bezpečné uložení hesla (šifrovaný otisk).",
+      "Ochrana proti hromadnému zakládání falešných účtů."
     ],
-    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu."
+    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu.",
+    "effort": "S"
   },
   {
     "id": "2.2",
@@ -112,12 +97,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez něj bude registrace na iOS o krok delší.",
     "example": "Na iPhonu klepne na „Pokračovat přes Apple“ a přihlásí se bez vytváření dalšího hesla.",
     "build": [
-      "Konkrétní část: Uživatel se přihlásí jedním kliknutím pomocí Apple ID.",
-      "Vytvořit příslušnou obrazovku, jasné pokyny a ověřování vyplněných údajů.",
-      "Bezpečně řešit neplatné údaje, opakování požadavků, ztracený přístup a zneužití.",
-      "Propojit ověření s profilem a se stavem přihlášení na webu i mobilu."
+      "Registrace aplikace u Applu a nastavení „Sign in with Apple“.",
+      "Propojení Apple účtu s účtem v BOBINA.",
+      "Ošetřit skrytý e-mail, který Apple umí posílat."
     ],
-    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu."
+    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu.",
+    "effort": "S"
   },
   {
     "id": "2.3",
@@ -127,12 +112,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez něj část uživatelů zvolí složitější klasickou registraci.",
     "example": "Na Androidu vybere svůj Google účet a vrátí se do již existujícího profilu.",
     "build": [
-      "Konkrétní část: Uživatel se přihlásí pomocí Google účtu.",
-      "Vytvořit příslušnou obrazovku, jasné pokyny a ověřování vyplněných údajů.",
-      "Bezpečně řešit neplatné údaje, opakování požadavků, ztracený přístup a zneužití.",
-      "Propojit ověření s profilem a se stavem přihlášení na webu i mobilu."
+      "Nastavení přihlášení v Google Cloud konzoli.",
+      "Propojení Google účtu s účtem v BOBINA.",
+      "Sloučení, když už stejný e-mail existuje."
     ],
-    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu."
+    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu.",
+    "effort": "S"
   },
   {
     "id": "2.4",
@@ -142,12 +127,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez něj lze snadno zakládat účty na neexistující adresy.",
     "example": "Po registraci přijde e-mail s odkazem, který potvrdí vlastnictví adresy.",
     "build": [
-      "Konkrétní část: Po registraci musí uživatel potvrdit e-mailovou adresu.",
-      "Vytvořit příslušnou obrazovku, jasné pokyny a ověřování vyplněných údajů.",
-      "Bezpečně řešit neplatné údaje, opakování požadavků, ztracený přístup a zneužití.",
-      "Propojit ověření s profilem a se stavem přihlášení na webu i mobilu."
+      "Odeslání e-mailu s potvrzovacím odkazem.",
+      "Omezení funkcí, dokud e-mail není potvrzený.",
+      "Znovuzaslání a vypršení odkazu."
     ],
-    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu."
+    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu.",
+    "effort": "S"
   },
   {
     "id": "2.5",
@@ -157,12 +142,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez něj je levnější a snazší vytvářet vícenásobné falešné profily.",
     "example": "Uživatel obdrží jednorázový SMS kód a opíše jej do aplikace.",
     "build": [
-      "Konkrétní část: Uživatel potvrdí telefon kódem z SMS.",
-      "Vytvořit příslušnou obrazovku, jasné pokyny a ověřování vyplněných údajů.",
-      "Bezpečně řešit neplatné údaje, opakování požadavků, ztracený přístup a zneužití.",
-      "Propojit ověření s profilem a se stavem přihlášení na webu i mobilu."
+      "Napojení na SMS bránu (placená služba za každou SMS).",
+      "Zadání a kontrola kódu, limit pokusů.",
+      "Ochrana proti zneužití SMS (náklady, roboti)."
     ],
-    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu."
+    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu.",
+    "effort": "S"
   },
   {
     "id": "2.6",
@@ -172,12 +157,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez něj bude každý zapomenutý přístup vyžadovat zásah administrátora.",
     "example": "Zapomněla heslo. Požádá o obnovu a obdrží časově omezený odkaz.",
     "build": [
-      "Konkrétní část: Bezpečný proces pro obnovu přístupu k účtu.",
-      "Vytvořit příslušnou obrazovku, jasné pokyny a ověřování vyplněných údajů.",
-      "Bezpečně řešit neplatné údaje, opakování požadavků, ztracený přístup a zneužití.",
-      "Propojit ověření s profilem a se stavem přihlášení na webu i mobilu."
+      "E-mail s jednorázovým odkazem na změnu hesla.",
+      "Formulář nového hesla a odhlášení ostatních zařízení.",
+      "Ochrana proti zneužití (limit žádostí)."
     ],
-    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu."
+    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu.",
+    "effort": "S"
   },
   {
     "id": "2.7",
@@ -187,12 +172,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez něj je převzetí účtu po úniku hesla podstatně snazší.",
     "example": "Při neobvyklém přihlášení je třeba potvrdit druhý ověřovací krok.",
     "build": [
-      "Konkrétní část: Při citlivém přihlášení nebo změně údajů vyžádá druhý ověřovací krok.",
-      "Vytvořit příslušnou obrazovku, jasné pokyny a ověřování vyplněných údajů.",
-      "Bezpečně řešit neplatné údaje, opakování požadavků, ztracený přístup a zneužití.",
-      "Propojit ověření s profilem a se stavem přihlášení na webu i mobilu."
+      "Druhý krok přes SMS nebo ověřovací aplikaci.",
+      "Vyžádat ho u citlivých akcí: výběr peněz, změna účtu.",
+      "Záložní kódy pro ztracený telefon."
     ],
-    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu."
+    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu.",
+    "effort": "M"
   },
   {
     "id": "2.8",
@@ -200,14 +185,14 @@ window.BOBINA_FEATURES = [
     "category": "Registrace a přihlášení",
     "description": "Uživatel vidí přihlášená zařízení a může je vzdáleně odhlásit.",
     "without": "Bez toho je obtížnější rychle ukončit cizí přístup.",
-    "example": "Uživatel použije možnost „Správa aktivních zařízení a relací“: uživatel vidí přihlášená zařízení a může je vzdáleně odhlásit.",
+    "example": "Jana zapomněla být přihlášená na počítači v práci; v telefonu ho uvidí v seznamu a jedním klepnutím ho odhlásí.",
     "build": [
-      "Konkrétní část: Uživatel vidí přihlášená zařízení a může je vzdáleně odhlásit.",
-      "Vytvořit příslušnou obrazovku, jasné pokyny a ověřování vyplněných údajů.",
-      "Bezpečně řešit neplatné údaje, opakování požadavků, ztracený přístup a zneužití.",
-      "Propojit ověření s profilem a se stavem přihlášení na webu i mobilu."
+      "Evidence přihlášených zařízení (typ, místo, čas).",
+      "Obrazovka se seznamem zařízení.",
+      "Vzdálené odhlášení vybraného zařízení."
     ],
-    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu."
+    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu.",
+    "effort": "S"
   },
   {
     "id": "2.9",
@@ -215,14 +200,14 @@ window.BOBINA_FEATURES = [
     "category": "Registrace a přihlášení",
     "description": "Uživatel může požádat o zrušení účtu podle pravidel platformy.",
     "without": "Bez toho vzniká zbytečná agenda pro podporu a compliance problém.",
-    "example": "Uživatel použije možnost „Smazání účtu“: uživatel může požádat o zrušení účtu podle pravidel platformy.",
+    "example": "Lucie už nechce prodávat, v nastavení klikne na „Smazat účet“ a po potvrzení jí účet zmizí.",
     "build": [
-      "Konkrétní část: Uživatel může požádat o zrušení účtu podle pravidel platformy.",
-      "Vytvořit příslušnou obrazovku, jasné pokyny a ověřování vyplněných údajů.",
-      "Bezpečně řešit neplatné údaje, opakování požadavků, ztracený přístup a zneužití.",
-      "Propojit ověření s profilem a se stavem přihlášení na webu i mobilu."
+      "Kontrola, že uživatel nemá rozběhlé objednávky ani peníze v peněžence.",
+      "Smazání nebo anonymizace osobních údajů.",
+      "Uchování dat, která musí zůstat ze zákona (účetnictví)."
     ],
-    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu."
+    "category_note": "Nový uživatel si zakládá účet nebo se bezpečně vrací do svého profilu.",
+    "effort": "M"
   },
   {
     "id": "3.1",
@@ -232,12 +217,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez profilu bude transakce působit anonymně a důvěra výrazně klesne.",
     "example": "Na detailu kabátu otevře profil prodejce, uvidí jeho hodnocení a všechny veřejné inzeráty.",
     "build": [
-      "Konkrétní část: Zobrazuje uživatelské jméno, fotku, bio, lokalitu, hodnocení a vystavené předměty.",
-      "Připravit profilovou stránku včetně veřejných a soukromých polí.",
-      "Zohlednit oprávnění vlastníka účtu a ochranu citlivých dat.",
-      "Promítnout aktualizace profilu také do detailu inzerátu a konverzace."
+      "Stránka profilu: jméno, fotka, bio, místo, hodnocení.",
+      "Výpis inzerátů prodejce s řazením.",
+      "Ochrana soukromí – co je veřejné a co ne."
     ],
-    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje."
+    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje.",
+    "effort": "S"
   },
   {
     "id": "3.2",
@@ -245,14 +230,14 @@ window.BOBINA_FEATURES = [
     "category": "Profil a důvěryhodnost",
     "description": "Uživatel si doplní fotku a krátké představení.",
     "without": "Bez toho budou profily působit prázdněji, ale transakce mohou fungovat.",
-    "example": "Uživatel použije možnost „Profilová fotografie a bio“: uživatel si doplní fotku a krátké představení.",
+    "example": "Klára si nahraje usměvavou fotku a napíše „Prodávám po sestře, nekouřím, posílám do 2 dnů“.",
     "build": [
-      "Konkrétní část: Uživatel si doplní fotku a krátké představení.",
-      "Připravit profilovou stránku včetně veřejných a soukromých polí.",
-      "Zohlednit oprávnění vlastníka účtu a ochranu citlivých dat.",
-      "Promítnout aktualizace profilu také do detailu inzerátu a konverzace."
+      "Nahrání a ořez profilové fotky.",
+      "Kontrola nevhodných fotek a textů.",
+      "Úprava v nastavení profilu."
     ],
-    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje."
+    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje.",
+    "effort": "S"
   },
   {
     "id": "3.3",
@@ -260,14 +245,14 @@ window.BOBINA_FEATURES = [
     "category": "Profil a důvěryhodnost",
     "description": "Profil ukazuje, zda je ověřen e-mail, telefon nebo identita.",
     "without": "Bez toho se ověření sice může provádět, ale uživatelé jeho hodnotu neuvidí.",
-    "example": "Uživatel použije možnost „Stav ověření účtu“: profil ukazuje, zda je ověřen e-mail, telefon nebo identita.",
+    "example": "Na profilu prodejce je vidět „✓ E-mail ověřen · ✓ Telefon ověřen“, takže kupující mu víc věří.",
     "build": [
-      "Konkrétní část: Profil ukazuje, zda je ověřen e-mail, telefon nebo identita.",
-      "Připravit profilovou stránku včetně veřejných a soukromých polí.",
-      "Zohlednit oprávnění vlastníka účtu a ochranu citlivých dat.",
-      "Promítnout aktualizace profilu také do detailu inzerátu a konverzace."
+      "Evidence, co má uživatel ověřené (e-mail, telefon, identita).",
+      "Odznáčky ověření na profilu a u inzerátu.",
+      "Výzva k doplnění ověření."
     ],
-    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje."
+    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje.",
+    "effort": "S"
   },
   {
     "id": "3.4",
@@ -277,27 +262,27 @@ window.BOBINA_FEATURES = [
     "without": "Bez něj mohou být omezené platební funkce nebo vyšší riziko podvodů.",
     "example": "Před vyplacením vyšší částky si platební poskytovatel může vyžádat ověření totožnosti.",
     "build": [
-      "Konkrétní část: U vybraných uživatelů nebo před výběrem peněz ověří skutečnou totožnost.",
-      "Připravit profilovou stránku včetně veřejných a soukromých polí.",
-      "Zohlednit oprávnění vlastníka účtu a ochranu citlivých dat.",
-      "Promítnout aktualizace profilu také do detailu inzerátu a konverzace."
+      "Napojení na službu pro ověření dokladů a obličeje.",
+      "Pravidla, kdy je ověření povinné (např. před výběrem peněz).",
+      "Bezpečné uložení výsledku podle GDPR."
     ],
-    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje."
+    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje.",
+    "effort": "L"
   },
   {
     "id": "3.5",
-    "title": "Sledování uživatelů",
+    "title": "Sledování prodejců",
     "category": "Profil a důvěryhodnost",
-    "description": "Uživatel může sledovat oblíbené prodejce a dostávat jejich nové nabídky.",
+    "description": "Uživatel může sledovat oblíbené prodejce, má jejich seznam na jednom místě a vidí jejich nové nabídky.",
     "without": "Bez toho platforma přijde o sociální a retenční prvek.",
-    "example": "Uživatel použije možnost „Sledování uživatelů“: uživatel může sledovat oblíbené prodejce a dostávat jejich nové nabídky.",
+    "example": "Eva má ráda styl jedné prodejkyně, klikne na „Sledovat“ a vidí její nové kousky jako první.",
     "build": [
-      "Konkrétní část: Uživatel může sledovat oblíbené prodejce a dostávat jejich nové nabídky.",
-      "Připravit profilovou stránku včetně veřejných a soukromých polí.",
-      "Zohlednit oprávnění vlastníka účtu a ochranu citlivých dat.",
-      "Promítnout aktualizace profilu také do detailu inzerátu a konverzace."
+      "Tlačítko Sledovat a seznam sledovaných.",
+      "Nové nabídky sledovaných prodejců ve feedu.",
+      "Upozornění na nové kusy oblíbených prodejců."
     ],
-    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje."
+    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje.",
+    "effort": "S"
   },
   {
     "id": "3.6",
@@ -305,14 +290,14 @@ window.BOBINA_FEATURES = [
     "category": "Profil a důvěryhodnost",
     "description": "Zobrazuje sociální důkaz na profilu.",
     "without": "Bez toho bude profil jednodušší, ale funkčně použitelný.",
-    "example": "Uživatel použije možnost „Počet sledujících / sledovaných“: zobrazuje sociální důkaz na profilu.",
+    "example": "U profilu svítí „1 240 sledujících“ – na první pohled je jasné, že je to oblíbená prodejkyně.",
     "build": [
-      "Konkrétní část: Zobrazuje sociální důkaz na profilu.",
-      "Připravit profilovou stránku včetně veřejných a soukromých polí.",
-      "Zohlednit oprávnění vlastníka účtu a ochranu citlivých dat.",
-      "Promítnout aktualizace profilu také do detailu inzerátu a konverzace."
+      "Počítání sledujících a sledovaných.",
+      "Zobrazení na profilu.",
+      "Seznam sledujících po rozkliknutí."
     ],
-    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje."
+    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje.",
+    "effort": "S"
   },
   {
     "id": "3.7",
@@ -320,14 +305,14 @@ window.BOBINA_FEATURES = [
     "category": "Profil a důvěryhodnost",
     "description": "Ukazuje, zda je uživatel aktivní nebo kdy byl naposledy přihlášen.",
     "without": "Bez toho může uživatel čekat na neaktivního prodejce bez kontextu.",
-    "example": "Uživatel použije možnost „Poslední aktivita / stav online“: ukazuje, zda je uživatel aktivní nebo kdy byl naposledy přihlášen.",
+    "example": "U prodejce je napsáno „Aktivní před 2 hodinami“, takže kupující ví, že brzy odpoví.",
     "build": [
-      "Konkrétní část: Ukazuje, zda je uživatel aktivní nebo kdy byl naposledy přihlášen.",
-      "Připravit profilovou stránku včetně veřejných a soukromých polí.",
-      "Zohlednit oprávnění vlastníka účtu a ochranu citlivých dat.",
-      "Promítnout aktualizace profilu také do detailu inzerátu a konverzace."
+      "Ukládání času poslední aktivity.",
+      "Zobrazení „Aktivní před 2 h“ u profilu a v chatu.",
+      "Možnost aktivitu skrýt v nastavení soukromí."
     ],
-    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje."
+    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje.",
+    "effort": "S"
   },
   {
     "id": "3.8",
@@ -335,14 +320,29 @@ window.BOBINA_FEATURES = [
     "category": "Profil a důvěryhodnost",
     "description": "Uživatel může zablokovat jiný účet a omezit další kontakt.",
     "without": "Bez toho musí vše řešit podpora nebo uživatel nemá obranný nástroj.",
-    "example": "Uživatel použije možnost „Blokování uživatelů“: uživatel může zablokovat jiný účet a omezit další kontakt.",
+    "example": "Někdo Markétě opakovaně posílá nepříjemné zprávy; zablokuje ho a už jí nemůže psát ani kupovat.",
     "build": [
-      "Konkrétní část: Uživatel může zablokovat jiný účet a omezit další kontakt.",
-      "Připravit profilovou stránku včetně veřejných a soukromých polí.",
-      "Zohlednit oprávnění vlastníka účtu a ochranu citlivých dat.",
-      "Promítnout aktualizace profilu také do detailu inzerátu a konverzace."
+      "Tlačítko Zablokovat a seznam zablokovaných.",
+      "Zablokovaný nemůže psát, kupovat ani nabízet cenu.",
+      "Odblokování v nastavení."
     ],
-    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje."
+    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje.",
+    "effort": "S"
+  },
+  {
+    "id": "3.9",
+    "title": "Odznaky prodejce",
+    "category": "Profil a důvěryhodnost",
+    "description": "Profil může získat odznak, např. „Rychle odesílá“ nebo „Často přidává nové věci“.",
+    "example": "U Kláry svítí odznak „Rychle odesílá“, protože posledních 20 zásilek podala do 24 hodin.",
+    "without": "Bez odznaků se spolehlivý prodejce pozná jen podle hodnocení.",
+    "build": [
+      "Pravidla pro každý odznak (např. odeslání do 24 h u 20 zásilek).",
+      "Automatický přepočet podle historie objednávek.",
+      "Zobrazení odznaků na profilu a u inzerátu."
+    ],
+    "category_note": "Kupující otevře profil prodávajícího ještě před nákupem a posoudí, zda mu důvěřuje.",
+    "effort": "M"
   },
   {
     "id": "4.1",
@@ -352,12 +352,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez ní bude katalog chaotický a hledání nepřesné.",
     "example": "Kupující projde Ženy → Oblečení → Svetry a uvidí jen odpovídající nabídky.",
     "build": [
-      "Konkrétní část: Spravuje strukturu Kategorie → Podkategorie → Typ produktu.",
-      "Navrhnout datovou strukturu kategorií a příslušných hodnot.",
-      "Zajistit, aby formulář inzerátu nabízel jen správné možnosti.",
-      "Používat stejné hodnoty ve filtrech, detailu a administraci."
+      "Strom Kategorie → Podkategorie → Typ (např. Ženy › Boty › Tenisky).",
+      "Výběr kategorie při vystavení krok za krokem.",
+      "Správa stromu v administraci bez programátora."
     ],
-    "category_note": "Prodávající vybírá parametry výrobku; kupující podle těchto parametrů hledá."
+    "category_note": "Prodávající vybírá parametry výrobku; kupující podle těchto parametrů hledá.",
+    "effort": "M"
   },
   {
     "id": "4.2",
@@ -365,14 +365,14 @@ window.BOBINA_FEATURES = [
     "category": "Kategorie a parametry zboží",
     "description": "Centrální seznam značek s možností jejich výběru při vystavení.",
     "without": "Bez značek uživatelé budou značku psát volně do textu a data budou nekonzistentní.",
-    "example": "Uživatel použije možnost „Značky“: centrální seznam značek s možností jejich výběru při vystavení.",
+    "example": "Při vystavení začne Tereza psát „Zar…“ a vybere „Zara“ ze seznamu, takže značka je všude napsaná stejně.",
     "build": [
-      "Konkrétní část: Centrální seznam značek s možností jejich výběru při vystavení.",
-      "Navrhnout datovou strukturu kategorií a příslušných hodnot.",
-      "Zajistit, aby formulář inzerátu nabízel jen správné možnosti.",
-      "Používat stejné hodnoty ve filtrech, detailu a administraci."
+      "Databáze značek (tisíce položek) s vyhledáváním.",
+      "Našeptávání značky při vystavení.",
+      "Přidávání nových značek a slučování překlepů."
     ],
-    "category_note": "Prodávající vybírá parametry výrobku; kupující podle těchto parametrů hledá."
+    "category_note": "Prodávající vybírá parametry výrobku; kupující podle těchto parametrů hledá.",
+    "effort": "M"
   },
   {
     "id": "4.3",
@@ -382,12 +382,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez velikostí bude nutné vše hledat v popisu a počet chybných nákupů vzroste.",
     "example": "U tenisek se nabízí EU 38–46, zatímco u triček XS–XXL.",
     "build": [
-      "Konkrétní část: Podporuje velikostní systémy podle kategorie, značky nebo země.",
-      "Navrhnout datovou strukturu kategorií a příslušných hodnot.",
-      "Zajistit, aby formulář inzerátu nabízel jen správné možnosti.",
-      "Používat stejné hodnoty ve filtrech, detailu a administraci."
+      "Tabulky velikostí podle typu zboží (oblečení, boty, děti).",
+      "Výběr velikosti při vystavení podle kategorie.",
+      "Napojení na filtr a „Moje velikosti“."
     ],
-    "category_note": "Prodávající vybírá parametry výrobku; kupující podle těchto parametrů hledá."
+    "category_note": "Prodávající vybírá parametry výrobku; kupující podle těchto parametrů hledá.",
+    "effort": "M"
   },
   {
     "id": "4.4",
@@ -395,14 +395,14 @@ window.BOBINA_FEATURES = [
     "category": "Kategorie a parametry zboží",
     "description": "Výběr např. nový, jako nový, velmi dobrý, dobrý, uspokojivý.",
     "without": "Bez stavu bude obtížné posoudit, zda zboží odpovídá popisu.",
-    "example": "Uživatel použije možnost „Stav předmětu“: výběr např. nový, jako nový, velmi dobrý, dobrý, uspokojivý.",
+    "example": "Prodávající u bundy vybere „Velmi dobrý – nošeno párkrát, bez vad“, kupující hned ví, co čekat.",
     "build": [
-      "Konkrétní část: Výběr např. nový, jako nový, velmi dobrý, dobrý, uspokojivý.",
-      "Navrhnout datovou strukturu kategorií a příslušných hodnot.",
-      "Zajistit, aby formulář inzerátu nabízel jen správné možnosti.",
-      "Používat stejné hodnoty ve filtrech, detailu a administraci."
+      "Pevný seznam stavů s krátkým vysvětlením.",
+      "Povinný výběr při vystavení.",
+      "Zobrazení na detailu a ve filtru."
     ],
-    "category_note": "Prodávající vybírá parametry výrobku; kupující podle těchto parametrů hledá."
+    "category_note": "Prodávající vybírá parametry výrobku; kupující podle těchto parametrů hledá.",
+    "effort": "S"
   },
   {
     "id": "4.5",
@@ -410,14 +410,14 @@ window.BOBINA_FEATURES = [
     "category": "Kategorie a parametry zboží",
     "description": "Umožní filtrovat barvu, materiál, model, kapacitu, rozměr a další vlastnosti.",
     "without": "Bez atributů bude vyhledávání více závislé na nekvalitním volném textu.",
-    "example": "Uživatel použije možnost „Barvy a další atributy“: umožní filtrovat barvu, materiál, model, kapacitu, rozměr a další vlastnosti.",
+    "example": "U kabelky vyplní barvu „béžová“ a materiál „kůže“; kupující pak může hledat jen béžové kožené kabelky.",
     "build": [
-      "Konkrétní část: Umožní filtrovat barvu, materiál, model, kapacitu, rozměr a další vlastnosti.",
-      "Navrhnout datovou strukturu kategorií a příslušných hodnot.",
-      "Zajistit, aby formulář inzerátu nabízel jen správné možnosti.",
-      "Používat stejné hodnoty ve filtrech, detailu a administraci."
+      "Atributy podle kategorie (barva, materiál, kapacita…).",
+      "Formulář při vystavení se správnými poli.",
+      "Napojení na filtry."
     ],
-    "category_note": "Prodávající vybírá parametry výrobku; kupující podle těchto parametrů hledá."
+    "category_note": "Prodávající vybírá parametry výrobku; kupující podle těchto parametrů hledá.",
+    "effort": "M"
   },
   {
     "id": "4.6",
@@ -425,14 +425,14 @@ window.BOBINA_FEATURES = [
     "category": "Kategorie a parametry zboží",
     "description": "Každá kategorie má vlastní povinné údaje.",
     "without": "Bez toho budou chybět zásadní informace a podpora bude řešit více sporů.",
-    "example": "Uživatel použije možnost „Povinná pole podle kategorie“: každá kategorie má vlastní povinné údaje.",
+    "example": "U bot musí prodávající vyplnit velikost, u mobilu kapacitu paměti – bez toho inzerát nejde uložit.",
     "build": [
-      "Konkrétní část: Každá kategorie má vlastní povinné údaje.",
-      "Navrhnout datovou strukturu kategorií a příslušných hodnot.",
-      "Zajistit, aby formulář inzerátu nabízel jen správné možnosti.",
-      "Používat stejné hodnoty ve filtrech, detailu a administraci."
+      "Nastavení, co je v které kategorii povinné.",
+      "Kontrola při uložení inzerátu.",
+      "Srozumitelné upozornění, co chybí."
     ],
-    "category_note": "Prodávající vybírá parametry výrobku; kupující podle těchto parametrů hledá."
+    "category_note": "Prodávající vybírá parametry výrobku; kupující podle těchto parametrů hledá.",
+    "effort": "S"
   },
   {
     "id": "4.7",
@@ -440,14 +440,14 @@ window.BOBINA_FEATURES = [
     "category": "Kategorie a parametry zboží",
     "description": "Systém zabrání nebo označí nabídky, které se na platformě nesmějí prodávat.",
     "without": "Bez toho bude moderace pouze reaktivní a rizikové nabídky se zveřejní.",
-    "example": "Uživatel použije možnost „Zakázané kategorie a položky“: systém zabrání nebo označí nabídky, které se na platformě nesmějí prodávat.",
+    "example": "Někdo zkusí vystavit léky nebo zbraň – aplikace inzerát zastaví a upozorní, že to se tu prodávat nesmí.",
     "build": [
-      "Konkrétní část: Systém zabrání nebo označí nabídky, které se na platformě nesmějí prodávat.",
-      "Navrhnout datovou strukturu kategorií a příslušných hodnot.",
-      "Zajistit, aby formulář inzerátu nabízel jen správné možnosti.",
-      "Používat stejné hodnoty ve filtrech, detailu a administraci."
+      "Seznam zakázaného zboží a klíčových slov.",
+      "Automatická kontrola při vystavení.",
+      "Fronta podezřelých inzerátů pro moderátora."
     ],
-    "category_note": "Prodávající vybírá parametry výrobku; kupující podle těchto parametrů hledá."
+    "category_note": "Prodávající vybírá parametry výrobku; kupující podle těchto parametrů hledá.",
+    "effort": "M"
   },
   {
     "id": "5.1",
@@ -457,12 +457,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez více fotek klesne důvěra a poroste množství dotazů a reklamací.",
     "example": "Prodávající přidá osm fotografií jedněch bot a určí, která bude titulní.",
     "build": [
-      "Konkrétní část: Prodávající nahraje několik fotek předmětu z různých úhlů.",
-      "Vytvořit interaktivní formulář a konkrétní ovládací prvky.",
-      "Kontrolovat povinná pole, chybové stavy a náhled výsledného inzerátu.",
-      "Ukládat změny a promítat je do katalogu i do profilu prodejce."
+      "Nahrání až 20 fotek, změna pořadí, výběr hlavní fotky.",
+      "Zmenšení a uložení fotek na server (úložiště, náklady).",
+      "Kontrola formátu a velikosti souborů."
     ],
-    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží."
+    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží.",
+    "effort": "M"
   },
   {
     "id": "5.2",
@@ -470,14 +470,14 @@ window.BOBINA_FEATURES = [
     "category": "Vystavení předmětu",
     "description": "Umožní vyfotit produkt bez opuštění aplikace.",
     "without": "Bez toho musí uživatel nejprve vytvořit fotky v telefonu a následně je nahrát.",
-    "example": "Uživatel použije možnost „Fotoaparát přímo v aplikaci“: umožní vyfotit produkt bez opuštění aplikace.",
+    "example": "Martina vyfotí šaty přímo v aplikaci a fotky se rovnou přidají do inzerátu.",
     "build": [
-      "Konkrétní část: Umožní vyfotit produkt bez opuštění aplikace.",
-      "Vytvořit interaktivní formulář a konkrétní ovládací prvky.",
-      "Kontrolovat povinná pole, chybové stavy a náhled výsledného inzerátu.",
-      "Ukládat změny a promítat je do katalogu i do profilu prodejce."
+      "Přístup k fotoaparátu telefonu se souhlasem uživatele.",
+      "Focení více snímků za sebou.",
+      "Přidání fotek rovnou do inzerátu."
     ],
-    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží."
+    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží.",
+    "effort": "S"
   },
   {
     "id": "5.3",
@@ -485,14 +485,14 @@ window.BOBINA_FEATURES = [
     "category": "Vystavení předmětu",
     "description": "Uživatel upraví fotku před publikací.",
     "without": "Bez toho budou častější špatně otočené nebo nevhodně oříznuté fotografie.",
-    "example": "Uživatel použije možnost „Ořez, otočení a základní úprava fotek“: uživatel upraví fotku před publikací.",
+    "example": "Fotka je nakřivo a s kusem pokoje; prodávající ji v aplikaci otočí a ořízne na samotný svetr.",
     "build": [
-      "Konkrétní část: Uživatel upraví fotku před publikací.",
-      "Vytvořit interaktivní formulář a konkrétní ovládací prvky.",
-      "Kontrolovat povinná pole, chybové stavy a náhled výsledného inzerátu.",
-      "Ukládat změny a promítat je do katalogu i do profilu prodejce."
+      "Editor: ořez, otočení, jas.",
+      "Uložení upravené verze.",
+      "Funguje na telefonu i na webu."
     ],
-    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží."
+    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží.",
+    "effort": "S"
   },
   {
     "id": "5.4",
@@ -500,14 +500,14 @@ window.BOBINA_FEATURES = [
     "category": "Vystavení předmětu",
     "description": "Krátký název nabídky použitý ve výsledcích hledání.",
     "without": "Bez něj se bude muset název generovat automaticky nebo použít jen popis.",
-    "example": "Uživatel použije možnost „Název předmětu“: krátký název nabídky použitý ve výsledcích hledání.",
+    "example": "Prodávající napíše „Růžový pletený svetr Zara, vel. M“ – přesně to pak kupující uvidí ve výsledcích hledání.",
     "build": [
-      "Konkrétní část: Krátký název nabídky použitý ve výsledcích hledání.",
-      "Vytvořit interaktivní formulář a konkrétní ovládací prvky.",
-      "Kontrolovat povinná pole, chybové stavy a náhled výsledného inzerátu.",
-      "Ukládat změny a promítat je do katalogu i do profilu prodejce."
+      "Pole s limitem znaků.",
+      "Kontrola zakázaných slov.",
+      "Použití názvu ve vyhledávání."
     ],
-    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží."
+    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží.",
+    "effort": "S"
   },
   {
     "id": "5.5",
@@ -515,14 +515,14 @@ window.BOBINA_FEATURES = [
     "category": "Vystavení předmětu",
     "description": "Prodávající uvede stav, vady, rozměry a další informace.",
     "without": "Bez popisu výrazně naroste počet dotazů a sporů.",
-    "example": "Uživatel použije možnost „Popis předmětu“: prodávající uvede stav, vady, rozměry a další informace.",
+    "example": "V popisu je „Nošeno 2×, malá oděrka na rukávu (viz foto), délka 65 cm“.",
     "build": [
-      "Konkrétní část: Prodávající uvede stav, vady, rozměry a další informace.",
-      "Vytvořit interaktivní formulář a konkrétní ovládací prvky.",
-      "Kontrolovat povinná pole, chybové stavy a náhled výsledného inzerátu.",
-      "Ukládat změny a promítat je do katalogu i do profilu prodejce."
+      "Pole s limitem znaků a nápovědou, co napsat.",
+      "Kontrola kontaktů a odkazů v textu.",
+      "Použití popisu ve vyhledávání."
     ],
-    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží."
+    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží.",
+    "effort": "S"
   },
   {
     "id": "5.6",
@@ -530,14 +530,14 @@ window.BOBINA_FEATURES = [
     "category": "Vystavení předmětu",
     "description": "Prodávající nastaví požadovanou cenu.",
     "without": "Bez ceny nebude možné provést standardní checkout.",
-    "example": "Uživatel použije možnost „Cena“: prodávající nastaví požadovanou cenu.",
+    "example": "Prodávající nastaví cenu 420 Kč, kterou kupující uvidí u inzerátu.",
     "build": [
-      "Konkrétní část: Prodávající nastaví požadovanou cenu.",
-      "Vytvořit interaktivní formulář a konkrétní ovládací prvky.",
-      "Kontrolovat povinná pole, chybové stavy a náhled výsledného inzerátu.",
-      "Ukládat změny a promítat je do katalogu i do profilu prodejce."
+      "Pole ceny s kontrolou limitů.",
+      "Zobrazení ceny i s poplatkem pro kupujícího.",
+      "Historie změn ceny (pro upozornění na zlevnění)."
     ],
-    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží."
+    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží.",
+    "effort": "S"
   },
   {
     "id": "5.7",
@@ -545,14 +545,14 @@ window.BOBINA_FEATURES = [
     "category": "Vystavení předmětu",
     "description": "Systém navrhne cenu podle podobných předmětů, značky nebo historie.",
     "without": "Bez toho musí cenu určit uživatel bez podpory.",
-    "example": "Uživatel použije možnost „Doporučená cena“: systém navrhne cenu podle podobných předmětů, značky nebo historie.",
+    "example": "Při zadávání ceny aplikace poradí: „Podobné svetry Zara se prodávají za 300–450 Kč“.",
     "build": [
-      "Konkrétní část: Systém navrhne cenu podle podobných předmětů, značky nebo historie.",
-      "Vytvořit interaktivní formulář a konkrétní ovládací prvky.",
-      "Kontrolovat povinná pole, chybové stavy a náhled výsledného inzerátu.",
-      "Ukládat změny a promítat je do katalogu i do profilu prodejce."
+      "Výpočet z cen podobných prodaných věcí (značka, kategorie, stav).",
+      "Zobrazení rozpětí při zadávání ceny.",
+      "Průběžné přepočítávání podle nových prodejů."
     ],
-    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží."
+    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží.",
+    "effort": "M"
   },
   {
     "id": "5.8",
@@ -560,14 +560,14 @@ window.BOBINA_FEATURES = [
     "category": "Vystavení předmětu",
     "description": "Prodávající určí logistickou velikost, případně ji systém doporučí.",
     "without": "Bez toho může být doprava chybně naceněná nebo zásilka odmítnuta.",
-    "example": "Uživatel použije možnost „Velikost zásilky / hmotnost“: prodávající určí logistickou velikost, případně ji systém doporučí.",
+    "example": "U bundy prodávající vybere „Střední balík (do 5 kg)“ a podle toho se kupujícímu spočítá doprava.",
     "build": [
-      "Konkrétní část: Prodávající určí logistickou velikost, případně ji systém doporučí.",
-      "Vytvořit interaktivní formulář a konkrétní ovládací prvky.",
-      "Kontrolovat povinná pole, chybové stavy a náhled výsledného inzerátu.",
-      "Ukládat změny a promítat je do katalogu i do profilu prodejce."
+      "Výběr velikosti balíku (malý / střední / velký).",
+      "Napojení na cenu dopravy u dopravců.",
+      "Doporučení velikosti podle kategorie."
     ],
-    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží."
+    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží.",
+    "effort": "S"
   },
   {
     "id": "5.9",
@@ -575,14 +575,14 @@ window.BOBINA_FEATURES = [
     "category": "Vystavení předmětu",
     "description": "Uživatel vidí, jak bude nabídka vypadat.",
     "without": "Bez něj uživatel zjistí chyby až po publikaci.",
-    "example": "Uživatel použije možnost „Náhled inzerátu před publikací“: uživatel vidí, jak bude nabídka vypadat.",
+    "example": "Před zveřejněním Klára vidí, jak bude inzerát vypadat, a všimne si, že zapomněla velikost.",
     "build": [
-      "Konkrétní část: Uživatel vidí, jak bude nabídka vypadat.",
-      "Vytvořit interaktivní formulář a konkrétní ovládací prvky.",
-      "Kontrolovat povinná pole, chybové stavy a náhled výsledného inzerátu.",
-      "Ukládat změny a promítat je do katalogu i do profilu prodejce."
+      "Obrazovka náhledu před zveřejněním.",
+      "Zvýraznění chybějících údajů.",
+      "Návrat k úpravě jedním klepnutím."
     ],
-    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží."
+    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží.",
+    "effort": "S"
   },
   {
     "id": "5.10",
@@ -592,12 +592,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho se při odchodu z formuláře rozpracovaná data ztratí.",
     "example": "Při fotografování dalších věcí přeruší vyplňování a později se vrátí k uloženému konceptu.",
     "build": [
-      "Konkrétní část: Rozpracovanou nabídku lze uložit a dokončit později.",
-      "Vytvořit interaktivní formulář a konkrétní ovládací prvky.",
-      "Kontrolovat povinná pole, chybové stavy a náhled výsledného inzerátu.",
-      "Ukládat změny a promítat je do katalogu i do profilu prodejce."
+      "Automatické ukládání rozpracovaného inzerátu.",
+      "Seznam konceptů.",
+      "Dokončení nebo smazání konceptu."
     ],
-    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží."
+    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží.",
+    "effort": "S"
   },
   {
     "id": "5.11",
@@ -605,14 +605,14 @@ window.BOBINA_FEATURES = [
     "category": "Vystavení předmětu",
     "description": "Prodávající může upravit cenu, popis, fotografie a parametry.",
     "without": "Bez editace by bylo nutné nabídku smazat a založit znovu.",
-    "example": "Uživatel použije možnost „Editace aktivního inzerátu“: prodávající může upravit cenu, popis, fotografie a parametry.",
+    "example": "Po týdnu bez zájmu prodávající sníží cenu z 600 na 490 Kč a přidá další fotku.",
     "build": [
-      "Konkrétní část: Prodávající může upravit cenu, popis, fotografie a parametry.",
-      "Vytvořit interaktivní formulář a konkrétní ovládací prvky.",
-      "Kontrolovat povinná pole, chybové stavy a náhled výsledného inzerátu.",
-      "Ukládat změny a promítat je do katalogu i do profilu prodejce."
+      "Úprava všech údajů aktivního inzerátu.",
+      "Zákaz úprav během rozběhlé objednávky.",
+      "Upozornění zájemců při zlevnění."
     ],
-    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží."
+    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží.",
+    "effort": "S"
   },
   {
     "id": "5.12",
@@ -620,14 +620,14 @@ window.BOBINA_FEATURES = [
     "category": "Vystavení předmětu",
     "description": "Prodávající nabídku dočasně skryje nebo odstraní.",
     "without": "Bez toho zůstanou v katalogu neaktuální položky. Strana 6 KLIENTSKÝ VÝBĚR FUNKCÍ - MARKETPLACE TYPU VINTED FUNKCE / VYSVĚTLENÍ CENA CHCI",
-    "example": "Uživatel použije možnost „Smazání / skrytí inzerátu“: prodávající nabídku dočasně skryje nebo odstraní.",
+    "example": "Prodávající odjíždí, inzerát na čas skryje, a po návratu ho zase zobrazí.",
     "build": [
-      "Konkrétní část: Prodávající nabídku dočasně skryje nebo odstraní.",
-      "Vytvořit interaktivní formulář a konkrétní ovládací prvky.",
-      "Kontrolovat povinná pole, chybové stavy a náhled výsledného inzerátu.",
-      "Ukládat změny a promítat je do katalogu i do profilu prodejce."
+      "Skrýt / zobrazit / smazat inzerát.",
+      "Zachování historie kvůli objednávkám.",
+      "Hromadné skrytí (např. dovolená)."
     ],
-    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží."
+    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží.",
+    "effort": "S"
   },
   {
     "id": "5.13",
@@ -635,14 +635,14 @@ window.BOBINA_FEATURES = [
     "category": "Vystavení předmětu",
     "description": "Jedním krokem obnoví předchozí inzerát.",
     "without": "Bez toho musí uživatel vše vyplnit znovu.",
-    "example": "Uživatel použije možnost „Znovuvystavení prodané/stornované položky“: jedním krokem obnoví předchozí inzerát.",
+    "example": "Kupující objednávku zrušil; prodávající jedním klepnutím vystaví stejný inzerát znovu.",
     "build": [
-      "Konkrétní část: Jedním krokem obnoví předchozí inzerát.",
-      "Vytvořit interaktivní formulář a konkrétní ovládací prvky.",
-      "Kontrolovat povinná pole, chybové stavy a náhled výsledného inzerátu.",
-      "Ukládat změny a promítat je do katalogu i do profilu prodejce."
+      "Kopie inzerátu i s fotkami jedním klepnutím.",
+      "Kontrola, že původní objednávka je uzavřená.",
+      "Nový inzerát s novým datem."
     ],
-    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží."
+    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží.",
+    "effort": "S"
   },
   {
     "id": "5.14",
@@ -650,29 +650,29 @@ window.BOBINA_FEATURES = [
     "category": "Vystavení předmětu",
     "description": "Jedna nabídka může obsahovat více souvisejících kusů.",
     "without": "Bez toho musí prodávající vytvořit jednotlivé inzeráty.",
-    "example": "Uživatel použije možnost „Prodej setu více věcí v jednom inzerátu“: jedna nabídka může obsahovat více souvisejících kusů.",
+    "example": "Maminka prodá „balík dětského oblečení 0–3 měsíce, 15 kusů“ jako jeden inzerát.",
     "build": [
-      "Konkrétní část: Jedna nabídka může obsahovat více souvisejících kusů.",
-      "Vytvořit interaktivní formulář a konkrétní ovládací prvky.",
-      "Kontrolovat povinná pole, chybové stavy a náhled výsledného inzerátu.",
-      "Ukládat změny a promítat je do katalogu i do profilu prodejce."
+      "Pole „počet kusů“ a seznam položek v popisu.",
+      "Velikost zásilky podle setu.",
+      "Označení „set“ ve výpisu."
     ],
-    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží."
+    "category_note": "Prodávající postupně vyplní formulář a předmět zveřejní nebo rozpracování uloží.",
+    "effort": "S"
   },
   {
     "id": "6.1",
-    "title": "Personalizovaný feed",
+    "title": "Personalizovaný feed („Doporučené pro vás“)",
     "category": "Domovská stránka a doporučování",
-    "description": "Domovská stránka řadí nabídky podle zájmů a chování uživatele.",
+    "description": "Úvodní stránka ukazuje každému jiné předměty podle toho, co si prohlíží, ukládá, hledá a kupuje.",
     "without": "Bez něj uvidí všichni stejný obsah a relevance bude výrazně nižší.",
     "example": "Po opakovaném prohlížení sportovní módy se na úvodu začne zobrazovat více relevantních nabídek.",
     "build": [
-      "Konkrétní část: Domovská stránka řadí nabídky podle zájmů a chování uživatele.",
-      "Připravit konkrétní blok na úvodní stránce a jeho grafiku pro mobil i počítač.",
-      "Zajistit řazení a načítání relevantních nabídek podle zvoleného pravidla.",
-      "Vyřadit smazané a prodané věci a ošetřit stav, kdy nejsou žádné výsledky."
+      "Sběr signálů: prohlížení, oblíbené, hledání, nákupy.",
+      "Doporučovací algoritmus a jeho průběžné ladění.",
+      "Rychlé načítání feedu pro každého zvlášť."
     ],
-    "category_note": "Kupující otevře úvodní stránku a rychle objeví zajímavé předměty."
+    "category_note": "Kupující otevře úvodní stránku a rychle objeví zajímavé předměty.",
+    "effort": "L"
   },
   {
     "id": "6.2",
@@ -680,89 +680,89 @@ window.BOBINA_FEATURES = [
     "category": "Domovská stránka a doporučování",
     "description": "Sekce řadí čerstvě přidané předměty.",
     "without": "Bez toho se nové nabídky hůř objevují.",
-    "example": "Uživatel použije možnost „Novinky / nejnovější nabídky“: sekce řadí čerstvě přidané předměty.",
+    "example": "Na úvodní stránce je sekce „Právě přidáno“ s věcmi vystavenými před pár minutami.",
     "build": [
-      "Konkrétní část: Sekce řadí čerstvě přidané předměty.",
-      "Připravit konkrétní blok na úvodní stránce a jeho grafiku pro mobil i počítač.",
-      "Zajistit řazení a načítání relevantních nabídek podle zvoleného pravidla.",
-      "Vyřadit smazané a prodané věci a ošetřit stav, kdy nejsou žádné výsledky."
+      "Výpis nejnovějších inzerátů s průběžným načítáním.",
+      "Filtrování podle velikostí uživatele.",
+      "Ukládání do mezipaměti kvůli rychlosti."
     ],
-    "category_note": "Kupující otevře úvodní stránku a rychle objeví zajímavé předměty."
+    "category_note": "Kupující otevře úvodní stránku a rychle objeví zajímavé předměty.",
+    "effort": "S"
   },
   {
     "id": "6.3",
-    "title": "Doporučené pro tebe",
-    "category": "Domovská stránka a doporučování",
-    "description": "Algoritmicky vybere produkty podle oblíbených, hledání a nákupů.",
-    "without": "Bez toho zůstane discovery převážně ruční.",
-    "example": "Uživatel použije možnost „Doporučené pro tebe“: algoritmicky vybere produkty podle oblíbených, hledání a nákupů.",
-    "build": [
-      "Konkrétní část: Algoritmicky vybere produkty podle oblíbených, hledání a nákupů.",
-      "Připravit konkrétní blok na úvodní stránce a jeho grafiku pro mobil i počítač.",
-      "Zajistit řazení a načítání relevantních nabídek podle zvoleného pravidla.",
-      "Vyřadit smazané a prodané věci a ošetřit stav, kdy nejsou žádné výsledky."
-    ],
-    "category_note": "Kupující otevře úvodní stránku a rychle objeví zajímavé předměty."
-  },
-  {
-    "id": "6.4",
     "title": "Podobné předměty",
     "category": "Domovská stránka a doporučování",
     "description": "Na detailu nabídky ukáže podobné alternativy.",
     "without": "Bez toho detail produktu častěji končí odchodem z aplikace.",
-    "example": "Uživatel použije možnost „Podobné předměty“: na detailu nabídky ukáže podobné alternativy.",
+    "example": "Pod zimní bundou jsou „Podobné předměty“ – další bundy stejné velikosti a ceny.",
     "build": [
-      "Konkrétní část: Na detailu nabídky ukáže podobné alternativy.",
-      "Připravit konkrétní blok na úvodní stránce a jeho grafiku pro mobil i počítač.",
-      "Zajistit řazení a načítání relevantních nabídek podle zvoleného pravidla.",
-      "Vyřadit smazané a prodané věci a ošetřit stav, kdy nejsou žádné výsledky."
+      "Výpočet podobnosti (kategorie, značka, velikost, cena).",
+      "Sekce pod detailem inzerátu.",
+      "Vynechání prodaných a skrytých věcí."
     ],
-    "category_note": "Kupující otevře úvodní stránku a rychle objeví zajímavé předměty."
+    "category_note": "Kupující otevře úvodní stránku a rychle objeví zajímavé předměty.",
+    "effort": "M"
   },
   {
-    "id": "6.5",
+    "id": "6.4",
     "title": "Doporučené profily / prodejci",
     "category": "Domovská stránka a doporučování",
     "description": "Navrhuje uživatele ke sledování.",
     "without": "Bez něj se nové profily objevují jen náhodně.",
-    "example": "Uživatel použije možnost „Doporučené profily / prodejci“: navrhuje uživatele ke sledování.",
+    "example": "Aplikace nabídne „Prodejci, kteří by se vám mohli líbit“ podle toho, co si uživatelka prohlíží.",
     "build": [
-      "Konkrétní část: Navrhuje uživatele ke sledování.",
-      "Připravit konkrétní blok na úvodní stránce a jeho grafiku pro mobil i počítač.",
-      "Zajistit řazení a načítání relevantních nabídek podle zvoleného pravidla.",
-      "Vyřadit smazané a prodané věci a ošetřit stav, kdy nejsou žádné výsledky."
+      "Výběr prodejců podle stylu a aktivity.",
+      "Sekce na úvodní stránce.",
+      "Skrytí již sledovaných prodejců."
     ],
-    "category_note": "Kupující otevře úvodní stránku a rychle objeví zajímavé předměty."
+    "category_note": "Kupující otevře úvodní stránku a rychle objeví zajímavé předměty.",
+    "effort": "M"
   },
   {
-    "id": "6.6",
+    "id": "6.5",
     "title": "Nedávno prohlížené",
     "category": "Domovská stránka a doporučování",
     "description": "Uživatel se rychle vrátí k předmětům, které už otevřel.",
     "without": "Bez toho musí nabídku znovu hledat.",
-    "example": "Uživatel použije možnost „Nedávno prohlížené“: uživatel se rychle vrátí k předmětům, které už otevřel.",
+    "example": "Včera si Petra prohlížela kabelku; dnes ji najde v sekci „Nedávno prohlížené“ bez hledání.",
     "build": [
-      "Konkrétní část: Uživatel se rychle vrátí k předmětům, které už otevřel.",
-      "Připravit konkrétní blok na úvodní stránce a jeho grafiku pro mobil i počítač.",
-      "Zajistit řazení a načítání relevantních nabídek podle zvoleného pravidla.",
-      "Vyřadit smazané a prodané věci a ošetřit stav, kdy nejsou žádné výsledky."
+      "Ukládání historie prohlížení.",
+      "Sekce na úvodní stránce.",
+      "Smazání historie v nastavení."
     ],
-    "category_note": "Kupující otevře úvodní stránku a rychle objeví zajímavé předměty."
+    "category_note": "Kupující otevře úvodní stránku a rychle objeví zajímavé předměty.",
+    "effort": "S"
   },
   {
-    "id": "6.7",
+    "id": "6.6",
     "title": "Sekce trendů / populární",
     "category": "Domovská stránka a doporučování",
     "description": "Ukazuje populární značky, kategorie nebo produkty.",
     "without": "Bez toho platforma ztrácí část řízeného discovery.",
-    "example": "Uživatel použije možnost „Sekce trendů / populární“: ukazuje populární značky, kategorie nebo produkty.",
+    "example": "Sekce „Teď v trendu“ ukazuje, že se nejvíc hledají Nike Air Force a lněné košile.",
     "build": [
-      "Konkrétní část: Ukazuje populární značky, kategorie nebo produkty.",
-      "Připravit konkrétní blok na úvodní stránce a jeho grafiku pro mobil i počítač.",
-      "Zajistit řazení a načítání relevantních nabídek podle zvoleného pravidla.",
-      "Vyřadit smazané a prodané věci a ošetřit stav, kdy nejsou žádné výsledky."
+      "Výpočet nejhledanějších značek a kategorií.",
+      "Sekce trendů na úvodní stránce.",
+      "Ruční úpravy trendů v administraci."
     ],
-    "category_note": "Kupující otevře úvodní stránku a rychle objeví zajímavé předměty."
+    "category_note": "Kupující otevře úvodní stránku a rychle objeví zajímavé předměty.",
+    "effort": "M"
+  },
+  {
+    "id": "6.7",
+    "title": "Moje velikosti a oblíbené značky",
+    "category": "Domovská stránka a doporučování",
+    "description": "Uživatel si uloží své velikosti a oblíbené značky a aplikace podle nich přednostně ukazuje nabídky.",
+    "example": "Petra si nastaví „oblečení M, boty 38, Zara a Nike“ a na úvodní stránce vidí hlavně tyto věci.",
+    "without": "Bez toho musí uživatel pokaždé ručně nastavovat filtry velikosti.",
+    "build": [
+      "Uložení velikostí a oblíbených značek v profilu.",
+      "Předvyplnění filtrů a úprava feedu.",
+      "Úvodní výběr při první registraci."
+    ],
+    "category_note": "Kupující otevře úvodní stránku a rychle objeví zajímavé předměty.",
+    "effort": "S"
   },
   {
     "id": "7.1",
@@ -772,12 +772,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez něj je uživatel odkázán na procházení kategorií.",
     "example": "Zadá „růžový svetr Zara“ a uvidí odpovídající názvy, značky i popisy.",
     "build": [
-      "Konkrétní část: Hledá v názvu, popisu, značce a dalších datech.",
-      "Zobrazit vyhledávací pole nebo filtr s jeho ovládáním a vymazáním.",
-      "Kombinovat podmínky a zobrazovat počet skutečně nalezených předmětů.",
-      "Zachovat nastavení při návratu z detailu a správně řešit nulový výsledek."
+      "Vyhledávací server (např. Elasticsearch / Algolia) a jeho provoz.",
+      "Hledání v názvu, popisu, značce i s překlepy a bez diakritiky.",
+      "Průběžné aktualizace při každé změně inzerátu."
     ],
-    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek."
+    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek.",
+    "effort": "L"
   },
   {
     "id": "7.2",
@@ -785,14 +785,14 @@ window.BOBINA_FEATURES = [
     "category": "Vyhledávání a filtry",
     "description": "Během psaní navrhuje značky, kategorie a časté dotazy.",
     "without": "Bez něj bude vyhledávání pomalejší a méně přesné.",
-    "example": "Uživatel použije možnost „Automatické našeptávání“: během psaní navrhuje značky, kategorie a časté dotazy.",
+    "example": "Uživatelka napíše „nik“ a aplikace nabídne „Nike“, „Nike Air Max“ a „Nike mikina“.",
     "build": [
-      "Konkrétní část: Během psaní navrhuje značky, kategorie a časté dotazy.",
-      "Zobrazit vyhledávací pole nebo filtr s jeho ovládáním a vymazáním.",
-      "Kombinovat podmínky a zobrazovat počet skutečně nalezených předmětů.",
-      "Zachovat nastavení při návratu z detailu a správně řešit nulový výsledek."
+      "Návrhy během psaní (značky, kategorie, časté dotazy).",
+      "Rychlá odezva do pár desetin sekundy.",
+      "Učení z toho, co lidé hledají."
     ],
-    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek."
+    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek.",
+    "effort": "M"
   },
   {
     "id": "7.3",
@@ -800,14 +800,14 @@ window.BOBINA_FEATURES = [
     "category": "Vyhledávání a filtry",
     "description": "Omezí výsledky na konkrétní část katalogu.",
     "without": "Bez něj budou výsledky obsahovat mnoho nerelevantních položek.",
-    "example": "Uživatel použije možnost „Filtr kategorie“: omezí výsledky na konkrétní část katalogu.",
+    "example": "Kupující hledá jen v „Ženy › Boty › Tenisky“, ostatní věci se neukážou.",
     "build": [
-      "Konkrétní část: Omezí výsledky na konkrétní část katalogu.",
-      "Zobrazit vyhledávací pole nebo filtr s jeho ovládáním a vymazáním.",
-      "Kombinovat podmínky a zobrazovat počet skutečně nalezených předmětů.",
-      "Zachovat nastavení při návratu z detailu a správně řešit nulový výsledek."
+      "Výběr kategorie ve výsledcích hledání.",
+      "Počty výsledků u každé kategorie.",
+      "Zapamatování filtru."
     ],
-    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek."
+    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek.",
+    "effort": "S"
   },
   {
     "id": "7.4",
@@ -815,14 +815,14 @@ window.BOBINA_FEATURES = [
     "category": "Vyhledávání a filtry",
     "description": "Umožní vybrat jednu nebo více značek.",
     "without": "Bez něj musí uživatel značku zadávat do textu.",
-    "example": "Uživatel použije možnost „Filtr značky“: umožní vybrat jednu nebo více značek.",
+    "example": "Kupující zaškrtne značky Zara a H&M a vidí jen jejich věci.",
     "build": [
-      "Konkrétní část: Umožní vybrat jednu nebo více značek.",
-      "Zobrazit vyhledávací pole nebo filtr s jeho ovládáním a vymazáním.",
-      "Kombinovat podmínky a zobrazovat počet skutečně nalezených předmětů.",
-      "Zachovat nastavení při návratu z detailu a správně řešit nulový výsledek."
+      "Výběr více značek s vyhledáváním.",
+      "Počty výsledků u značek.",
+      "Napojení na uložené hledání."
     ],
-    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek."
+    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek.",
+    "effort": "S"
   },
   {
     "id": "7.5",
@@ -830,14 +830,14 @@ window.BOBINA_FEATURES = [
     "category": "Vyhledávání a filtry",
     "description": "Omezí produkty na požadovanou velikost.",
     "without": "Bez něj bude velká část výsledků pro kupujícího nepoužitelná.",
-    "example": "Uživatel použije možnost „Filtr velikosti“: omezí produkty na požadovanou velikost.",
+    "example": "Kupující nosí velikost M, nastaví filtr a ostatní velikosti se schovají.",
     "build": [
-      "Konkrétní část: Omezí produkty na požadovanou velikost.",
-      "Zobrazit vyhledávací pole nebo filtr s jeho ovládáním a vymazáním.",
-      "Kombinovat podmínky a zobrazovat počet skutečně nalezených předmětů.",
-      "Zachovat nastavení při návratu z detailu a správně řešit nulový výsledek."
+      "Výběr velikostí podle typu zboží.",
+      "Předvyplnění z „Moje velikosti“.",
+      "Kombinace s ostatními filtry."
     ],
-    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek."
+    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek.",
+    "effort": "S"
   },
   {
     "id": "7.6",
@@ -845,14 +845,14 @@ window.BOBINA_FEATURES = [
     "category": "Vyhledávání a filtry",
     "description": "Nastaví minimální a maximální cenu.",
     "without": "Bez něj musí uživatel ručně procházet drahé nebo příliš levné nabídky.",
-    "example": "Uživatel použije možnost „Filtr ceny“: nastaví minimální a maximální cenu.",
+    "example": "Kupující nastaví cenu 200–500 Kč a levnější ani dražší věci neuvidí.",
     "build": [
-      "Konkrétní část: Nastaví minimální a maximální cenu.",
-      "Zobrazit vyhledávací pole nebo filtr s jeho ovládáním a vymazáním.",
-      "Kombinovat podmínky a zobrazovat počet skutečně nalezených předmětů.",
-      "Zachovat nastavení při návratu z detailu a správně řešit nulový výsledek."
+      "Rozsah od–do.",
+      "Cena včetně / bez poplatku.",
+      "Kombinace s ostatními filtry."
     ],
-    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek."
+    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek.",
+    "effort": "S"
   },
   {
     "id": "7.7",
@@ -860,14 +860,14 @@ window.BOBINA_FEATURES = [
     "category": "Vyhledávání a filtry",
     "description": "Omezí výsledky podle opotřebení / novosti.",
     "without": "Bez něj se míchají nové i silně použité věci.",
-    "example": "Uživatel použije možnost „Filtr stavu“: omezí výsledky podle opotřebení / novosti.",
+    "example": "Kupující chce jen „Nové s visačkou“ nebo „Jako nové“.",
     "build": [
-      "Konkrétní část: Omezí výsledky podle opotřebení / novosti.",
-      "Zobrazit vyhledávací pole nebo filtr s jeho ovládáním a vymazáním.",
-      "Kombinovat podmínky a zobrazovat počet skutečně nalezených předmětů.",
-      "Zachovat nastavení při návratu z detailu a správně řešit nulový výsledek."
+      "Výběr stavů.",
+      "Kombinace s ostatními filtry.",
+      "Zobrazení ve výsledcích."
     ],
-    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek."
+    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek.",
+    "effort": "S"
   },
   {
     "id": "7.8",
@@ -875,14 +875,14 @@ window.BOBINA_FEATURES = [
     "category": "Vyhledávání a filtry",
     "description": "Filtruje podle barvy, materiálu a dalších vlastností.",
     "without": "Bez něj bude hledání méně přesné.",
-    "example": "Uživatel použije možnost „Filtr barvy a atributů“: filtruje podle barvy, materiálu a dalších vlastností.",
+    "example": "Kupující hledá jen černé šaty z bavlny.",
     "build": [
-      "Konkrétní část: Filtruje podle barvy, materiálu a dalších vlastností.",
-      "Zobrazit vyhledávací pole nebo filtr s jeho ovládáním a vymazáním.",
-      "Kombinovat podmínky a zobrazovat počet skutečně nalezených předmětů.",
-      "Zachovat nastavení při návratu z detailu a správně řešit nulový výsledek."
+      "Výběr barev a materiálů podle kategorie.",
+      "Kombinace s ostatními filtry.",
+      "Počty výsledků."
     ],
-    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek."
+    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek.",
+    "effort": "S"
   },
   {
     "id": "7.9",
@@ -890,14 +890,14 @@ window.BOBINA_FEATURES = [
     "category": "Vyhledávání a filtry",
     "description": "Řadí např. podle relevance, ceny, novosti nebo popularity.",
     "without": "Bez něj je uživatel závislý pouze na jednom algoritmu řazení.",
-    "example": "Uživatel použije možnost „Řazení výsledků“: řadí např. podle relevance, ceny, novosti nebo popularity.",
+    "example": "Kupující si seřadí výsledky „Od nejlevnějšího“ nebo „Nejnovější“.",
     "build": [
-      "Konkrétní část: Řadí např. podle relevance, ceny, novosti nebo popularity.",
-      "Zobrazit vyhledávací pole nebo filtr s jeho ovládáním a vymazáním.",
-      "Kombinovat podmínky a zobrazovat počet skutečně nalezených předmětů.",
-      "Zachovat nastavení při návratu z detailu a správně řešit nulový výsledek."
+      "Řazení podle relevance, ceny, data, oblíbenosti.",
+      "Zapamatování zvoleného řazení.",
+      "Stejné výsledky na webu i v aplikaci."
     ],
-    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek."
+    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek.",
+    "effort": "S"
   },
   {
     "id": "7.10",
@@ -907,12 +907,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez něj musí stejné filtry zadávat opakovaně.",
     "example": "Uloží si hledání „Nike, velikost 40, do 900 Kč“ a příště nemusí podmínky zadávat znovu.",
     "build": [
-      "Konkrétní část: Uživatel si uloží kombinaci hledaného textu a filtrů.",
-      "Zobrazit vyhledávací pole nebo filtr s jeho ovládáním a vymazáním.",
-      "Kombinovat podmínky a zobrazovat počet skutečně nalezených předmětů.",
-      "Zachovat nastavení při návratu z detailu a správně řešit nulový výsledek."
+      "Uložení dotazu se všemi filtry.",
+      "Seznam uložených hledání.",
+      "Úprava a smazání."
     ],
-    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek."
+    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek.",
+    "effort": "S"
   },
   {
     "id": "7.11",
@@ -920,14 +920,29 @@ window.BOBINA_FEATURES = [
     "category": "Vyhledávání a filtry",
     "description": "Pošle notifikaci, když se objeví položka odpovídající uloženému hledání.",
     "without": "Bez toho uložené hledání pouze šetří čas, ale aktivně uživatele nevrací.",
-    "example": "Uživatel použije možnost „Upozornění na nové výsledky“: pošle notifikaci, když se objeví položka odpovídající uloženému hledání.",
+    "example": "Kupující si uloží hledání „Levi's 501, vel. 28“ a jakmile je někdo vystaví, přijde mu upozornění.",
     "build": [
-      "Konkrétní část: Pošle notifikaci, když se objeví položka odpovídající uloženému hledání.",
-      "Zobrazit vyhledávací pole nebo filtr s jeho ovládáním a vymazáním.",
-      "Kombinovat podmínky a zobrazovat počet skutečně nalezených předmětů.",
-      "Zachovat nastavení při návratu z detailu a správně řešit nulový výsledek."
+      "Pravidelná kontrola nových inzerátů proti uloženým hledáním.",
+      "Odeslání push / e-mailu bez spamování.",
+      "Nastavení četnosti upozornění."
     ],
-    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek."
+    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek.",
+    "effort": "M"
+  },
+  {
+    "id": "7.12",
+    "title": "Filtr podle místa",
+    "category": "Vyhledávání a filtry",
+    "description": "Kupující může hledat věci v okolí – hodí se hlavně pro osobní předání.",
+    "example": "Kupující z Brna si nastaví „do 20 km“ a vidí věci, pro které si může dojet.",
+    "without": "Bez toho nejde najít věci v okolí a osobní předání se domlouvá složitě.",
+    "build": [
+      "Uložení přibližné polohy prodejce (město).",
+      "Výpočet vzdálenosti a filtr „do X km“.",
+      "Ochrana soukromí – nikdy přesná adresa."
+    ],
+    "category_note": "Kupující zadá, co hledá, upřesní podmínky a dostane správný seznam nabídek.",
+    "effort": "M"
   },
   {
     "id": "8.1",
@@ -935,14 +950,14 @@ window.BOBINA_FEATURES = [
     "category": "Detail produktu",
     "description": "Zobrazí fotografie ve vysoké kvalitě s přiblížením.",
     "without": "Bez kvalitní galerie klesá důvěra a roste počet dotazů.",
-    "example": "Uživatel použije možnost „Galerie fotografií“: zobrazí fotografie ve vysoké kvalitě s přiblížením.",
+    "example": "Kupující si roztáhne fotku prsty a zblízka vidí strukturu látky i drobnou vadu.",
     "build": [
-      "Konkrétní část: Zobrazí fotografie ve vysoké kvalitě s přiblížením.",
-      "Doplnit konkrétní prvek do detailu inzerátu a jeho mobilní verze.",
-      "Zobrazit aktuální informace, stav nabídky a navazující dostupné akce.",
-      "Ošetřit změnu či prodej předmětu během prohlížení."
+      "Prohlížení fotek tažením a přiblížení prsty.",
+      "Načítání ve správné velikosti pro mobil.",
+      "Zobrazení na celou obrazovku."
     ],
-    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce."
+    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce.",
+    "effort": "S"
   },
   {
     "id": "8.2",
@@ -950,14 +965,14 @@ window.BOBINA_FEATURES = [
     "category": "Detail produktu",
     "description": "Na jednom místě zobrazí značku, velikost, stav, barvu, cenu a další údaje.",
     "without": "Bez toho musí kupující hledat informace v textu.",
-    "example": "Uživatel použije možnost „Kompletní parametry produktu“: na jednom místě zobrazí značku, velikost, stav, barvu, cenu a další údaje.",
+    "example": "Na detailu je přehledně: Zara · vel. M · Velmi dobrý stav · růžová · bavlna · 420 Kč.",
     "build": [
-      "Konkrétní část: Na jednom místě zobrazí značku, velikost, stav, barvu, cenu a další údaje.",
-      "Doplnit konkrétní prvek do detailu inzerátu a jeho mobilní verze.",
-      "Zobrazit aktuální informace, stav nabídky a navazující dostupné akce.",
-      "Ošetřit změnu či prodej předmětu během prohlížení."
+      "Přehled všech parametrů na detailu.",
+      "Odkazy z parametrů do hledání (např. „další Zara“).",
+      "Stejné zobrazení na webu i v aplikaci."
     ],
-    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce."
+    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce.",
+    "effort": "S"
   },
   {
     "id": "8.3",
@@ -965,14 +980,14 @@ window.BOBINA_FEATURES = [
     "category": "Detail produktu",
     "description": "Na detailu ukáže profil, hodnocení a ověření prodejce.",
     "without": "Bez toho musí přecházet na profil nebo nakupuje naslepo.",
-    "example": "Uživatel použije možnost „Informace o prodávajícím“: na detailu ukáže profil, hodnocení a ověření prodejce.",
+    "example": "Pod inzerátem je prodejkyně „Klára, ★ 4,9 (86 hodnocení), ověřený telefon“.",
     "build": [
-      "Konkrétní část: Na detailu ukáže profil, hodnocení a ověření prodejce.",
-      "Doplnit konkrétní prvek do detailu inzerátu a jeho mobilní verze.",
-      "Zobrazit aktuální informace, stav nabídky a navazující dostupné akce.",
-      "Ošetřit změnu či prodej předmětu během prohlížení."
+      "Karta prodejce na detailu inzerátu.",
+      "Hodnocení, ověření, poslední aktivita.",
+      "Odkaz na celý šatník."
     ],
-    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce."
+    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce.",
+    "effort": "S"
   },
   {
     "id": "8.4",
@@ -980,14 +995,14 @@ window.BOBINA_FEATURES = [
     "category": "Detail produktu",
     "description": "Zobrazí dostupné možnosti a orientační náklady.",
     "without": "Bez toho může skutečná cena v checkoutu uživatele nepříjemně překvapit.",
-    "example": "Uživatel použije možnost „Odhad dopravy / cena dopravy“: zobrazí dostupné možnosti a orientační náklady.",
+    "example": "U inzerátu je napsáno „Doprava od 69 Kč (Zásilkovna, PPL)“.",
     "build": [
-      "Konkrétní část: Zobrazí dostupné možnosti a orientační náklady.",
-      "Doplnit konkrétní prvek do detailu inzerátu a jeho mobilní verze.",
-      "Zobrazit aktuální informace, stav nabídky a navazující dostupné akce.",
-      "Ošetřit změnu či prodej předmětu během prohlížení."
+      "Načtení cen od dopravců podle velikosti balíku.",
+      "Zobrazení nejlevnější možnosti na detailu.",
+      "Aktualizace při změně ceníků."
     ],
-    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce."
+    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce.",
+    "effort": "M"
   },
   {
     "id": "8.5",
@@ -997,12 +1012,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez něj bude nutné obchod domlouvat mimo systém.",
     "example": "U kabelky klepne na Koupit a přejde na výběr dopravy a platební metody.",
     "build": [
-      "Konkrétní část: Spustí bezpečný checkout přímo v aplikaci.",
-      "Doplnit konkrétní prvek do detailu inzerátu a jeho mobilní verze.",
-      "Zobrazit aktuální informace, stav nabídky a navazující dostupné akce.",
-      "Ošetřit změnu či prodej předmětu během prohlížení."
+      "Spuštění objednávky a dočasná rezervace předmětu.",
+      "Ochrana proti tomu, aby věc koupili dva najednou.",
+      "Napojení na platbu a dopravu."
     ],
-    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce."
+    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce.",
+    "effort": "M"
   },
   {
     "id": "8.6",
@@ -1012,12 +1027,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez něj se vyjednávání přesune do chatu a bude méně strukturované.",
     "example": "U bundy za 1 000 Kč nabídne 800 Kč; prodávající nabídku přijme nebo odmítne.",
     "build": [
-      "Konkrétní část: Kupující navrhne prodávajícímu nižší cenu.",
-      "Doplnit konkrétní prvek do detailu inzerátu a jeho mobilní verze.",
-      "Zobrazit aktuální informace, stav nabídky a navazující dostupné akce.",
-      "Ošetřit změnu či prodej předmětu během prohlížení."
+      "Dialog pro zadání nabízené ceny.",
+      "Odeslání nabídky do chatu.",
+      "Limit nabídek proti zneužití."
     ],
-    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce."
+    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce.",
+    "effort": "S"
   },
   {
     "id": "8.7",
@@ -1025,14 +1040,14 @@ window.BOBINA_FEATURES = [
     "category": "Detail produktu",
     "description": "Otevře konverzaci s prodávajícím o konkrétní položce.",
     "without": "Bez něj budou nejasnosti častěji končit nenákupem.",
-    "example": "Uživatel použije možnost „Tlačítko Poslat dotaz“: otevře konverzaci s prodávajícím o konkrétní položce.",
+    "example": "Kupující klepne na „Zeptat se“ a napíše „Jaká je délka rukávu?“ – zpráva se váže k tomuto svetru.",
     "build": [
-      "Konkrétní část: Otevře konverzaci s prodávajícím o konkrétní položce.",
-      "Doplnit konkrétní prvek do detailu inzerátu a jeho mobilní verze.",
-      "Zobrazit aktuální informace, stav nabídky a navazující dostupné akce.",
-      "Ošetřit změnu či prodej předmětu během prohlížení."
+      "Otevření chatu s prodávajícím.",
+      "Připojení náhledu inzerátu do konverzace.",
+      "Kontrola blokovaných uživatelů."
     ],
-    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce."
+    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce.",
+    "effort": "S"
   },
   {
     "id": "8.8",
@@ -1040,14 +1055,14 @@ window.BOBINA_FEATURES = [
     "category": "Detail produktu",
     "description": "Uloží produkt pro pozdější návrat.",
     "without": "Bez toho uživatel nabídku snadno ztratí.",
-    "example": "Uživatel použije možnost „Přidat do oblíbených“: uloží produkt pro pozdější návrat.",
+    "example": "Kupující klepne na srdíčko a svetr se uloží do oblíbených na později.",
     "build": [
-      "Konkrétní část: Uloží produkt pro pozdější návrat.",
-      "Doplnit konkrétní prvek do detailu inzerátu a jeho mobilní verze.",
-      "Zobrazit aktuální informace, stav nabídky a navazující dostupné akce.",
-      "Ošetřit změnu či prodej předmětu během prohlížení."
+      "Srdíčko u inzerátu a na detailu.",
+      "Počet oblíbení u inzerátu.",
+      "Synchronizace mezi mobilem a webem."
     ],
-    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce."
+    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce.",
+    "effort": "S"
   },
   {
     "id": "8.9",
@@ -1055,29 +1070,14 @@ window.BOBINA_FEATURES = [
     "category": "Detail produktu",
     "description": "Vygeneruje odkaz pro sdílení mimo aplikaci.",
     "without": "Bez něj bude sdílení složitější.",
-    "example": "Uživatel použije možnost „Sdílení nabídky“: vygeneruje odkaz pro sdílení mimo aplikaci.",
+    "example": "Petra pošle kamarádce odkaz na šaty přes WhatsApp a ta je otevře rovnou v aplikaci.",
     "build": [
-      "Konkrétní část: Vygeneruje odkaz pro sdílení mimo aplikaci.",
-      "Doplnit konkrétní prvek do detailu inzerátu a jeho mobilní verze.",
-      "Zobrazit aktuální informace, stav nabídky a navazující dostupné akce.",
-      "Ošetřit změnu či prodej předmětu během prohlížení."
+      "Sdílecí odkaz s náhledem pro sociální sítě.",
+      "Otevření odkazu rovnou v aplikaci.",
+      "Systémové sdílení na telefonu."
     ],
-    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce."
-  },
-  {
-    "id": "8.10",
-    "title": "Nahlásit nabídku",
-    "category": "Detail produktu",
-    "description": "Umožní uživateli označit podezřelý nebo zakázaný obsah.",
-    "without": "Bez toho musí závadný obsah najít pouze automatika nebo interní tým.",
-    "example": "Uživatel použije možnost „Nahlásit nabídku“: umožní uživateli označit podezřelý nebo zakázaný obsah.",
-    "build": [
-      "Konkrétní část: Umožní uživateli označit podezřelý nebo zakázaný obsah.",
-      "Doplnit konkrétní prvek do detailu inzerátu a jeho mobilní verze.",
-      "Zobrazit aktuální informace, stav nabídky a navazující dostupné akce.",
-      "Ošetřit změnu či prodej předmětu během prohlížení."
-    ],
-    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce."
+    "category_note": "Kupující otevře konkrétní předmět a může se rozhodnout, zda jej chce.",
+    "effort": "S"
   },
   {
     "id": "9.1",
@@ -1085,14 +1085,14 @@ window.BOBINA_FEATURES = [
     "category": "Oblíbené a sledování",
     "description": "Uživatel má vlastní seznam uložených nabídek.",
     "without": "Bez něj je návrat ke konkrétní nabídce obtížnější.",
-    "example": "Uživatel použije možnost „Seznam oblíbených předmětů“: uživatel má vlastní seznam uložených nabídek.",
+    "example": "V záložce „Oblíbené“ má uživatelka 12 uložených věcí, ke kterým se může vrátit.",
     "build": [
-      "Konkrétní část: Uživatel má vlastní seznam uložených nabídek.",
-      "Vytvořit uložení či sledování ovládané z detailu nabídky.",
-      "Zobrazit přehled sledovaných položek a jejich aktuální stav.",
-      "Aktualizovat položky při smazání, prodeji nebo změně ceny."
+      "Obrazovka oblíbených s řazením.",
+      "Označení prodaných a zlevněných kusů.",
+      "Odebrání z oblíbených."
     ],
-    "category_note": "Kupující se vrací k uložené věci nebo sleduje změny v nabídce."
+    "category_note": "Kupující se vrací k uložené věci nebo sleduje změny v nabídce.",
+    "effort": "S"
   },
   {
     "id": "9.2",
@@ -1102,12 +1102,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho se uživatel o slevě nemusí dozvědět.",
     "example": "Označí si šaty srdíčkem a po snížení ceny z 800 na 650 Kč dostane upozornění.",
     "build": [
-      "Konkrétní část: Upozorní na zlevnění uloženého předmětu.",
-      "Vytvořit uložení či sledování ovládané z detailu nabídky.",
-      "Zobrazit přehled sledovaných položek a jejich aktuální stav.",
-      "Aktualizovat položky při smazání, prodeji nebo změně ceny."
+      "Hlídání změny ceny u oblíbených.",
+      "Upozornění zájemcům.",
+      "Omezení počtu upozornění."
     ],
-    "category_note": "Kupující se vrací k uložené věci nebo sleduje změny v nabídce."
+    "category_note": "Kupující se vrací k uložené věci nebo sleduje změny v nabídce.",
+    "effort": "S"
   },
   {
     "id": "9.3",
@@ -1115,29 +1115,14 @@ window.BOBINA_FEATURES = [
     "category": "Oblíbené a sledování",
     "description": "Informuje, že sledovaný předmět už není dostupný.",
     "without": "Bez něj uživatel zjistí nedostupnost až při návratu.",
-    "example": "Uživatel použije možnost „Notifikace při prodeji oblíbené položky“: informuje, že sledovaný předmět už není dostupný.",
+    "example": "Uživatelce přijde „Kabelka, kterou máte v oblíbených, byla prodána“.",
     "build": [
-      "Konkrétní část: Informuje, že sledovaný předmět už není dostupný.",
-      "Vytvořit uložení či sledování ovládané z detailu nabídky.",
-      "Zobrazit přehled sledovaných položek a jejich aktuální stav.",
-      "Aktualizovat položky při smazání, prodeji nebo změně ceny."
+      "Hlídání prodeje oblíbených.",
+      "Upozornění zájemcům.",
+      "Nabídka podobných věcí."
     ],
-    "category_note": "Kupující se vrací k uložené věci nebo sleduje změny v nabídce."
-  },
-  {
-    "id": "9.4",
-    "title": "Seznam sledovaných prodejců",
-    "category": "Oblíbené a sledování",
-    "description": "Umožní spravovat oblíbené profily.",
-    "without": "Bez toho sledování nebude prakticky využitelné.",
-    "example": "Uživatel použije možnost „Seznam sledovaných prodejců“: umožní spravovat oblíbené profily.",
-    "build": [
-      "Konkrétní část: Umožní spravovat oblíbené profily.",
-      "Vytvořit uložení či sledování ovládané z detailu nabídky.",
-      "Zobrazit přehled sledovaných položek a jejich aktuální stav.",
-      "Aktualizovat položky při smazání, prodeji nebo změně ceny."
-    ],
-    "category_note": "Kupující se vrací k uložené věci nebo sleduje změny v nabídce."
+    "category_note": "Kupující se vrací k uložené věci nebo sleduje změny v nabídce.",
+    "effort": "S"
   },
   {
     "id": "10.1",
@@ -1147,12 +1132,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez chatu se komunikace přesune mimo platformu a platforma ztratí dohled.",
     "example": "Kupující napíše „Jaká je délka rukávu?“ a prodávající odpoví v jednom vlákně.",
     "build": [
-      "Konkrétní část: Soukromé zprávy uvnitř platformy.",
-      "Vytvořit zprávy nebo strukturované akce navázané na inzerát.",
-      "Ošetřit přijímání, ukládání, doručení a průběžnou změnu stavu.",
-      "Zachovat historii pro případ sporu a omezit spam či zneužití."
+      "Server pro zprávy v reálném čase.",
+      "Seznam konverzací, nepřečtené zprávy, upozornění.",
+      "Uchování historie a ochrana soukromí."
     ],
-    "category_note": "Kupující a prodejce se domlouvají o konkrétním předmětu."
+    "category_note": "Kupující a prodejce se domlouvají o konkrétním předmětu.",
+    "effort": "L"
   },
   {
     "id": "10.2",
@@ -1160,14 +1145,14 @@ window.BOBINA_FEATURES = [
     "category": "Zprávy a vyjednávání",
     "description": "Konverzace automaticky obsahuje kontext nabídky.",
     "without": "Bez toho si uživatelé musí sami hlídat, o čem si píší.",
-    "example": "Uživatel použije možnost „Chat navázaný na konkrétní předmět“: konverzace automaticky obsahuje kontext nabídky.",
+    "example": "V chatu je nahoře vždy vidět, o který svetr se jedná, i s fotkou a cenou.",
     "build": [
-      "Konkrétní část: Konverzace automaticky obsahuje kontext nabídky.",
-      "Vytvořit zprávy nebo strukturované akce navázané na inzerát.",
-      "Ošetřit přijímání, ukládání, doručení a průběžnou změnu stavu.",
-      "Zachovat historii pro případ sporu a omezit spam či zneužití."
+      "Náhled inzerátu v hlavičce chatu.",
+      "Jedna konverzace na předmět a dvojici lidí.",
+      "Rychlé tlačítko Koupit z chatu."
     ],
-    "category_note": "Kupující a prodejce se domlouvají o konkrétním předmětu."
+    "category_note": "Kupující a prodejce se domlouvají o konkrétním předmětu.",
+    "effort": "S"
   },
   {
     "id": "10.3",
@@ -1175,14 +1160,14 @@ window.BOBINA_FEATURES = [
     "category": "Zprávy a vyjednávání",
     "description": "Uživatel může vyžádat nebo poslat detail vady, rozměr či doklad.",
     "without": "Bez toho se fotky budou posílat mimo platformu.",
-    "example": "Uživatel použije možnost „Posílání fotografií v chatu“: uživatel může vyžádat nebo poslat detail vady, rozměr či doklad.",
+    "example": "Kupující požádá o fotku cedulky a prodávající ji pošle přímo do chatu.",
     "build": [
-      "Konkrétní část: Uživatel může vyžádat nebo poslat detail vady, rozměr či doklad.",
-      "Vytvořit zprávy nebo strukturované akce navázané na inzerát.",
-      "Ošetřit přijímání, ukládání, doručení a průběžnou změnu stavu.",
-      "Zachovat historii pro případ sporu a omezit spam či zneužití."
+      "Nahrání fotek do konverzace.",
+      "Kontrola nevhodných obrázků.",
+      "Úložiště a mazání starých fotek."
     ],
-    "category_note": "Kupující a prodejce se domlouvají o konkrétním předmětu."
+    "category_note": "Kupující a prodejce se domlouvají o konkrétním předmětu.",
+    "effort": "M"
   },
   {
     "id": "10.4",
@@ -1190,14 +1175,14 @@ window.BOBINA_FEATURES = [
     "category": "Zprávy a vyjednávání",
     "description": "Nabídka ceny má částku, stav přijetí/odmítnutí a časovou platnost.",
     "without": "Bez toho vznikne chaotické smlouvání v textu.",
-    "example": "Uživatel použije možnost „Strukturovaná nabídka ceny“: nabídka ceny má částku, stav přijetí/odmítnutí a časovou platnost.",
+    "example": "Kupující nabídne 350 Kč místo 420 Kč; prodávající jen klepne „Přijmout“ nebo „Odmítnout“.",
     "build": [
-      "Konkrétní část: Nabídka ceny má částku, stav přijetí/odmítnutí a časovou platnost.",
-      "Vytvořit zprávy nebo strukturované akce navázané na inzerát.",
-      "Ošetřit přijímání, ukládání, doručení a průběžnou změnu stavu.",
-      "Zachovat historii pro případ sporu a omezit spam či zneužití."
+      "Nabídka jako zvláštní zpráva s tlačítky Přijmout / Odmítnout.",
+      "Platnost nabídky (např. 48 h).",
+      "Po přijetí nákup za nabídnutou cenu."
     ],
-    "category_note": "Kupující a prodejce se domlouvají o konkrétním předmětu."
+    "category_note": "Kupující a prodejce se domlouvají o konkrétním předmětu.",
+    "effort": "M"
   },
   {
     "id": "10.5",
@@ -1207,12 +1192,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho musí vytvořit novou nabídku nebo napsat cenu textem.",
     "example": "Kupující nabízí 700 Kč, prodávající navrhne 850 Kč a kupující se rozhodne.",
     "build": [
-      "Konkrétní část: Prodávající může odpovědět jinou částkou.",
-      "Vytvořit zprávy nebo strukturované akce navázané na inzerát.",
-      "Ošetřit přijímání, ukládání, doručení a průběžnou změnu stavu.",
-      "Zachovat historii pro případ sporu a omezit spam či zneužití."
+      "Odpověď jinou částkou.",
+      "Historie nabídek v konverzaci.",
+      "Limit počtu kol."
     ],
-    "category_note": "Kupující a prodejce se domlouvají o konkrétním předmětu."
+    "category_note": "Kupující a prodejce se domlouvají o konkrétním předmětu.",
+    "effort": "S"
   },
   {
     "id": "10.6",
@@ -1220,14 +1205,14 @@ window.BOBINA_FEATURES = [
     "category": "Zprávy a vyjednávání",
     "description": "Ukáže, zda protistrana zprávu viděla.",
     "without": "Bez toho uživatel neví, zda protistrana nereaguje nebo zprávu nečetla.",
-    "example": "Uživatel použije možnost „Označení přečtené zprávy“: ukáže, zda protistrana zprávu viděla.",
+    "example": "U zprávy je vidět „Přečteno“, takže kupující ví, že ji prodávající viděl.",
     "build": [
-      "Konkrétní část: Ukáže, zda protistrana zprávu viděla.",
-      "Vytvořit zprávy nebo strukturované akce navázané na inzerát.",
-      "Ošetřit přijímání, ukládání, doručení a průběžnou změnu stavu.",
-      "Zachovat historii pro případ sporu a omezit spam či zneužití."
+      "Ukládání času přečtení.",
+      "Zobrazení „Přečteno“.",
+      "Možnost vypnout v nastavení."
     ],
-    "category_note": "Kupující a prodejce se domlouvají o konkrétním předmětu."
+    "category_note": "Kupující a prodejce se domlouvají o konkrétním předmětu.",
+    "effort": "S"
   },
   {
     "id": "10.7",
@@ -1235,29 +1220,14 @@ window.BOBINA_FEATURES = [
     "category": "Zprávy a vyjednávání",
     "description": "V chatu se zobrazí stav nákupu, štítek, doručení, spor a další události.",
     "without": "Bez toho budou informace roztroušené v různých obrazovkách.",
-    "example": "Uživatel použije možnost „Automatické systémové zprávy v konverzaci“: v chatu se zobrazí stav nákupu, štítek, doručení, spor a další události.",
+    "example": "Do chatu se samo napíše „Zásilka byla odeslána“ nebo „Kupující potvrdil převzetí“.",
     "build": [
-      "Konkrétní část: V chatu se zobrazí stav nákupu, štítek, doručení, spor a další události.",
-      "Vytvořit zprávy nebo strukturované akce navázané na inzerát.",
-      "Ošetřit přijímání, ukládání, doručení a průběžnou změnu stavu.",
-      "Zachovat historii pro případ sporu a omezit spam či zneužití."
+      "Automatické zprávy při každé změně objednávky.",
+      "Odkazy ze zpráv na objednávku a sledování zásilky.",
+      "Texty ve všech jazycích aplikace."
     ],
-    "category_note": "Kupující a prodejce se domlouvají o konkrétním předmětu."
-  },
-  {
-    "id": "10.8",
-    "title": "Nahlášení zprávy / konverzace",
-    "category": "Zprávy a vyjednávání",
-    "description": "Uživatel nahlásí spam, phishing, obtěžování nebo nevhodný obsah.",
-    "without": "Bez toho je zneužití chatu výrazně hůře řešitelné.",
-    "example": "Uživatel použije možnost „Nahlášení zprávy / konverzace“: uživatel nahlásí spam, phishing, obtěžování nebo nevhodný obsah.",
-    "build": [
-      "Konkrétní část: Uživatel nahlásí spam, phishing, obtěžování nebo nevhodný obsah.",
-      "Vytvořit zprávy nebo strukturované akce navázané na inzerát.",
-      "Ošetřit přijímání, ukládání, doručení a průběžnou změnu stavu.",
-      "Zachovat historii pro případ sporu a omezit spam či zneužití."
-    ],
-    "category_note": "Kupující a prodejce se domlouvají o konkrétním předmětu."
+    "category_note": "Kupující a prodejce se domlouvají o konkrétním předmětu.",
+    "effort": "M"
   },
   {
     "id": "11.1",
@@ -1265,14 +1235,14 @@ window.BOBINA_FEATURES = [
     "category": "Košík a dokončení nákupu",
     "description": "Kupující přejde z detailu přímo do objednávky.",
     "without": "Bez toho bude checkout zbytečně komplikovaný.",
-    "example": "Uživatel použije možnost „Přímý nákup jednoho předmětu“: kupující přejde z detailu přímo do objednávky.",
+    "example": "Kupující klepne na „Koupit“ a hned je v objednávce, bez košíku.",
     "build": [
-      "Konkrétní část: Kupující přejde z detailu přímo do objednávky.",
-      "Připravit jednotlivé kroky nákupního formuláře a přehled ceny.",
-      "Zkontrolovat dostupnost zboží, oprávněnost dopravy a povinné údaje.",
-      "Předat do platby přesný a ověřený souhrn objednávky."
+      "Objednávková obrazovka: adresa, doprava, platba, souhrn.",
+      "Vytvoření objednávky a rezervace předmětu.",
+      "Potvrzení oběma stranám."
     ],
-    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit."
+    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit.",
+    "effort": "M"
   },
   {
     "id": "11.2",
@@ -1282,12 +1252,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho musí každou položku kupovat a posílat zvlášť.",
     "example": "Z jednoho šatníku koupí dvě trička a jedny boty v jedné zásilce.",
     "build": [
-      "Konkrétní část: Kupující koupí několik položek od stejného prodejce společně.",
-      "Připravit jednotlivé kroky nákupního formuláře a přehled ceny.",
-      "Zkontrolovat dostupnost zboží, oprávněnost dopravy a povinné údaje.",
-      "Předat do platby přesný a ověřený souhrn objednávky."
+      "Výběr více věcí od jednoho prodejce do jednoho nákupu.",
+      "Jedna doprava za celý balíček.",
+      "Rozdělení při stornu jednotlivé věci."
     ],
-    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit."
+    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit.",
+    "effort": "M"
   },
   {
     "id": "11.3",
@@ -1295,14 +1265,14 @@ window.BOBINA_FEATURES = [
     "category": "Košík a dokončení nákupu",
     "description": "Prodávající může nastavit procentní slevu podle počtu položek.",
     "without": "Bez toho nebude systém aktivně podporovat větší objednávky.",
-    "example": "Uživatel použije možnost „Sleva na balíček“: prodávající může nastavit procentní slevu podle počtu položek.",
+    "example": "Prodávající nastaví „Při koupi 3 a více věcí sleva 15 %“.",
     "build": [
-      "Konkrétní část: Prodávající může nastavit procentní slevu podle počtu položek.",
-      "Připravit jednotlivé kroky nákupního formuláře a přehled ceny.",
-      "Zkontrolovat dostupnost zboží, oprávněnost dopravy a povinné údaje.",
-      "Předat do platby přesný a ověřený souhrn objednávky."
+      "Nastavení slev v profilu prodejce.",
+      "Výpočet slevy v košíku.",
+      "Zobrazení výhody u inzerátů."
     ],
-    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit."
+    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit.",
+    "effort": "S"
   },
   {
     "id": "11.4",
@@ -1312,12 +1282,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho kupující neví, kolik skutečně zaplatí.",
     "example": "Před zaplacením vidí zboží 500 Kč, dopravu 79 Kč a platformní poplatek odděleně.",
     "build": [
-      "Konkrétní část: Zobrazí cenu zboží, dopravy, poplatků a celkovou částku.",
-      "Připravit jednotlivé kroky nákupního formuláře a přehled ceny.",
-      "Zkontrolovat dostupnost zboží, oprávněnost dopravy a povinné údaje.",
-      "Předat do platby přesný a ověřený souhrn objednávky."
+      "Rozpis: zboží, doprava, poplatky, celkem.",
+      "Přepočet při změně dopravy.",
+      "Stejná částka v potvrzení a na dokladu."
     ],
-    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit."
+    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit.",
+    "effort": "S"
   },
   {
     "id": "11.5",
@@ -1325,14 +1295,14 @@ window.BOBINA_FEATURES = [
     "category": "Košík a dokončení nákupu",
     "description": "Kupující vybere doručovací adresu, box nebo výdejní místo.",
     "without": "Bez toho nelze automaticky vytvořit správnou zásilku.",
-    "example": "Uživatel použije možnost „Volba adresy / výdejního místa“: kupující vybere doručovací adresu, box nebo výdejní místo.",
+    "example": "Kupující vybere „Z-BOX Brno, Hlavní 12“ nebo zadá domácí adresu.",
     "build": [
-      "Konkrétní část: Kupující vybere doručovací adresu, box nebo výdejní místo.",
-      "Připravit jednotlivé kroky nákupního formuláře a přehled ceny.",
-      "Zkontrolovat dostupnost zboží, oprávněnost dopravy a povinné údaje.",
-      "Předat do platby přesný a ověřený souhrn objednávky."
+      "Formulář adresy s kontrolou PSČ.",
+      "Výběr výdejního místa z mapy dopravce.",
+      "Uložení pro příště."
     ],
-    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit."
+    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit.",
+    "effort": "M"
   },
   {
     "id": "11.6",
@@ -1340,14 +1310,14 @@ window.BOBINA_FEATURES = [
     "category": "Košík a dokončení nákupu",
     "description": "Kupující si vybere dostupnou přepravní službu.",
     "without": "Bez toho platforma musí dopravce určit automaticky.",
-    "example": "Uživatel použije možnost „Volba dopravce“: kupující si vybere dostupnou přepravní službu.",
+    "example": "Kupující si vybere mezi Zásilkovnou za 69 Kč a PPL za 99 Kč.",
     "build": [
-      "Konkrétní část: Kupující si vybere dostupnou přepravní službu.",
-      "Připravit jednotlivé kroky nákupního formuláře a přehled ceny.",
-      "Zkontrolovat dostupnost zboží, oprávněnost dopravy a povinné údaje.",
-      "Předat do platby přesný a ověřený souhrn objednávky."
+      "Seznam dopravců s cenou a dobou doručení.",
+      "Jen dopravci dostupní pro danou zásilku.",
+      "Výchozí volba podle minula."
     ],
-    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit."
+    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit.",
+    "effort": "S"
   },
   {
     "id": "11.7",
@@ -1355,14 +1325,14 @@ window.BOBINA_FEATURES = [
     "category": "Košík a dokončení nákupu",
     "description": "Kupující zvolí kartu, Apple Pay, Google Pay nebo jinou podporovanou metodu.",
     "without": "Bez výběru bude checkout omezen na jediný způsob platby.",
-    "example": "Uživatel použije možnost „Volba platební metody“: kupující zvolí kartu, Apple Pay, Google Pay nebo jinou podporovanou metodu.",
+    "example": "Kupující zaplatí kartou, Apple Pay nebo Google Pay.",
     "build": [
-      "Konkrétní část: Kupující zvolí kartu, Apple Pay, Google Pay nebo jinou podporovanou metodu.",
-      "Připravit jednotlivé kroky nákupního formuláře a přehled ceny.",
-      "Zkontrolovat dostupnost zboží, oprávněnost dopravy a povinné údaje.",
-      "Předat do platby přesný a ověřený souhrn objednávky."
+      "Výběr metody v objednávce.",
+      "Uložená karta pro rychlou platbu.",
+      "Zobrazení jen dostupných metod."
     ],
-    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit."
+    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit.",
+    "effort": "S"
   },
   {
     "id": "11.8",
@@ -1370,14 +1340,29 @@ window.BOBINA_FEATURES = [
     "category": "Košík a dokončení nákupu",
     "description": "Před platbou uživatel odsouhlasí relevantní podmínky.",
     "without": "Bez něj se zvyšuje právní riziko provozovatele.",
-    "example": "Uživatel použije možnost „Potvrzení obchodních podmínek“: před platbou uživatel odsouhlasí relevantní podmínky.",
+    "example": "Před zaplacením kupující zaškrtne, že souhlasí s obchodními podmínkami.",
     "build": [
-      "Konkrétní část: Před platbou uživatel odsouhlasí relevantní podmínky.",
-      "Připravit jednotlivé kroky nákupního formuláře a přehled ceny.",
-      "Zkontrolovat dostupnost zboží, oprávněnost dopravy a povinné údaje.",
-      "Předat do platby přesný a ověřený souhrn objednávky."
+      "Zaškrtávací políčko s odkazem na podmínky.",
+      "Uložení souhlasu u objednávky.",
+      "Jiné podmínky u PRO prodejců."
     ],
-    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit."
+    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit.",
+    "effort": "S"
+  },
+  {
+    "id": "11.9",
+    "title": "Uložené adresy",
+    "category": "Košík a dokončení nákupu",
+    "description": "Uživatel si uloží doručovací adresy a oblíbená výdejní místa a příště je jen vybere.",
+    "example": "Jana má uloženou adresu domů a Z-BOX u práce; při nákupu jen klepne na jednu z nich.",
+    "without": "Bez toho musí kupující adresu vyplňovat při každém nákupu znovu.",
+    "build": [
+      "Adresář s více adresami a výchozí adresou.",
+      "Oblíbená výdejní místa.",
+      "Úprava a mazání."
+    ],
+    "category_note": "Kupující vybírá, co zaplatí a kam se má předmět doručit.",
+    "effort": "S"
   },
   {
     "id": "12.1",
@@ -1385,14 +1370,14 @@ window.BOBINA_FEATURES = [
     "category": "Platby a peněženka",
     "description": "Kupující zaplatí objednávku přímo v aplikaci.",
     "without": "Bez ní se platby přesunou mimo systém.",
-    "example": "Uživatel použije možnost „Online platba kartou“: kupující zaplatí objednávku přímo v aplikaci.",
+    "example": "Kupující zadá kartu a zaplatí přímo v aplikaci; peníze se k prodávajícímu dostanou až po doručení.",
     "build": [
-      "Konkrétní část: Kupující zaplatí objednávku přímo v aplikaci.",
-      "Napojit příslušnou operaci na certifikovaného platebního poskytovatele.",
-      "Ošetřit zamítnutí, výpadek, duplicitní požadavek a zpožděné potvrzení.",
-      "Evidovat skutečné finanční změny a návaznost na objednávku i účetnictví."
+      "Smlouva a napojení platební brány pro tržiště (např. Stripe Connect, Adyen).",
+      "Bezpečné 3-D Secure ověření platby.",
+      "Účtování plateb, poplatků a vratek."
     ],
-    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz."
+    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz.",
+    "effort": "L"
   },
   {
     "id": "12.2",
@@ -1400,134 +1385,119 @@ window.BOBINA_FEATURES = [
     "category": "Platby a peněženka",
     "description": "Rychlá mobilní platba bez ručního zadávání karty.",
     "without": "Bez toho bude část mobilních nákupů zbytečně pomalejší.",
-    "example": "Uživatel použije možnost „Apple Pay / Google Pay“: rychlá mobilní platba bez ručního zadávání karty.",
+    "example": "Na iPhonu kupující zaplatí jedním dvojklikem a Face ID, bez opisování karty.",
     "build": [
-      "Konkrétní část: Rychlá mobilní platba bez ručního zadávání karty.",
-      "Napojit příslušnou operaci na certifikovaného platebního poskytovatele.",
-      "Ošetřit zamítnutí, výpadek, duplicitní požadavek a zpožděné potvrzení.",
-      "Evidovat skutečné finanční změny a návaznost na objednávku i účetnictví."
+      "Aktivace v platební bráně a u Applu / Googlu.",
+      "Tlačítka v objednávce.",
+      "Ověření na všech zařízeních."
     ],
-    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz."
+    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz.",
+    "effort": "S"
   },
   {
     "id": "12.3",
-    "title": "Platební tokenizace",
-    "category": "Platby a peněženka",
-    "description": "Citlivé údaje karty zpracovává certifikovaný poskytovatel a aplikace pracuje s tokenem.",
-    "without": "Bez toho by platforma nesla výrazně vyšší nároky na bezpečnost platebních dat.",
-    "example": "Uživatel použije možnost „Platební tokenizace“: citlivé údaje karty zpracovává certifikovaný poskytovatel a aplikace pracuje s tokenem.",
-    "build": [
-      "Konkrétní část: Citlivé údaje karty zpracovává certifikovaný poskytovatel a aplikace pracuje s tokenem.",
-      "Napojit příslušnou operaci na certifikovaného platebního poskytovatele.",
-      "Ošetřit zamítnutí, výpadek, duplicitní požadavek a zpožděné potvrzení.",
-      "Evidovat skutečné finanční změny a návaznost na objednávku i účetnictví."
-    ],
-    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz."
-  },
-  {
-    "id": "12.4",
     "title": "Držení platby do dokončení obchodu",
     "category": "Platby a peněženka",
     "description": "Peníze se neuvolní prodávajícímu okamžitě; čekají na úspěšné doručení / dokončení.",
     "without": "Bez toho prodávající dostane peníze dříve, než kupující zboží převezme.",
     "example": "Kupující zaplatí, ale prodejce nedostane peníze před dokončením obchodu podle pravidel poskytovatele.",
     "build": [
-      "Konkrétní část: Peníze se neuvolní prodávajícímu okamžitě; čekají na úspěšné doručení / dokončení.",
-      "Napojit příslušnou operaci na certifikovaného platebního poskytovatele.",
-      "Ošetřit zamítnutí, výpadek, duplicitní požadavek a zpožděné potvrzení.",
-      "Evidovat skutečné finanční změny a návaznost na objednávku i účetnictví."
+      "Peníze zůstávají u platební brány do potvrzení doručení.",
+      "Automatické uvolnění po lhůtě nebo po potvrzení.",
+      "Zadržení při sporu a vrácení kupujícímu."
     ],
-    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz."
+    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz.",
+    "effort": "L"
   },
   {
-    "id": "12.5",
+    "id": "12.4",
     "title": "Virtuální peněženka prodávajícího",
     "category": "Platby a peněženka",
     "description": "Po dokončení transakce se výdělek připíše do interního zůstatku.",
     "without": "Bez peněženky lze peníze posílat rovnou na účet, ale řízení plateb je méně flexibilní.",
-    "example": "Uživatel použije možnost „Virtuální peněženka prodávajícího“: po dokončení transakce se výdělek připíše do interního zůstatku.",
+    "example": "Po doručení svetru se prodávající Kláře připíše 420 Kč do peněženky v aplikaci.",
     "build": [
-      "Konkrétní část: Po dokončení transakce se výdělek připíše do interního zůstatku.",
-      "Napojit příslušnou operaci na certifikovaného platebního poskytovatele.",
-      "Ošetřit zamítnutí, výpadek, duplicitní požadavek a zpožděné potvrzení.",
-      "Evidovat skutečné finanční změny a návaznost na objednávku i účetnictví."
+      "Účetní kniha zůstatků každého uživatele.",
+      "Připsání výdělku po dokončení objednávky.",
+      "Soulad s pravidly platebních služeb (licence / partner)."
     ],
-    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz."
+    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz.",
+    "effort": "L"
   },
   {
-    "id": "12.6",
+    "id": "12.5",
     "title": "Výběr peněz na bankovní účet",
     "category": "Platby a peněženka",
     "description": "Prodávající odešle zůstatek na svůj ověřený účet.",
     "without": "Bez toho jsou výdělky uzamčené v platformě.",
-    "example": "Uživatel použije možnost „Výběr peněz na bankovní účet“: prodávající odešle zůstatek na svůj ověřený účet.",
+    "example": "Klára si z peněženky pošle 1 200 Kč na svůj bankovní účet.",
     "build": [
-      "Konkrétní část: Prodávající odešle zůstatek na svůj ověřený účet.",
-      "Napojit příslušnou operaci na certifikovaného platebního poskytovatele.",
-      "Ošetřit zamítnutí, výpadek, duplicitní požadavek a zpožděné potvrzení.",
-      "Evidovat skutečné finanční změny a návaznost na objednávku i účetnictví."
+      "Zadání a ověření bankovního účtu.",
+      "Odeslání výplaty přes platební bránu.",
+      "Limity, poplatky a historie výběrů."
     ],
-    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz."
+    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz.",
+    "effort": "M"
   },
   {
-    "id": "12.7",
+    "id": "12.6",
     "title": "Historie peněženky a plateb",
     "category": "Platby a peněženka",
     "description": "Zobrazuje příchozí výdělky, refundace, výběry a poplatky.",
     "without": "Bez toho vzniká více dotazů a reklamací na platby.",
-    "example": "Uživatel použije možnost „Historie peněženky a plateb“: zobrazuje příchozí výdělky, refundace, výběry a poplatky.",
+    "example": "V peněžence Klára vidí: „+420 Kč prodej svetru, −1 200 Kč výběr na účet“.",
     "build": [
-      "Konkrétní část: Zobrazuje příchozí výdělky, refundace, výběry a poplatky.",
-      "Napojit příslušnou operaci na certifikovaného platebního poskytovatele.",
-      "Ošetřit zamítnutí, výpadek, duplicitní požadavek a zpožděné potvrzení.",
-      "Evidovat skutečné finanční změny a návaznost na objednávku i účetnictví."
+      "Přehled všech pohybů s filtrem.",
+      "Detail každého pohybu.",
+      "Export pro účetnictví."
     ],
-    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz."
+    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz.",
+    "effort": "S"
   },
   {
-    "id": "12.8",
+    "id": "12.7",
     "title": "Refundace celé platby",
     "category": "Platby a peněženka",
     "description": "Systém umí vrátit kupujícímu celou částku.",
     "without": "Bez toho musí finance řešit podporou a manuálními převody.",
     "example": "Po uznaném nedoručení se peníze vrátí na původní platební metodu.",
     "build": [
-      "Konkrétní část: Systém umí vrátit kupujícímu celou částku.",
-      "Napojit příslušnou operaci na certifikovaného platebního poskytovatele.",
-      "Ošetřit zamítnutí, výpadek, duplicitní požadavek a zpožděné potvrzení.",
-      "Evidovat skutečné finanční změny a návaznost na objednávku i účetnictví."
+      "Vrácení peněz na původní kartu.",
+      "Automatické vrácení při stornu.",
+      "Evidence a potvrzení kupujícímu."
     ],
-    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz."
+    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz.",
+    "effort": "M"
+  },
+  {
+    "id": "12.8",
+    "title": "Částečné vrácení peněz",
+    "category": "Platby a peněženka",
+    "description": "Lze vrátit část ceny bez zrušení celé objednávky – po dohodě stran nebo jako rozhodnutí sporu podporou.",
+    "without": "Bez toho je řešením pouze plná refundace nebo žádná.",
+    "example": "Svetr přišel s malou vadou, prodávající vrátí kupujícímu 100 Kč z ceny a obchod platí. Platí i jako řešení sporu.",
+    "build": [
+      "Zadání částky a důvodu.",
+      "Souhlas druhé strany nebo rozhodnutí podpory.",
+      "Přepočet poplatků a výdělku prodejce."
+    ],
+    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz.",
+    "effort": "M"
   },
   {
     "id": "12.9",
-    "title": "Částečná refundace",
+    "title": "Platba zůstatkem z peněženky",
     "category": "Platby a peněženka",
-    "description": "Lze vrátit část ceny bez kompletního zrušení transakce.",
-    "without": "Bez toho je řešením pouze plná refundace nebo žádná.",
-    "example": "Uživatel použije možnost „Částečná refundace“: lze vrátit část ceny bez kompletního zrušení transakce.",
+    "description": "Kupující může zaplatit nákup penězi, které má v peněžence z vlastních prodejů.",
+    "example": "Klára má v peněžence 600 Kč z prodaných šatů a kabelku za 450 Kč zaplatí rovnou z nich.",
+    "without": "Bez toho musí uživatel peníze nejdřív vybrat na účet a pak znovu platit kartou.",
     "build": [
-      "Konkrétní část: Lze vrátit část ceny bez kompletního zrušení transakce.",
-      "Napojit příslušnou operaci na certifikovaného platebního poskytovatele.",
-      "Ošetřit zamítnutí, výpadek, duplicitní požadavek a zpožděné potvrzení.",
-      "Evidovat skutečné finanční změny a návaznost na objednávku i účetnictví."
+      "Zůstatek jako platební metoda, i v kombinaci s kartou.",
+      "Správné zaúčtování a vrácení zpět do peněženky.",
+      "Zobrazení v historii."
     ],
-    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz."
-  },
-  {
-    "id": "12.10",
-    "title": "Automatické rozúčtování poplatků",
-    "category": "Platby a peněženka",
-    "description": "Platba se rozpadne na cenu zboží, poplatek platformy, dopravu a další položky.",
-    "without": "Bez toho se finance musí složitě párovat ručně.",
-    "example": "Uživatel použije možnost „Automatické rozúčtování poplatků“: platba se rozpadne na cenu zboží, poplatek platformy, dopravu a další položky.",
-    "build": [
-      "Konkrétní část: Platba se rozpadne na cenu zboží, poplatek platformy, dopravu a další položky.",
-      "Napojit příslušnou operaci na certifikovaného platebního poskytovatele.",
-      "Ošetřit zamítnutí, výpadek, duplicitní požadavek a zpožděné potvrzení.",
-      "Evidovat skutečné finanční změny a návaznost na objednávku i účetnictví."
-    ],
-    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz."
+    "category_note": "Zákazník platí; prodejce sleduje výdělek a případné vrácení peněz.",
+    "effort": "M"
   },
   {
     "id": "13.1",
@@ -1535,14 +1505,14 @@ window.BOBINA_FEATURES = [
     "category": "Doprava a logistika",
     "description": "Aplikace komunikuje přímo se zásilkovými službami.",
     "without": "Bez integrace musí uživatelé dopravu řešit ručně mimo aplikaci.",
-    "example": "Uživatel použije možnost „Integrace dopravců přes API“: aplikace komunikuje přímo se zásilkovými službami.",
+    "example": "Aplikace si sama objedná přepravu u Zásilkovny nebo PPL, nikdo nic nevyplňuje na jejich webu.",
     "build": [
-      "Konkrétní část: Aplikace komunikuje přímo se zásilkovými službami.",
-      "Připravit výběr přepravní služby a propojení s jejím rozhraním.",
-      "Aktualizovat štítek, podací kód nebo stav doručení podle událostí dopravce.",
-      "Řešit překročení lhůty, nedostupnou službu a chyby při přepravě."
+      "Smlouvy a napojení API každého dopravce zvlášť (Zásilkovna, PPL…).",
+      "Objednání přepravy po zaplacení.",
+      "Ošetření výpadků a chyb dopravců."
     ],
-    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu."
+    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu.",
+    "effort": "L"
   },
   {
     "id": "13.2",
@@ -1550,14 +1520,14 @@ window.BOBINA_FEATURES = [
     "category": "Doprava a logistika",
     "description": "Po zaplacení dostane prodávající připravený štítek nebo kód.",
     "without": "Bez něj musí prodávající sám objednávat dopravu.",
-    "example": "Uživatel použije možnost „Automatické vytvoření štítku / podacího kódu“: po zaplacení dostane prodávající připravený štítek nebo kód.",
+    "example": "Po zaplacení dostane prodávající do telefonu kód, nadiktuje ho na pobočce a štítek mu vytisknou.",
     "build": [
-      "Konkrétní část: Po zaplacení dostane prodávající připravený štítek nebo kód.",
-      "Připravit výběr přepravní služby a propojení s jejím rozhraním.",
-      "Aktualizovat štítek, podací kód nebo stav doručení podle událostí dopravce.",
-      "Řešit překročení lhůty, nedostupnou službu a chyby při přepravě."
+      "Získání štítku nebo podacího kódu od dopravce.",
+      "Zobrazení prodávajícímu v aplikaci a e-mailem.",
+      "Nové vytvoření při chybě."
     ],
-    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu."
+    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu.",
+    "effort": "M"
   },
   {
     "id": "13.3",
@@ -1567,12 +1537,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez mapy je výběr výdejního místa nepohodlný.",
     "example": "Na mapě vybere nejbližší výdejní box, systém jej předá dopravci.",
     "build": [
-      "Konkrétní část: Kupující vybere konkrétní místo na mapě nebo v seznamu.",
-      "Připravit výběr přepravní služby a propojení s jejím rozhraním.",
-      "Aktualizovat štítek, podací kód nebo stav doručení podle událostí dopravce.",
-      "Řešit překročení lhůty, nedostupnou službu a chyby při přepravě."
+      "Mapa a seznam výdejních míst z dat dopravců.",
+      "Vyhledání podle adresy a polohy.",
+      "Pravidelná aktualizace míst."
     ],
-    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu."
+    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu.",
+    "effort": "M"
   },
   {
     "id": "13.4",
@@ -1580,89 +1550,74 @@ window.BOBINA_FEATURES = [
     "category": "Doprava a logistika",
     "description": "Kupující i prodávající vidí aktuální stav přepravy.",
     "without": "Bez trackingu budou uživatelé hledat zásilku u dopravce ručně.",
-    "example": "Uživatel použije možnost „Sledování zásilky“: kupující i prodávající vidí aktuální stav přepravy.",
+    "example": "Kupující v aplikaci vidí „Zásilka je na cestě, doručení zítra“.",
     "build": [
-      "Konkrétní část: Kupující i prodávající vidí aktuální stav přepravy.",
-      "Připravit výběr přepravní služby a propojení s jejím rozhraním.",
-      "Aktualizovat štítek, podací kód nebo stav doručení podle událostí dopravce.",
-      "Řešit překročení lhůty, nedostupnou službu a chyby při přepravě."
+      "Načítání stavů zásilky od dopravců.",
+      "Časová osa v objednávce.",
+      "Upozornění na doručení."
     ],
-    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu."
+    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu.",
+    "effort": "M"
   },
   {
     "id": "13.5",
-    "title": "Automatické změny stavu objednávky podle trackingu",
-    "category": "Doprava a logistika",
-    "description": "Události dopravce automaticky posouvají objednávku: odesláno, v přepravě, doručeno.",
-    "without": "Bez toho bude stav nutné potvrzovat ručně.",
-    "example": "Uživatel použije možnost „Automatické změny stavu objednávky podle trackingu“: události dopravce automaticky posouvají objednávku: odesláno, v přepravě, doručeno.",
-    "build": [
-      "Konkrétní část: Události dopravce automaticky posouvají objednávku: odesláno, v přepravě, doručeno.",
-      "Připravit výběr přepravní služby a propojení s jejím rozhraním.",
-      "Aktualizovat štítek, podací kód nebo stav doručení podle událostí dopravce.",
-      "Řešit překročení lhůty, nedostupnou službu a chyby při přepravě."
-    ],
-    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu."
-  },
-  {
-    "id": "13.6",
     "title": "Lhůta na odeslání",
     "category": "Doprava a logistika",
     "description": "Objednávka má definovaný termín, do kdy má prodávající zásilku podat.",
     "without": "Bez lhůty může zaplacená objednávka zůstat dlouho bez pohybu.",
-    "example": "Uživatel použije možnost „Lhůta na odeslání“: objednávka má definovaný termín, do kdy má prodávající zásilku podat.",
+    "example": "Prodávající musí zásilku podat do 5 pracovních dnů, jinak se mu ukáže upozornění.",
     "build": [
-      "Konkrétní část: Objednávka má definovaný termín, do kdy má prodávající zásilku podat.",
-      "Připravit výběr přepravní služby a propojení s jejím rozhraním.",
-      "Aktualizovat štítek, podací kód nebo stav doručení podle událostí dopravce.",
-      "Řešit překročení lhůty, nedostupnou službu a chyby při přepravě."
+      "Výpočet termínu (pracovní dny).",
+      "Odpočet v objednávce a připomínky.",
+      "Napojení na automatické storno."
     ],
-    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu."
+    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu.",
+    "effort": "S"
   },
   {
-    "id": "13.7",
+    "id": "13.6",
     "title": "Prodloužení lhůty po souhlasu kupujícího",
     "category": "Doprava a logistika",
     "description": "Prodávající požádá o více času a kupující rozhodne.",
     "without": "Bez toho se objednávka musí stornovat nebo ignorovat původní termín.",
-    "example": "Uživatel použije možnost „Prodloužení lhůty po souhlasu kupujícího“: prodávající požádá o více času a kupující rozhodne.",
+    "example": "Prodávající je nemocný, požádá o 3 dny navíc a kupující to schválí.",
     "build": [
-      "Konkrétní část: Prodávající požádá o více času a kupující rozhodne.",
-      "Připravit výběr přepravní služby a propojení s jejím rozhraním.",
-      "Aktualizovat štítek, podací kód nebo stav doručení podle událostí dopravce.",
-      "Řešit překročení lhůty, nedostupnou službu a chyby při přepravě."
+      "Žádost prodejce o další dny.",
+      "Schválení kupujícím.",
+      "Posunutí termínu."
     ],
-    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu."
+    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu.",
+    "effort": "S"
   },
   {
-    "id": "13.8",
+    "id": "13.7",
     "title": "Automatické storno při neodeslání",
     "category": "Doprava a logistika",
     "description": "Po uplynutí lhůty systém objednávku ukončí a refunduje kupujícího.",
     "without": "Bez toho budou neodeslané objednávky viset a vyžadovat podporu.",
     "example": "Prodejce zásilku včas nepodá; systém za splnění pravidel objednávku zruší a zahájí vrácení.",
     "build": [
-      "Konkrétní část: Po uplynutí lhůty systém objednávku ukončí a refunduje kupujícího.",
-      "Připravit výběr přepravní služby a propojení s jejím rozhraním.",
-      "Aktualizovat štítek, podací kód nebo stav doručení podle událostí dopravce.",
-      "Řešit překročení lhůty, nedostupnou službu a chyby při přepravě."
+      "Hlídání uplynulých lhůt.",
+      "Zrušení objednávky a vrácení peněz.",
+      "Záznam do hodnocení prodejce."
     ],
-    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu."
+    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu.",
+    "effort": "M"
   },
   {
-    "id": "13.9",
+    "id": "13.8",
     "title": "Vlastní doprava / osobní předání",
     "category": "Doprava a logistika",
-    "description": "Volitelný režim mimo integrované dopravce.",
+    "description": "Volitelný režim mimo dopravce: kupující a prodávající si věc předají osobně a převzetí potvrdí kódem v aplikaci.",
     "without": "Bez něj bude možné obchodovat jen prostřednictvím podporovaných dopravců.",
-    "example": "Uživatel použije možnost „Vlastní doprava / osobní předání“: volitelný režim mimo integrované dopravce.",
+    "example": "Kupující a prodávající jsou ze stejného města a předají si věc osobně; převzetí potvrdí kódem v aplikaci.",
     "build": [
-      "Konkrétní část: Volitelný režim mimo integrované dopravce.",
-      "Připravit výběr přepravní služby a propojení s jejím rozhraním.",
-      "Aktualizovat štítek, podací kód nebo stav doručení podle událostí dopravce.",
-      "Řešit překročení lhůty, nedostupnou službu a chyby při přepravě."
+      "Volba „osobní předání“ v objednávce.",
+      "Jednorázový kód pro potvrzení převzetí.",
+      "Pravidla ochrany kupujícího bez dopravce."
     ],
-    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu."
+    "category_note": "Po zaplacení musí vzniknout správná zásilka a oba uživatelé sledují její cestu.",
+    "effort": "M"
   },
   {
     "id": "14.1",
@@ -1672,12 +1627,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez stavového automatu vzniknou nekonzistentní transakce.",
     "example": "Objednávka postupně přejde přes „zaplaceno“, „odesláno“, „doručeno“ a „dokončeno“.",
     "build": [
-      "Konkrétní část: Objednávka má jasné stavy od vytvoření přes zaplacení a doručení až po dokončení.",
-      "Definovat, kdo a za jakých okolností smí změnit konkrétní stav.",
-      "Zobrazit stav kupujícímu i prodejci v objednávce a notifikacích.",
-      "Provázat změnu stavu s vrácením zboží, platbou a dopravou."
+      "Návrh všech stavů a povolených přechodů mezi nimi.",
+      "Hlídání, aby objednávka nikdy neuvízla.",
+      "Záznam každé změny."
     ],
-    "category_note": "Objednávka postupně mění stav od zaplacení až po dokončení."
+    "category_note": "Objednávka postupně mění stav od zaplacení až po dokončení.",
+    "effort": "L"
   },
   {
     "id": "14.2",
@@ -1685,14 +1640,14 @@ window.BOBINA_FEATURES = [
     "category": "Životní cyklus objednávky",
     "description": "Prodávající nebo dopravce potvrdí, že zásilka byla podána.",
     "without": "Bez toho není jasné, zda prodejce splnil povinnost.",
-    "example": "Uživatel použije možnost „Potvrzení odeslání“: prodávající nebo dopravce potvrdí, že zásilka byla podána.",
+    "example": "Po podání zásilky se objednávka přepne na „Odesláno“ a kupující dostane upozornění.",
     "build": [
-      "Konkrétní část: Prodávající nebo dopravce potvrdí, že zásilka byla podána.",
-      "Definovat, kdo a za jakých okolností smí změnit konkrétní stav.",
-      "Zobrazit stav kupujícímu i prodejci v objednávce a notifikacích.",
-      "Provázat změnu stavu s vrácením zboží, platbou a dopravou."
+      "Ruční i automatické potvrzení od dopravce.",
+      "Upozornění kupujícímu.",
+      "Kontrola lhůty."
     ],
-    "category_note": "Objednávka postupně mění stav od zaplacení až po dokončení."
+    "category_note": "Objednávka postupně mění stav od zaplacení až po dokončení.",
+    "effort": "S"
   },
   {
     "id": "14.3",
@@ -1700,14 +1655,14 @@ window.BOBINA_FEATURES = [
     "category": "Životní cyklus objednávky",
     "description": "Kupující potvrdí, že je vše v pořádku.",
     "without": "Bez něj se musí čekat pouze na automatickou lhůtu.",
-    "example": "Uživatel použije možnost „Potvrzení převzetí kupujícím“: kupující potvrdí, že je vše v pořádku.",
+    "example": "Kupující otevře balík, vše sedí, klepne „Vše v pořádku“ a prodávajícímu se uvolní peníze.",
     "build": [
-      "Konkrétní část: Kupující potvrdí, že je vše v pořádku.",
-      "Definovat, kdo a za jakých okolností smí změnit konkrétní stav.",
-      "Zobrazit stav kupujícímu i prodejci v objednávce a notifikacích.",
-      "Provázat změnu stavu s vrácením zboží, platbou a dopravou."
+      "Tlačítko „Vše v pořádku“.",
+      "Uvolnění peněz prodejci.",
+      "Výzva k hodnocení."
     ],
-    "category_note": "Objednávka postupně mění stav od zaplacení až po dokončení."
+    "category_note": "Objednávka postupně mění stav od zaplacení až po dokončení.",
+    "effort": "S"
   },
   {
     "id": "14.4",
@@ -1715,14 +1670,14 @@ window.BOBINA_FEATURES = [
     "category": "Životní cyklus objednávky",
     "description": "Pokud kupující nenahlásí problém, systém objednávku po určité době dokončí.",
     "without": "Bez toho musí každý obchod ručně uzavírat kupující nebo podpora.",
-    "example": "Uživatel použije možnost „Automatické dokončení po lhůtě“: pokud kupující nenahlásí problém, systém objednávku po určité době dokončí.",
+    "example": "Kupující nic nepotvrdí ani nenahlásí; po 2 dnech od doručení se objednávka dokončí sama.",
     "build": [
-      "Konkrétní část: Pokud kupující nenahlásí problém, systém objednávku po určité době dokončí.",
-      "Definovat, kdo a za jakých okolností smí změnit konkrétní stav.",
-      "Zobrazit stav kupujícímu i prodejci v objednávce a notifikacích.",
-      "Provázat změnu stavu s vrácením zboží, platbou a dopravou."
+      "Odpočet po doručení (např. 2 dny).",
+      "Automatické dokončení a výplata.",
+      "Upozornění před koncem lhůty."
     ],
-    "category_note": "Objednávka postupně mění stav od zaplacení až po dokončení."
+    "category_note": "Objednávka postupně mění stav od zaplacení až po dokončení.",
+    "effort": "S"
   },
   {
     "id": "14.5",
@@ -1730,14 +1685,14 @@ window.BOBINA_FEATURES = [
     "category": "Životní cyklus objednávky",
     "description": "Kupující nebo prodávající mohou v povoleném stavu objednávku zrušit.",
     "without": "Bez toho bude každé storno vyžadovat zásah podpory.",
-    "example": "Uživatel použije možnost „Ruční storno před odesláním“: kupující nebo prodávající mohou v povoleném stavu objednávku zrušit.",
+    "example": "Prodávající zjistí, že má svetr potrhaný, a ještě před odesláním objednávku zruší.",
     "build": [
-      "Konkrétní část: Kupující nebo prodávající mohou v povoleném stavu objednávku zrušit.",
-      "Definovat, kdo a za jakých okolností smí změnit konkrétní stav.",
-      "Zobrazit stav kupujícímu i prodejci v objednávce a notifikacích.",
-      "Provázat změnu stavu s vrácením zboží, platbou a dopravou."
+      "Tlačítko Zrušit v povolených stavech.",
+      "Vrácení peněz.",
+      "Upozornění druhé straně."
     ],
-    "category_note": "Objednávka postupně mění stav od zaplacení až po dokončení."
+    "category_note": "Objednávka postupně mění stav od zaplacení až po dokončení.",
+    "effort": "S"
   },
   {
     "id": "14.6",
@@ -1745,14 +1700,14 @@ window.BOBINA_FEATURES = [
     "category": "Životní cyklus objednávky",
     "description": "Při stornu se zaznamená strukturovaný důvod.",
     "without": "Bez toho nebude jasné, proč se objednávky ruší.",
-    "example": "Uživatel použije možnost „Důvody storna“: při stornu se zaznamená strukturovaný důvod.",
+    "example": "Při zrušení prodávající vybere důvod „Předmět je poškozený“.",
     "build": [
-      "Konkrétní část: Při stornu se zaznamená strukturovaný důvod.",
-      "Definovat, kdo a za jakých okolností smí změnit konkrétní stav.",
-      "Zobrazit stav kupujícímu i prodejci v objednávce a notifikacích.",
-      "Provázat změnu stavu s vrácením zboží, platbou a dopravou."
+      "Seznam důvodů.",
+      "Statistika pro moderaci.",
+      "Vliv na hodnocení."
     ],
-    "category_note": "Objednávka postupně mění stav od zaplacení až po dokončení."
+    "category_note": "Objednávka postupně mění stav od zaplacení až po dokončení.",
+    "effort": "S"
   },
   {
     "id": "14.7",
@@ -1760,14 +1715,14 @@ window.BOBINA_FEATURES = [
     "category": "Životní cyklus objednávky",
     "description": "Po stornu lze položku znovu aktivovat.",
     "without": "Bez toho musí nabídku založit znovu.",
-    "example": "Uživatel použije možnost „Automatické vrácení nabídky do prodeje“: po stornu lze položku znovu aktivovat.",
+    "example": "Po zrušení objednávky se svetr automaticky znovu objeví v nabídce.",
     "build": [
-      "Konkrétní část: Po stornu lze položku znovu aktivovat.",
-      "Definovat, kdo a za jakých okolností smí změnit konkrétní stav.",
-      "Zobrazit stav kupujícímu i prodejci v objednávce a notifikacích.",
-      "Provázat změnu stavu s vrácením zboží, platbou a dopravou."
+      "Znovu zobrazit inzerát po stornu.",
+      "Upozornění prodejci.",
+      "Výjimka pro poškozené věci."
     ],
-    "category_note": "Objednávka postupně mění stav od zaplacení až po dokončení."
+    "category_note": "Objednávka postupně mění stav od zaplacení až po dokončení.",
+    "effort": "S"
   },
   {
     "id": "15.1",
@@ -1777,12 +1732,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez něj nelze jednoduše zastavit transakci při vadném zboží.",
     "example": "Kupující otevře zaplacenou objednávku a klikne „Mám problém“, protože přišlo poškozené zboží.",
     "build": [
-      "Konkrétní část: Kupující v definované lhůtě zastaví dokončení objednávky a otevře problém.",
-      "Zobrazit vhodný formulář u konkrétní objednávky.",
-      "Uchovat důkazy, lhůty, odpovědi obou stran a rozhodnutí podpory.",
-      "Pozastavit nebo upravit finanční vypořádání podle výsledku sporu."
+      "Tlačítko v objednávce během ochranné lhůty.",
+      "Zastavení automatického dokončení.",
+      "Otevření případu s druhou stranou."
     ],
-    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení."
+    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení.",
+    "effort": "M"
   },
   {
     "id": "15.2",
@@ -1790,14 +1745,14 @@ window.BOBINA_FEATURES = [
     "category": "Ochrana kupujícího a spory",
     "description": "Kupující zvolí např. nedoručeno, poškozeno, neodpovídá popisu, podezření na padělek.",
     "without": "Bez toho bude každý spor volný text a práce podpory naroste.",
-    "example": "Uživatel použije možnost „Typy reklamací“: kupující zvolí např. nedoručeno, poškozeno, neodpovídá popisu, podezření na padělek.",
+    "example": "Kupující vybere „Neodpovídá popisu“, ne jen napíše dlouhý text.",
     "build": [
-      "Konkrétní část: Kupující zvolí např. nedoručeno, poškozeno, neodpovídá popisu, podezření na padělek.",
-      "Zobrazit vhodný formulář u konkrétní objednávky.",
-      "Uchovat důkazy, lhůty, odpovědi obou stran a rozhodnutí podpory.",
-      "Pozastavit nebo upravit finanční vypořádání podle výsledku sporu."
+      "Seznam typů s návodem, co doložit.",
+      "Jiný postup podle typu.",
+      "Statistika pro podporu."
     ],
-    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení."
+    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení.",
+    "effort": "S"
   },
   {
     "id": "15.3",
@@ -1807,12 +1762,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho se spor stává tvrzením proti tvrzení.",
     "example": "K reklamaci přiloží fotografie poškození a obalu, aby podpora mohla rozhodnout.",
     "build": [
-      "Konkrétní část: Strany mohou přiložit fotografie, zprávy a další podklady.",
-      "Zobrazit vhodný formulář u konkrétní objednávky.",
-      "Uchovat důkazy, lhůty, odpovědi obou stran a rozhodnutí podpory.",
-      "Pozastavit nebo upravit finanční vypořádání podle výsledku sporu."
+      "Nahrání fotek a dokumentů k případu.",
+      "Přístup jen pro strany a podporu.",
+      "Uchování po dobu sporu."
     ],
-    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení."
+    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení.",
+    "effort": "M"
   },
   {
     "id": "15.4",
@@ -1820,14 +1775,14 @@ window.BOBINA_FEATURES = [
     "category": "Ochrana kupujícího a spory",
     "description": "Peníze zůstanou zadrženy do vyřešení případu.",
     "without": "Bez toho mohou být peníze vyplaceny dříve než se spor vyřeší.",
-    "example": "Uživatel použije možnost „Pozastavení výplaty během sporu“: peníze zůstanou zadrženy do vyřešení případu.",
+    "example": "Kupující nahlásí problém a peníze prodávajícímu se zastaví, dokud se spor nevyřeší.",
     "build": [
-      "Konkrétní část: Peníze zůstanou zadrženy do vyřešení případu.",
-      "Zobrazit vhodný formulář u konkrétní objednávky.",
-      "Uchovat důkazy, lhůty, odpovědi obou stran a rozhodnutí podpory.",
-      "Pozastavit nebo upravit finanční vypořádání podle výsledku sporu."
+      "Zadržení peněz při otevřeném sporu.",
+      "Uvolnění podle výsledku.",
+      "Upozornění prodejci."
     ],
-    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení."
+    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení.",
+    "effort": "M"
   },
   {
     "id": "15.5",
@@ -1835,14 +1790,14 @@ window.BOBINA_FEATURES = [
     "category": "Ochrana kupujícího a spory",
     "description": "Systém umožní, aby strany vyřešily problém samy před eskalací.",
     "without": "Bez toho musí každý problém řešit interní tým.",
-    "example": "Uživatel použije možnost „Dohoda mezi kupujícím a prodávajícím“: systém umožní, aby strany vyřešily problém samy před eskalací.",
+    "example": "Kupující a prodávající se v aplikaci domluví na vrácení části peněz a spor se uzavře bez podpory.",
     "build": [
-      "Konkrétní část: Systém umožní, aby strany vyřešily problém samy před eskalací.",
-      "Zobrazit vhodný formulář u konkrétní objednávky.",
-      "Uchovat důkazy, lhůty, odpovědi obou stran a rozhodnutí podpory.",
-      "Pozastavit nebo upravit finanční vypořádání podle výsledku sporu."
+      "Návrh řešení (vrácení části, vrácení zboží).",
+      "Přijetí druhou stranou.",
+      "Automatické provedení dohody."
     ],
-    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení."
+    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení.",
+    "effort": "M"
   },
   {
     "id": "15.6",
@@ -1850,14 +1805,14 @@ window.BOBINA_FEATURES = [
     "category": "Ochrana kupujícího a spory",
     "description": "Pokud není dohoda, případ převezme moderátor / support.",
     "without": "Bez toho neexistuje autorita, která spor uzavře.",
-    "example": "Uživatel použije možnost „Eskalace na zákaznickou podporu“: pokud není dohoda, případ převezme moderátor / support.",
+    "example": "Strany se nedohodnou, kupující klepne „Požádat podporu o pomoc“ a případ převezme pracovník Bobiny.",
     "build": [
-      "Konkrétní část: Pokud není dohoda, případ převezme moderátor / support.",
-      "Zobrazit vhodný formulář u konkrétní objednávky.",
-      "Uchovat důkazy, lhůty, odpovědi obou stran a rozhodnutí podpory.",
-      "Pozastavit nebo upravit finanční vypořádání podle výsledku sporu."
+      "Předání případu podpoře.",
+      "Lhůty pro odpověď.",
+      "Rozhodnutí a jeho provedení."
     ],
-    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení."
+    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení.",
+    "effort": "M"
   },
   {
     "id": "15.7",
@@ -1865,44 +1820,29 @@ window.BOBINA_FEATURES = [
     "category": "Ochrana kupujícího a spory",
     "description": "Systém určí, zda a kam se má zboží vrátit a sleduje návratovou zásilku.",
     "without": "Bez toho se vrácení řeší ručně a snadno vzniknou další spory.",
-    "example": "Uživatel použije možnost „Proces vrácení zboží“: systém určí, zda a kam se má zboží vrátit a sleduje návratovou zásilku.",
+    "example": "Bota je jiná velikost; kupující dostane štítek na vrácení a po doručení zpět se mu vrátí peníze.",
     "build": [
-      "Konkrétní část: Systém určí, zda a kam se má zboží vrátit a sleduje návratovou zásilku.",
-      "Zobrazit vhodný formulář u konkrétní objednávky.",
-      "Uchovat důkazy, lhůty, odpovědi obou stran a rozhodnutí podpory.",
-      "Pozastavit nebo upravit finanční vypořádání podle výsledku sporu."
+      "Štítek pro zpětnou zásilku.",
+      "Sledování zpětné zásilky.",
+      "Vrácení peněz po doručení zpět."
     ],
-    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení."
+    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení.",
+    "effort": "L"
   },
   {
     "id": "15.8",
-    "title": "Částečná kompenzace",
-    "category": "Ochrana kupujícího a spory",
-    "description": "Strany nebo podpora mohou uzavřít spor částečným vrácením ceny.",
-    "without": "Bez toho je výsledek pouze vše nebo nic.",
-    "example": "Uživatel použije možnost „Částečná kompenzace“: strany nebo podpora mohou uzavřít spor částečným vrácením ceny.",
-    "build": [
-      "Konkrétní část: Strany nebo podpora mohou uzavřít spor částečným vrácením ceny.",
-      "Zobrazit vhodný formulář u konkrétní objednávky.",
-      "Uchovat důkazy, lhůty, odpovědi obou stran a rozhodnutí podpory.",
-      "Pozastavit nebo upravit finanční vypořádání podle výsledku sporu."
-    ],
-    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení."
-  },
-  {
-    "id": "15.9",
     "title": "Reklamace ztracené zásilky u dopravce",
     "category": "Ochrana kupujícího a spory",
     "description": "Systém propojí objednávku s reklamačním procesem dopravce.",
     "without": "Bez toho musí uživatel nebo podpora vše řešit odděleně.",
-    "example": "Uživatel použije možnost „Reklamace ztracené zásilky u dopravce“: systém propojí objednávku s reklamačním procesem dopravce.",
+    "example": "Zásilka se ztratila; aplikace sama podá reklamaci u dopravce a kupující dostane peníze zpět.",
     "build": [
-      "Konkrétní část: Systém propojí objednávku s reklamačním procesem dopravce.",
-      "Zobrazit vhodný formulář u konkrétní objednávky.",
-      "Uchovat důkazy, lhůty, odpovědi obou stran a rozhodnutí podpory.",
-      "Pozastavit nebo upravit finanční vypořádání podle výsledku sporu."
+      "Podání reklamace dopravci přes jeho systém.",
+      "Vrácení peněz kupujícímu.",
+      "Evidence náhrad od dopravce."
     ],
-    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení."
+    "category_note": "Kupující hlásí problém s doručenou věcí a žádá řešení.",
+    "effort": "M"
   },
   {
     "id": "16.1",
@@ -1912,12 +1852,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho nový kupující neví, zda je protistrana spolehlivá.",
     "example": "Po doručení kupující ohodnotí prodejce pěti hvězdami a krátkým komentářem.",
     "build": [
-      "Konkrétní část: Kupující a prodávající se po obchodu ohodnotí.",
-      "Zobrazit hodnocení pouze ve správný okamžik a oprávněnému uživateli.",
-      "Ukládat skóre, text a vazbu na ověřený obchod.",
-      "Přepočítávat celkový profil a umožnit nahlášení zneužití."
+      "Výzva k hodnocení po dokončení.",
+      "Hodnocení jen u skutečné objednávky.",
+      "Uzávěrka pro úpravy."
     ],
-    "category_note": "Po dokončení prodeje jedna strana hodnotí zkušenost s druhou."
+    "category_note": "Po dokončení prodeje jedna strana hodnotí zkušenost s druhou.",
+    "effort": "M"
   },
   {
     "id": "16.2",
@@ -1925,14 +1865,14 @@ window.BOBINA_FEATURES = [
     "category": "Hodnocení a reputace",
     "description": "Profil zobrazuje průměrné hodnocení.",
     "without": "Bez skóre musí uživatel číst všechny recenze.",
-    "example": "Uživatel použije možnost „Hvězdičkové skóre“: profil zobrazuje průměrné hodnocení.",
+    "example": "U profilu svítí „★ 4,8 z 5 (52 hodnocení)“.",
     "build": [
-      "Konkrétní část: Profil zobrazuje průměrné hodnocení.",
-      "Zobrazit hodnocení pouze ve správný okamžik a oprávněnému uživateli.",
-      "Ukládat skóre, text a vazbu na ověřený obchod.",
-      "Přepočítávat celkový profil a umožnit nahlášení zneužití."
+      "Výpočet průměru.",
+      "Zobrazení na profilu a u inzerátu.",
+      "Ochrana proti manipulaci."
     ],
-    "category_note": "Po dokončení prodeje jedna strana hodnotí zkušenost s druhou."
+    "category_note": "Po dokončení prodeje jedna strana hodnotí zkušenost s druhou.",
+    "effort": "S"
   },
   {
     "id": "16.3",
@@ -1940,14 +1880,14 @@ window.BOBINA_FEATURES = [
     "category": "Hodnocení a reputace",
     "description": "Uživatel může doplnit zkušenost slovně.",
     "without": "Bez textu je hodnocení méně informativní.",
-    "example": "Uživatel použije možnost „Textová recenze“: uživatel může doplnit zkušenost slovně.",
+    "example": "Kupující napíše „Rychlé odeslání, krásně zabalené, doporučuji!“.",
     "build": [
-      "Konkrétní část: Uživatel může doplnit zkušenost slovně.",
-      "Zobrazit hodnocení pouze ve správný okamžik a oprávněnému uživateli.",
-      "Ukládat skóre, text a vazbu na ověřený obchod.",
-      "Přepočítávat celkový profil a umožnit nahlášení zneužití."
+      "Pole pro text s limitem.",
+      "Kontrola nevhodného obsahu.",
+      "Zobrazení na profilu."
     ],
-    "category_note": "Po dokončení prodeje jedna strana hodnotí zkušenost s druhou."
+    "category_note": "Po dokončení prodeje jedna strana hodnotí zkušenost s druhou.",
+    "effort": "S"
   },
   {
     "id": "16.4",
@@ -1955,14 +1895,14 @@ window.BOBINA_FEATURES = [
     "category": "Hodnocení a reputace",
     "description": "Systém může označit opakované storno nebo neodeslání.",
     "without": "Bez toho lze opakovaně rušit objednávky bez dopadu na reputaci.",
-    "example": "Uživatel použije možnost „Automatické hodnocení za vybraná selhání“: systém může označit opakované storno nebo neodeslání.",
+    "example": "Prodávající třikrát neodeslal zásilku; aplikace mu automaticky přidá záporné hodnocení.",
     "build": [
-      "Konkrétní část: Systém může označit opakované storno nebo neodeslání.",
-      "Zobrazit hodnocení pouze ve správný okamžik a oprávněnému uživateli.",
-      "Ukládat skóre, text a vazbu na ověřený obchod.",
-      "Přepočítávat celkový profil a umožnit nahlášení zneužití."
+      "Pravidla pro automatické záznamy.",
+      "Zobrazení na profilu.",
+      "Odvolání."
     ],
-    "category_note": "Po dokončení prodeje jedna strana hodnotí zkušenost s druhou."
+    "category_note": "Po dokončení prodeje jedna strana hodnotí zkušenost s druhou.",
+    "effort": "S"
   },
   {
     "id": "16.5",
@@ -1970,14 +1910,29 @@ window.BOBINA_FEATURES = [
     "category": "Hodnocení a reputace",
     "description": "Uživatel může požádat o moderaci recenze porušující pravidla.",
     "without": "Bez toho se recenzní systém může stát nástrojem obtěžování.",
-    "example": "Uživatel použije možnost „Nahlášení nevhodné recenze“: uživatel může požádat o moderaci recenze porušující pravidla.",
+    "example": "Prodávající dostane urážlivou recenzi, nahlásí ji a moderátor ji odstraní.",
     "build": [
-      "Konkrétní část: Uživatel může požádat o moderaci recenze porušující pravidla.",
-      "Zobrazit hodnocení pouze ve správný okamžik a oprávněnému uživateli.",
-      "Ukládat skóre, text a vazbu na ověřený obchod.",
-      "Přepočítávat celkový profil a umožnit nahlášení zneužití."
+      "Tlačítko Nahlásit.",
+      "Fronta pro moderátora.",
+      "Skrytí po rozhodnutí."
     ],
-    "category_note": "Po dokončení prodeje jedna strana hodnotí zkušenost s druhou."
+    "category_note": "Po dokončení prodeje jedna strana hodnotí zkušenost s druhou.",
+    "effort": "S"
+  },
+  {
+    "id": "16.6",
+    "title": "Odpověď prodejce na hodnocení",
+    "category": "Hodnocení a reputace",
+    "description": "Prodávající může k hodnocení napsat veřejnou odpověď.",
+    "example": "Kupující napíše „Svetr byl menší“; Klára odpoví „Rozměry byly v popisu, ale omlouvám se, nabízím vrácení“.",
+    "without": "Bez toho se prodávající nemůže k nespravedlivému hodnocení vyjádřit.",
+    "build": [
+      "Jedna odpověď na hodnocení.",
+      "Zobrazení pod hodnocením.",
+      "Moderace odpovědí."
+    ],
+    "category_note": "Po dokončení prodeje jedna strana hodnotí zkušenost s druhou.",
+    "effort": "S"
   },
   {
     "id": "17.1",
@@ -1985,14 +1940,14 @@ window.BOBINA_FEATURES = [
     "category": "Nástroje prodejce",
     "description": "Prodávající vidí všechny aktivní, rezervované, prodané a skryté položky.",
     "without": "Bez toho se větší počet nabídek stává nepřehledný.",
-    "example": "Uživatel použije možnost „Moje nabídky / šatník“: prodávající vidí všechny aktivní, rezervované, prodané a skryté položky.",
+    "example": "Klára vidí na jednom místě 35 aktivních, 2 rezervované, 48 prodaných a 3 skryté inzeráty.",
     "build": [
-      "Konkrétní část: Prodávající vidí všechny aktivní, rezervované, prodané a skryté položky.",
-      "Zobrazit vlastní přehled a příslušná tlačítka pro práci s nabídkami.",
-      "Načítat skutečné stavy a ověřovat práva majitele nabídky.",
-      "Synchronizovat změny do katalogu a oznámení kupujícím."
+      "Přehled inzerátů podle stavu.",
+      "Rychlé akce (zlevnit, skrýt, topovat).",
+      "Hledání ve vlastních inzerátech."
     ],
-    "category_note": "Prodejce otevře svůj šatník a řídí vystavené předměty i objednávky."
+    "category_note": "Prodejce otevře svůj šatník a řídí vystavené předměty i objednávky.",
+    "effort": "M"
   },
   {
     "id": "17.2",
@@ -2000,14 +1955,14 @@ window.BOBINA_FEATURES = [
     "category": "Nástroje prodejce",
     "description": "Ukazuje aktuální a dokončené objednávky.",
     "without": "Bez toho je nutné vše hledat v jednotlivých chatech.",
-    "example": "Uživatel použije možnost „Přehled prodejů“: ukazuje aktuální a dokončené objednávky.",
+    "example": "V přehledu prodejů Klára vidí, které objednávky musí ještě odeslat.",
     "build": [
-      "Konkrétní část: Ukazuje aktuální a dokončené objednávky.",
-      "Zobrazit vlastní přehled a příslušná tlačítka pro práci s nabídkami.",
-      "Načítat skutečné stavy a ověřovat práva majitele nabídky.",
-      "Synchronizovat změny do katalogu a oznámení kupujícím."
+      "Seznam objednávek podle stavu.",
+      "Zvýraznění toho, co je potřeba odeslat.",
+      "Detail objednávky."
     ],
-    "category_note": "Prodejce otevře svůj šatník a řídí vystavené předměty i objednávky."
+    "category_note": "Prodejce otevře svůj šatník a řídí vystavené předměty i objednávky.",
+    "effort": "S"
   },
   {
     "id": "17.3",
@@ -2015,14 +1970,14 @@ window.BOBINA_FEATURES = [
     "category": "Nástroje prodejce",
     "description": "Souhrn příjmů za období.",
     "without": "Bez toho si musí výdělky počítat z jednotlivých transakcí.",
-    "example": "Uživatel použije možnost „Přehled výdělků“: souhrn příjmů za období.",
+    "example": "Klára vidí „Za říjen vyděláno 3 450 Kč“.",
     "build": [
-      "Konkrétní část: Souhrn příjmů za období.",
-      "Zobrazit vlastní přehled a příslušná tlačítka pro práci s nabídkami.",
-      "Načítat skutečné stavy a ověřovat práva majitele nabídky.",
-      "Synchronizovat změny do katalogu a oznámení kupujícím."
+      "Součty za období.",
+      "Graf vývoje.",
+      "Export."
     ],
-    "category_note": "Prodejce otevře svůj šatník a řídí vystavené předměty i objednávky."
+    "category_note": "Prodejce otevře svůj šatník a řídí vystavené předměty i objednávky.",
+    "effort": "S"
   },
   {
     "id": "17.4",
@@ -2030,14 +1985,14 @@ window.BOBINA_FEATURES = [
     "category": "Nástroje prodejce",
     "description": "Umožní označit více položek a změnit cenu, skrýt je nebo odstranit.",
     "without": "Bez toho se každá změna provádí jednotlivě.",
-    "example": "Uživatel použije možnost „Hromadná správa nabídek“: umožní označit více položek a změnit cenu, skrýt je nebo odstranit.",
+    "example": "Klára označí 20 letních věcí a jedním klepnutím jim sníží cenu o 20 %.",
     "build": [
-      "Konkrétní část: Umožní označit více položek a změnit cenu, skrýt je nebo odstranit.",
-      "Zobrazit vlastní přehled a příslušná tlačítka pro práci s nabídkami.",
-      "Načítat skutečné stavy a ověřovat práva majitele nabídky.",
-      "Synchronizovat změny do katalogu a oznámení kupujícím."
+      "Výběr více inzerátů.",
+      "Hromadná změna ceny / skrytí / smazání.",
+      "Kontrola rozběhlých objednávek."
     ],
-    "category_note": "Prodejce otevře svůj šatník a řídí vystavené předměty i objednávky."
+    "category_note": "Prodejce otevře svůj šatník a řídí vystavené předměty i objednávky.",
+    "effort": "M"
   },
   {
     "id": "17.5",
@@ -2047,12 +2002,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez něj musí všechny nabídky ručně skrýt nebo riskovat storna.",
     "example": "Prodejce odjíždí na týden pryč a zapne dovolenou, aby nepřijímal objednávky, které nestihne odeslat.",
     "build": [
-      "Konkrétní část: Dočasně omezí nákup nebo upozorní na delší odeslání.",
-      "Zobrazit vlastní přehled a příslušná tlačítka pro práci s nabídkami.",
-      "Načítat skutečné stavy a ověřovat práva majitele nabídky.",
-      "Synchronizovat změny do katalogu a oznámení kupujícím."
+      "Zapnutí s datem návratu.",
+      "Skrytí nebo zablokování nákupu.",
+      "Upozornění zájemcům."
     ],
-    "category_note": "Prodejce otevře svůj šatník a řídí vystavené předměty i objednávky."
+    "category_note": "Prodejce otevře svůj šatník a řídí vystavené předměty i objednávky.",
+    "effort": "S"
   },
   {
     "id": "17.6",
@@ -2060,14 +2015,14 @@ window.BOBINA_FEATURES = [
     "category": "Nástroje prodejce",
     "description": "Ukazuje zobrazení, oblíbené, konverzi a další metriky.",
     "without": "Bez toho prodávající neví, proč se nabídka neprodává.",
-    "example": "Uživatel použije možnost „Statistiky nabídek“: ukazuje zobrazení, oblíbené, konverzi a další metriky.",
+    "example": "Klára vidí, že šaty mělo 230 lidí zobrazené a 18 v oblíbených, ale nikdo je nekoupil.",
     "build": [
-      "Konkrétní část: Ukazuje zobrazení, oblíbené, konverzi a další metriky.",
-      "Zobrazit vlastní přehled a příslušná tlačítka pro práci s nabídkami.",
-      "Načítat skutečné stavy a ověřovat práva majitele nabídky.",
-      "Synchronizovat změny do katalogu a oznámení kupujícím."
+      "Počítání zobrazení a oblíbení.",
+      "Přehled u každého inzerátu.",
+      "Doporučení (např. zlevni)."
     ],
-    "category_note": "Prodejce otevře svůj šatník a řídí vystavené předměty i objednávky."
+    "category_note": "Prodejce otevře svůj šatník a řídí vystavené předměty i objednávky.",
+    "effort": "M"
   },
   {
     "id": "18.1",
@@ -2077,12 +2032,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho přichází platforma o přímou monetizaci prodejců.",
     "example": "Prodejce si zaplatí zvýraznění bot a po stanovenou dobu je nabídka lépe viditelná.",
     "build": [
-      "Konkrétní část: Prodávající zaplatí za dočasně vyšší viditelnost položky.",
-      "Vytvořit nabídku služby, její cenu a informování před potvrzením.",
-      "Zajistit správné účtování a zaznamenání nákupu služby.",
-      "Nastavit začátek, dobu platnosti a ukončení zvýhodnění nebo poplatku."
+      "Nákup topování a platba.",
+      "Přednostní zobrazení na zvolenou dobu.",
+      "Vyhodnocení, kolik to přineslo."
     ],
-    "category_note": "Prodejce nebo platforma využívá placenou službu či poplatek."
+    "category_note": "Prodejce nebo platforma využívá placenou službu či poplatek.",
+    "effort": "M"
   },
   {
     "id": "18.2",
@@ -2090,14 +2045,14 @@ window.BOBINA_FEATURES = [
     "category": "Monetizace",
     "description": "Placena propagace zobrazí více položek jednoho prodejce.",
     "without": "Bez toho lze monetizovat jen jednotlivé položky.",
-    "example": "Uživatel použije možnost „Zvýraznění celého profilu / šatníku“: placena propagace zobrazí více položek jednoho prodejce.",
+    "example": "Klára zaplatí 99 Kč a celý její šatník se týden ukazuje víc lidem.",
     "build": [
-      "Konkrétní část: Placena propagace zobrazí více položek jednoho prodejce.",
-      "Vytvořit nabídku služby, její cenu a informování před potvrzením.",
-      "Zajistit správné účtování a zaznamenání nákupu služby.",
-      "Nastavit začátek, dobu platnosti a ukončení zvýhodnění nebo poplatku."
+      "Nákup propagace šatníku.",
+      "Zobrazení ve feedu a ve hledání.",
+      "Statistiky výsledku."
     ],
-    "category_note": "Prodejce nebo platforma využívá placenou službu či poplatek."
+    "category_note": "Prodejce nebo platforma využívá placenou službu či poplatek.",
+    "effort": "M"
   },
   {
     "id": "18.3",
@@ -2105,14 +2060,14 @@ window.BOBINA_FEATURES = [
     "category": "Monetizace",
     "description": "Platforma může přidělit slevu na placené funkce nebo nákup.",
     "without": "Bez toho jsou promo akce méně flexibilní.",
-    "example": "Uživatel použije možnost „Propagační kredity / kupony“: platforma může přidělit slevu na placené funkce nebo nákup.",
+    "example": "Nová uživatelka dostane kupon „100 Kč na první nákup“.",
     "build": [
-      "Konkrétní část: Platforma může přidělit slevu na placené funkce nebo nákup.",
-      "Vytvořit nabídku služby, její cenu a informování před potvrzením.",
-      "Zajistit správné účtování a zaznamenání nákupu služby.",
-      "Nastavit začátek, dobu platnosti a ukončení zvýhodnění nebo poplatku."
+      "Generování kódů a kreditů.",
+      "Uplatnění v objednávce.",
+      "Pravidla platnosti a zneužití."
     ],
-    "category_note": "Prodejce nebo platforma využívá placenou službu či poplatek."
+    "category_note": "Prodejce nebo platforma využívá placenou službu či poplatek.",
+    "effort": "M"
   },
   {
     "id": "18.4",
@@ -2120,14 +2075,14 @@ window.BOBINA_FEATURES = [
     "category": "Monetizace",
     "description": "Checkout přidá poplatek za bezpečnou transakci a služby platformy.",
     "without": "Bez něj musí platforma vydělávat jiným způsobem.",
-    "example": "Uživatel použije možnost „Poplatek za ochranu kupujícího“: checkout přidá poplatek za bezpečnou transakci a služby platformy.",
+    "example": "Kupující u svetru za 420 Kč zaplatí navíc ochranu kupujícího, třeba 5 % + 15 Kč.",
     "build": [
-      "Konkrétní část: Checkout přidá poplatek za bezpečnou transakci a služby platformy.",
-      "Vytvořit nabídku služby, její cenu a informování před potvrzením.",
-      "Zajistit správné účtování a zaznamenání nákupu služby.",
-      "Nastavit začátek, dobu platnosti a ukončení zvýhodnění nebo poplatku."
+      "Výpočet poplatku v objednávce.",
+      "Zobrazení a vysvětlení kupujícímu.",
+      "Nastavení sazby v administraci."
     ],
-    "category_note": "Prodejce nebo platforma využívá placenou službu či poplatek."
+    "category_note": "Prodejce nebo platforma využívá placenou službu či poplatek.",
+    "effort": "S"
   },
   {
     "id": "18.5",
@@ -2135,14 +2090,14 @@ window.BOBINA_FEATURES = [
     "category": "Monetizace",
     "description": "Platforma strhne procento nebo fixní částku z ceny prodávajícího.",
     "without": "Bez provize musí být monetizace na kupujícím, reklamě nebo předplatném.",
-    "example": "Uživatel použije možnost „Provize z prodeje“: platforma strhne procento nebo fixní částku z ceny prodávajícího.",
+    "example": "Z prodeje za 420 Kč si Bobina nechá například 10 % a prodávajícímu pošle 378 Kč.",
     "build": [
-      "Konkrétní část: Platforma strhne procento nebo fixní částku z ceny prodávajícího.",
-      "Vytvořit nabídku služby, její cenu a informování před potvrzením.",
-      "Zajistit správné účtování a zaznamenání nákupu služby.",
-      "Nastavit začátek, dobu platnosti a ukončení zvýhodnění nebo poplatku."
+      "Výpočet a stržení provize z výdělku.",
+      "Zobrazení prodejci před vystavením.",
+      "Nastavení sazby."
     ],
-    "category_note": "Prodejce nebo platforma využívá placenou službu či poplatek."
+    "category_note": "Prodejce nebo platforma využívá placenou službu či poplatek.",
+    "effort": "S"
   },
   {
     "id": "18.6",
@@ -2150,14 +2105,14 @@ window.BOBINA_FEATURES = [
     "category": "Monetizace",
     "description": "Profesionální prodejci platí měsíční tarif za rozšířené nástroje.",
     "without": "Bez něj jsou PRO funkce zdarma nebo se monetizují jinak.",
-    "example": "Uživatel použije možnost „Předplatné PRO“: profesionální prodejci platí měsíční tarif za rozšířené nástroje.",
+    "example": "Malý obchod s second handem platí 299 Kč měsíčně za firemní profil a lepší nástroje.",
     "build": [
-      "Konkrétní část: Profesionální prodejci platí měsíční tarif za rozšířené nástroje.",
-      "Vytvořit nabídku služby, její cenu a informování před potvrzením.",
-      "Zajistit správné účtování a zaznamenání nákupu služby.",
-      "Nastavit začátek, dobu platnosti a ukončení zvýhodnění nebo poplatku."
+      "Opakované platby a tarify.",
+      "Odemčení nástrojů podle tarifu.",
+      "Faktury a zrušení předplatného."
     ],
-    "category_note": "Prodejce nebo platforma využívá placenou službu či poplatek."
+    "category_note": "Prodejce nebo platforma využívá placenou službu či poplatek.",
+    "effort": "L"
   },
   {
     "id": "18.7",
@@ -2165,14 +2120,14 @@ window.BOBINA_FEATURES = [
     "category": "Monetizace",
     "description": "Platforma může zobrazovat placenou reklamu třetích stran nebo partnerů.",
     "without": "Bez něj bude uživatelské prostředí čistší, ale monetizace užší.",
-    "example": "Uživatel použije možnost „Reklamní plochy / sponzorovaný obsah“: platforma může zobrazovat placenou reklamu třetích stran nebo partnerů.",
+    "example": "Mezi nabídkami se občas zobrazí reklama na prací prostředek nebo spřátelený e-shop.",
     "build": [
-      "Konkrétní část: Platforma může zobrazovat placenou reklamu třetích stran nebo partnerů.",
-      "Vytvořit nabídku služby, její cenu a informování před potvrzením.",
-      "Zajistit správné účtování a zaznamenání nákupu služby.",
-      "Nastavit začátek, dobu platnosti a ukončení zvýhodnění nebo poplatku."
+      "Reklamní místa ve feedu.",
+      "Správa kampaní nebo napojení reklamní sítě.",
+      "Souhlas s cookies a označení reklamy."
     ],
-    "category_note": "Prodejce nebo platforma využívá placenou službu či poplatek."
+    "category_note": "Prodejce nebo platforma využívá placenou službu či poplatek.",
+    "effort": "M"
   },
   {
     "id": "19.1",
@@ -2182,12 +2137,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez push notifikací se transakce zpomalí a více uživatelů zapomene reagovat.",
     "example": "Na telefonu se objeví upozornění „Vaše zásilka byla doručena“.",
     "build": [
-      "Konkrétní část: Mobil upozorní na zprávy, prodej, nabídku ceny, dopravu a další události.",
-      "Definovat událost, kdy se zpráva odesílá, a její srozumitelný text.",
-      "Nastavit kanály oznámení a uživatelské preference.",
-      "Zabránit duplicitám, chybám doručení a nechtěnému spamu."
+      "Napojení na Apple a Google notifikace.",
+      "Typy upozornění a jejich texty.",
+      "Hromadné i jednotlivé odesílání."
     ],
-    "category_note": "Uživatel dostane zprávu o důležité události nebo nové nabídce."
+    "category_note": "Uživatel dostane zprávu o důležité události nebo nové nabídce.",
+    "effort": "M"
   },
   {
     "id": "19.2",
@@ -2195,14 +2150,14 @@ window.BOBINA_FEATURES = [
     "category": "Upozornění",
     "description": "Důležité události se odešlou také e-mailem.",
     "without": "Bez něj jsou uživatelé závislí pouze na aplikaci.",
-    "example": "Uživatel použije možnost „E-mailové notifikace“: důležité události se odešlou také e-mailem.",
+    "example": "Kupujícímu přijde e-mail „Vaše objednávka byla odeslána“.",
     "build": [
-      "Konkrétní část: Důležité události se odešlou také e-mailem.",
-      "Definovat událost, kdy se zpráva odesílá, a její srozumitelný text.",
-      "Nastavit kanály oznámení a uživatelské preference.",
-      "Zabránit duplicitám, chybám doručení a nechtěnému spamu."
+      "Napojení e-mailové služby.",
+      "Šablony e-mailů ve všech jazycích.",
+      "Odhlášení a správa doručitelnosti."
     ],
-    "category_note": "Uživatel dostane zprávu o důležité události nebo nové nabídce."
+    "category_note": "Uživatel dostane zprávu o důležité události nebo nové nabídce.",
+    "effort": "M"
   },
   {
     "id": "19.3",
@@ -2210,14 +2165,14 @@ window.BOBINA_FEATURES = [
     "category": "Upozornění",
     "description": "Uživatel si zvolí, které typy upozornění chce.",
     "without": "Bez nastavení může platforma uživatele zahlcovat nebo naopak neinformovat.",
-    "example": "Uživatel použije možnost „Nastavení notifikací“: uživatel si zvolí, které typy upozornění chce.",
+    "example": "Uživatelka si vypne upozornění na novinky, ale nechá si upozornění na zprávy a objednávky.",
     "build": [
-      "Konkrétní část: Uživatel si zvolí, které typy upozornění chce.",
-      "Definovat událost, kdy se zpráva odesílá, a její srozumitelný text.",
-      "Nastavit kanály oznámení a uživatelské preference.",
-      "Zabránit duplicitám, chybám doručení a nechtěnému spamu."
+      "Obrazovka s přepínači podle typu.",
+      "Respektování nastavení při odesílání.",
+      "Výchozí nastavení."
     ],
-    "category_note": "Uživatel dostane zprávu o důležité události nebo nové nabídce."
+    "category_note": "Uživatel dostane zprávu o důležité události nebo nové nabídce.",
+    "effort": "S"
   },
   {
     "id": "19.4",
@@ -2225,14 +2180,14 @@ window.BOBINA_FEATURES = [
     "category": "Upozornění",
     "description": "Platba, storno, spor nebo termín odeslání mají oddělený režim od marketingu.",
     "without": "Bez toho mohou uživatelé vypnout vše kvůli marketingu a přijít o důležité zprávy.",
-    "example": "Uživatel použije možnost „Transakční upozornění s vysokou prioritou“: platba, storno, spor nebo termín odeslání mají oddělený režim od marketingu.",
+    "example": "Upozornění „Zbývá 1 den na odeslání zásilky“ přijde vždy, i když má uživatelka vypnuté reklamní zprávy.",
     "build": [
-      "Konkrétní část: Platba, storno, spor nebo termín odeslání mají oddělený režim od marketingu.",
-      "Definovat událost, kdy se zpráva odesílá, a její srozumitelný text.",
-      "Nastavit kanály oznámení a uživatelské preference.",
-      "Zabránit duplicitám, chybám doručení a nechtěnému spamu."
+      "Oddělení důležitých upozornění od reklamních.",
+      "Doručení i při vypnutém marketingu.",
+      "Záloha e-mailem."
     ],
-    "category_note": "Uživatel dostane zprávu o důležité události nebo nové nabídce."
+    "category_note": "Uživatel dostane zprávu o důležité události nebo nové nabídce.",
+    "effort": "S"
   },
   {
     "id": "19.5",
@@ -2240,14 +2195,14 @@ window.BOBINA_FEATURES = [
     "category": "Upozornění",
     "description": "Platforma posílá cílené kampaně podle segmentu a chování.",
     "without": "Bez toho bude retence záviset jen na organickém návratu.",
-    "example": "Uživatel použije možnost „Marketingové kampaně“: platforma posílá cílené kampaně podle segmentu a chování.",
+    "example": "Uživatelkám, které hledají boty, přijde „Jarní výprodej tenisek – sleva na dopravu“.",
     "build": [
-      "Konkrétní část: Platforma posílá cílené kampaně podle segmentu a chování.",
-      "Definovat událost, kdy se zpráva odesílá, a její srozumitelný text.",
-      "Nastavit kanály oznámení a uživatelské preference.",
-      "Zabránit duplicitám, chybám doručení a nechtěnému spamu."
+      "Výběr skupin uživatelů.",
+      "Plánování a odeslání kampaně.",
+      "Měření výsledků a souhlasy."
     ],
-    "category_note": "Uživatel dostane zprávu o důležité události nebo nové nabídce."
+    "category_note": "Uživatel dostane zprávu o důležité události nebo nové nabídce.",
+    "effort": "M"
   },
   {
     "id": "20.1",
@@ -2255,44 +2210,44 @@ window.BOBINA_FEATURES = [
     "category": "Bezpečnost a moderace",
     "description": "Uživatel může nahlásit podezřelý profil.",
     "without": "Bez toho je moderace výrazně méně škálovatelná.",
-    "example": "Správce platformy použije možnost „Nahlášení uživatele“: uživatel může nahlásit podezřelý profil.",
+    "example": "Profil vypadá jako podvodník, kupující ho nahlásí a moderátor ho prověří.",
     "build": [
-      "Konkrétní část: Uživatel může nahlásit podezřelý profil.",
-      "Připravit hlášení nebo automatický signál s konkrétním důvodem.",
-      "Zobrazit případy v moderátorské frontě a umožnit rozhodnutí.",
-      "Zaznamenat zásah, informovat dotčené osoby a zajistit možnost odvolání."
+      "Formulář s důvody.",
+      "Fronta pro moderátora.",
+      "Odpověď nahlašovateli."
     ],
-    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah."
+    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah.",
+    "effort": "S"
   },
   {
     "id": "20.2",
     "title": "Nahlášení nabídky",
     "category": "Bezpečnost a moderace",
-    "description": "Podezřelé nebo zakázané zboží lze předat moderaci.",
+    "description": "Podezřelé nebo zakázané zboží lze nahlásit přímo z detailu nabídky a předat moderaci.",
     "without": "Bez toho závadné položky zůstanou déle online.",
-    "example": "Správce platformy použije možnost „Nahlášení nabídky“: podezřelé nebo zakázané zboží lze předat moderaci.",
+    "example": "Kupující nahlásí inzerát s padělkem kabelky, z inzerátu i ze stránky moderace.",
     "build": [
-      "Konkrétní část: Podezřelé nebo zakázané zboží lze předat moderaci.",
-      "Připravit hlášení nebo automatický signál s konkrétním důvodem.",
-      "Zobrazit případy v moderátorské frontě a umožnit rozhodnutí.",
-      "Zaznamenat zásah, informovat dotčené osoby a zajistit možnost odvolání."
+      "Tlačítko na detailu inzerátu.",
+      "Fronta pro moderátora.",
+      "Skrytí inzerátu po rozhodnutí."
     ],
-    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah."
+    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah.",
+    "effort": "S"
   },
   {
     "id": "20.3",
-    "title": "Nahlášení zprávy",
+    "title": "Nahlášení zprávy nebo konverzace",
     "category": "Bezpečnost a moderace",
-    "description": "Zprávy lze nahlásit kvůli phishingu, spamu nebo obtěžování.",
+    "description": "Zprávy i celé konverzace lze nahlásit kvůli phishingu, spamu nebo obtěžování.",
     "without": "Bez toho platforma ztrácí důležitý bezpečnostní mechanismus.",
-    "example": "Správce platformy použije možnost „Nahlášení zprávy“: zprávy lze nahlásit kvůli phishingu, spamu nebo obtěžování.",
+    "example": "Někdo v chatu posílá podezřelý odkaz na platbu; příjemce zprávu nahlásí. Lze nahlásit i celou konverzaci.",
     "build": [
-      "Konkrétní část: Zprávy lze nahlásit kvůli phishingu, spamu nebo obtěžování.",
-      "Připravit hlášení nebo automatický signál s konkrétním důvodem.",
-      "Zobrazit případy v moderátorské frontě a umožnit rozhodnutí.",
-      "Zaznamenat zásah, informovat dotčené osoby a zajistit možnost odvolání."
+      "Nahlášení zprávy i celé konverzace.",
+      "Přístup moderátora ke konverzaci.",
+      "Blokace odesílatele."
     ],
-    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah."
+    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah.",
+    "effort": "S"
   },
   {
     "id": "20.4",
@@ -2300,14 +2255,14 @@ window.BOBINA_FEATURES = [
     "category": "Bezpečnost a moderace",
     "description": "Pravidla nebo AI před publikací a po ní hledají rizikové texty a obrázky.",
     "without": "Bez toho bude potřeba výrazně větší moderátorský tým.",
-    "example": "Správce platformy použije možnost „Automatická detekce zakázaného obsahu“: pravidla nebo AI před publikací a po ní hledají rizikové texty a obrázky.",
+    "example": "Prodávající do popisu napíše telefon a „pošli peníze na účet“; aplikace inzerát zadrží ke kontrole.",
     "build": [
-      "Konkrétní část: Pravidla nebo AI před publikací a po ní hledají rizikové texty a obrázky.",
-      "Připravit hlášení nebo automatický signál s konkrétním důvodem.",
-      "Zobrazit případy v moderátorské frontě a umožnit rozhodnutí.",
-      "Zaznamenat zásah, informovat dotčené osoby a zajistit možnost odvolání."
+      "Pravidla a klíčová slova pro rizikový obsah.",
+      "Napojení AI kontroly obrázků a textů.",
+      "Zadržení podezřelého obsahu ke kontrole."
     ],
-    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah."
+    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah.",
+    "effort": "L"
   },
   {
     "id": "20.5",
@@ -2315,14 +2270,14 @@ window.BOBINA_FEATURES = [
     "category": "Bezpečnost a moderace",
     "description": "Rizikové luxusní produkty označí k ruční kontrole nebo vyžádá důkaz originality.",
     "without": "Bez toho může marketplace rychle získat pověst místa pro fake zboží.",
-    "example": "Správce platformy použije možnost „Detekce padělků / podezřelých značkových nabídek“: rizikové luxusní produkty označí k ruční kontrole nebo vyžádá důkaz originality.",
+    "example": "Kabelka „Louis Vuitton“ za 500 Kč se automaticky označí jako podezřelá a prodávající musí doložit pravost.",
     "build": [
-      "Konkrétní část: Rizikové luxusní produkty označí k ruční kontrole nebo vyžádá důkaz originality.",
-      "Připravit hlášení nebo automatický signál s konkrétním důvodem.",
-      "Zobrazit případy v moderátorské frontě a umožnit rozhodnutí.",
-      "Zaznamenat zásah, informovat dotčené osoby a zajistit možnost odvolání."
+      "Pravidla pro rizikové značky a ceny.",
+      "Žádost o doklad pravosti.",
+      "Fronta pro odborníka."
     ],
-    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah."
+    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah.",
+    "effort": "L"
   },
   {
     "id": "20.6",
@@ -2332,72 +2287,42 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho může být bezpečný checkout obcházen komunikací v chatu.",
     "example": "Podvodník pošle falešný odkaz na platbu; systém zprávu označí nebo zablokuje.",
     "build": [
-      "Konkrétní část: Chat blokuje nebo varuje před podezřelými odkazy, e-maily a přesunem platby mimo platformu.",
-      "Připravit hlášení nebo automatický signál s konkrétním důvodem.",
-      "Zobrazit případy v moderátorské frontě a umožnit rozhodnutí.",
-      "Zaznamenat zásah, informovat dotčené osoby a zajistit možnost odvolání."
+      "Rozpoznání odkazů, e-mailů a čísel účtů v chatu.",
+      "Varování nebo blokace zprávy.",
+      "Hlášení opakovaných pokusů."
     ],
-    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah."
+    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah.",
+    "effort": "M"
   },
   {
     "id": "20.7",
-    "title": "Rate limiting a anti-spam",
-    "category": "Bezpečnost a moderace",
-    "description": "Omezuje hromadné zprávy, scraping a automatizované útoky.",
-    "without": "Bez toho lze platformu snadněji spamovat nebo zneužívat roboty.",
-    "example": "Správce platformy použije možnost „Rate limiting a anti-spam“: omezuje hromadné zprávy, scraping a automatizované útoky.",
-    "build": [
-      "Konkrétní část: Omezuje hromadné zprávy, scraping a automatizované útoky.",
-      "Připravit hlášení nebo automatický signál s konkrétním důvodem.",
-      "Zobrazit případy v moderátorské frontě a umožnit rozhodnutí.",
-      "Zaznamenat zásah, informovat dotčené osoby a zajistit možnost odvolání."
-    ],
-    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah."
-  },
-  {
-    "id": "20.8",
     "title": "Dočasná a trvalá blokace účtu",
     "category": "Bezpečnost a moderace",
     "description": "Moderátor může účet omezit na určitou dobu nebo definitivně.",
     "without": "Bez toho lze pouze mazat jednotlivý obsah, ale problémový uživatel pokračuje.",
-    "example": "Správce platformy použije možnost „Dočasná a trvalá blokace účtu“: moderátor může účet omezit na určitou dobu nebo definitivně.",
+    "example": "Za opakované podvody dostane účet blokaci na 30 dní, při dalším porušení navždy.",
     "build": [
-      "Konkrétní část: Moderátor může účet omezit na určitou dobu nebo definitivně.",
-      "Připravit hlášení nebo automatický signál s konkrétním důvodem.",
-      "Zobrazit případy v moderátorské frontě a umožnit rozhodnutí.",
-      "Zaznamenat zásah, informovat dotčené osoby a zajistit možnost odvolání."
+      "Typy blokací a jejich délka.",
+      "Co blokovaný účet nesmí.",
+      "Upozornění s důvodem."
     ],
-    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah."
+    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah.",
+    "effort": "M"
   },
   {
-    "id": "20.9",
+    "id": "20.8",
     "title": "Odvolání proti moderaci",
     "category": "Bezpečnost a moderace",
     "description": "Uživatel může napadnout blokaci nebo smazání nabídky.",
     "without": "Bez toho budou omyly moderace řešeny chaoticky přes podporu.",
-    "example": "Správce platformy použije možnost „Odvolání proti moderaci“: uživatel může napadnout blokaci nebo smazání nabídky.",
+    "example": "Prodávající si myslí, že mu inzerát smazali neprávem, podá odvolání a moderátor rozhodne znovu.",
     "build": [
-      "Konkrétní část: Uživatel může napadnout blokaci nebo smazání nabídky.",
-      "Připravit hlášení nebo automatický signál s konkrétním důvodem.",
-      "Zobrazit případy v moderátorské frontě a umožnit rozhodnutí.",
-      "Zaznamenat zásah, informovat dotčené osoby a zajistit možnost odvolání."
+      "Formulář odvolání.",
+      "Druhé posouzení jiným moderátorem.",
+      "Odpověď s odůvodněním."
     ],
-    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah."
-  },
-  {
-    "id": "20.10",
-    "title": "Interní risk skóre",
-    "category": "Bezpečnost a moderace",
-    "description": "Systém hodnotí účty a transakce podle rizikových signálů.",
-    "without": "Bez něj se bezpečnostní kontroly aplikují plošně nebo pouze ručně.",
-    "example": "Správce platformy použije možnost „Interní risk skóre“: systém hodnotí účty a transakce podle rizikových signálů.",
-    "build": [
-      "Konkrétní část: Systém hodnotí účty a transakce podle rizikových signálů.",
-      "Připravit hlášení nebo automatický signál s konkrétním důvodem.",
-      "Zobrazit případy v moderátorské frontě a umožnit rozhodnutí.",
-      "Zaznamenat zásah, informovat dotčené osoby a zajistit možnost odvolání."
-    ],
-    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah."
+    "category_note": "Komunita nebo systém označí rizikové chování či nevhodný obsah.",
+    "effort": "M"
   },
   {
     "id": "21.1",
@@ -2407,12 +2332,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho nese kupující i platforma vyšší riziko u luxusních transakcí.",
     "example": "Dražší značková kabelka může před předáním projít kontrolou pravosti.",
     "build": [
-      "Konkrétní část: Vybraná objednávka nejprve putuje do ověřovacího centra.",
-      "Stanovit, které věci mohou projít touto kontrolou a za jakých podmínek.",
-      "Zajistit vhodný kontrolní krok, stav objednávky a sdělení výsledku.",
-      "Nastavit logistické a finanční větvení při úspěšné i neúspěšné kontrole."
+      "Smlouva s ověřovacím centrem nebo vlastní tým odborníků.",
+      "Postup ověření a protokol.",
+      "Poplatek za ověření v objednávce."
     ],
-    "category_note": "Kupující chce nezávislé potvrzení, že předmět odpovídá nabídce."
+    "category_note": "Kupující chce nezávislé potvrzení, že předmět odpovídá nabídce.",
+    "effort": "L"
   },
   {
     "id": "21.2",
@@ -2420,14 +2345,14 @@ window.BOBINA_FEATURES = [
     "category": "Ověření rizikových předmětů",
     "description": "Specialista zkontroluje funkčnost, stav, vlastnosti a případně originalitu zařízení.",
     "without": "Bez toho bude více sporů o skryté vady a funkčnost.",
-    "example": "Správce platformy použije možnost „Ověření elektroniky“: specialista zkontroluje funkčnost, stav, vlastnosti a případně originalitu zařízení.",
+    "example": "Kupující koupí iPhone za 8 000 Kč s ověřením; technik zkontroluje, že funguje a není kradený.",
     "build": [
-      "Konkrétní část: Specialista zkontroluje funkčnost, stav, vlastnosti a případně originalitu zařízení.",
-      "Stanovit, které věci mohou projít touto kontrolou a za jakých podmínek.",
-      "Zajistit vhodný kontrolní krok, stav objednávky a sdělení výsledku.",
-      "Nastavit logistické a finanční větvení při úspěšné i neúspěšné kontrole."
+      "Partner nebo technik pro kontrolu zařízení.",
+      "Kontrolní seznam podle typu zařízení.",
+      "Protokol pro kupujícího."
     ],
-    "category_note": "Kupující chce nezávislé potvrzení, že předmět odpovídá nabídce."
+    "category_note": "Kupující chce nezávislé potvrzení, že předmět odpovídá nabídce.",
+    "effort": "L"
   },
   {
     "id": "21.3",
@@ -2435,14 +2360,14 @@ window.BOBINA_FEATURES = [
     "category": "Ověření rizikových předmětů",
     "description": "Systém podle kategorie, značky a ceny určí, zda lze službu nabídnout.",
     "without": "Bez toho musí způsobilost určovat člověk.",
-    "example": "Správce platformy použije možnost „Automatická způsobilost pro ověření“: systém podle kategorie, značky a ceny určí, zda lze službu nabídnout.",
+    "example": "Aplikace nabídne ověření jen u značkových kabelek nad 3 000 Kč, u trička ne.",
     "build": [
-      "Konkrétní část: Systém podle kategorie, značky a ceny určí, zda lze službu nabídnout.",
-      "Stanovit, které věci mohou projít touto kontrolou a za jakých podmínek.",
-      "Zajistit vhodný kontrolní krok, stav objednávky a sdělení výsledku.",
-      "Nastavit logistické a finanční větvení při úspěšné i neúspěšné kontrole."
+      "Pravidla podle kategorie, značky a ceny.",
+      "Nabídka služby v objednávce.",
+      "Nastavení v administraci."
     ],
-    "category_note": "Kupující chce nezávislé potvrzení, že předmět odpovídá nabídce."
+    "category_note": "Kupující chce nezávislé potvrzení, že předmět odpovídá nabídce.",
+    "effort": "S"
   },
   {
     "id": "21.4",
@@ -2450,14 +2375,14 @@ window.BOBINA_FEATURES = [
     "category": "Ověření rizikových předmětů",
     "description": "Po zaplacení se zásilka neposílá rovnou kupujícímu.",
     "without": "Bez něj nelze autentizaci bezpečně vložit do objednávkového procesu.",
-    "example": "Správce platformy použije možnost „Speciální logistický tok přes ověřovací centrum“: po zaplacení se zásilka neposílá rovnou kupujícímu.",
+    "example": "Kabelka nejde rovnou kupující, ale nejdřív do ověřovacího centra a odtud teprve k ní.",
     "build": [
-      "Konkrétní část: Po zaplacení se zásilka neposílá rovnou kupujícímu.",
-      "Stanovit, které věci mohou projít touto kontrolou a za jakých podmínek.",
-      "Zajistit vhodný kontrolní krok, stav objednávky a sdělení výsledku.",
-      "Nastavit logistické a finanční větvení při úspěšné i neúspěšné kontrole."
+      "Doprava prodejce → centrum → kupující.",
+      "Stavy objednávky pro tuto cestu.",
+      "Sledování obou zásilek."
     ],
-    "category_note": "Kupující chce nezávislé potvrzení, že předmět odpovídá nabídce."
+    "category_note": "Kupující chce nezávislé potvrzení, že předmět odpovídá nabídce.",
+    "effort": "L"
   },
   {
     "id": "21.5",
@@ -2465,14 +2390,14 @@ window.BOBINA_FEATURES = [
     "category": "Ověření rizikových předmětů",
     "description": "Neúspěšně ověřená položka se nedoručí kupujícímu a spustí se definovaný proces vrácení.",
     "without": "Bez toho neexistuje automatický postup při neúspěšném ověření.",
-    "example": "Správce platformy použije možnost „Výsledek ověření a refundace“: neúspěšně ověřená položka se nedoručí kupujícímu a spustí se definovaný proces vrácení.",
+    "example": "Kabelka se ukáže jako padělek; kupující dostane všechny peníze zpět a kabelka se vrátí prodávajícímu.",
     "build": [
-      "Konkrétní část: Neúspěšně ověřená položka se nedoručí kupujícímu a spustí se definovaný proces vrácení.",
-      "Stanovit, které věci mohou projít touto kontrolou a za jakých podmínek.",
-      "Zajistit vhodný kontrolní krok, stav objednávky a sdělení výsledku.",
-      "Nastavit logistické a finanční větvení při úspěšné i neúspěšné kontrole."
+      "Zápis výsledku ověření.",
+      "Vrácení peněz a zboží při neúspěchu.",
+      "Upozornění oběma stranám."
     ],
-    "category_note": "Kupující chce nezávislé potvrzení, že předmět odpovídá nabídce."
+    "category_note": "Kupující chce nezávislé potvrzení, že předmět odpovídá nabídce.",
+    "effort": "M"
   },
   {
     "id": "22.1",
@@ -2480,14 +2405,14 @@ window.BOBINA_FEATURES = [
     "category": "Zákaznická podpora",
     "description": "Uživatel najde návody podle témat bez kontaktování podpory.",
     "without": "Bez něj bude podpora odpovídat stále na stejné otázky.",
-    "example": "Správce platformy použije možnost „Centrum nápovědy / FAQ“: uživatel najde návody podle témat bez kontaktování podpory.",
+    "example": "Uživatelka hledá „jak vrátit zboží“ a najde návod v nápovědě bez psaní podpoře.",
     "build": [
-      "Konkrétní část: Uživatel najde návody podle témat bez kontaktování podpory.",
-      "Zobrazit odpovídající kontaktní cestu či nápovědu.",
-      "Přiřadit požadavek k uživateli nebo objednávce a uložit komunikaci.",
-      "Umožnit podpoře vyřídit případ a zaznamenat odpověď i uzavření."
+      "Systém článků s kategoriemi a hledáním.",
+      "Napsání desítek návodů.",
+      "Správa článků bez programátora."
     ],
-    "category_note": "Uživatel potřebuje pomoc s nákupem, účtem nebo reklamací."
+    "category_note": "Uživatel potřebuje pomoc s nákupem, účtem nebo reklamací.",
+    "effort": "M"
   },
   {
     "id": "22.2",
@@ -2495,14 +2420,14 @@ window.BOBINA_FEATURES = [
     "category": "Zákaznická podpora",
     "description": "Formulář sbírá správná data podle typu požadavku.",
     "without": "Bez toho vzniknou dlouhé výměny zpráv kvůli chybějícím údajům.",
-    "example": "Správce platformy použije možnost „Kontaktní formulář podle problému“: formulář sbírá správná data podle typu požadavku.",
+    "example": "Ve formuláři vybere „Problém s platbou“ a formulář se rovnou zeptá na číslo objednávky.",
     "build": [
-      "Konkrétní část: Formulář sbírá správná data podle typu požadavku.",
-      "Zobrazit odpovídající kontaktní cestu či nápovědu.",
-      "Přiřadit požadavek k uživateli nebo objednávce a uložit komunikaci.",
-      "Umožnit podpoře vyřídit případ a zaznamenat odpověď i uzavření."
+      "Formulář s výběrem typu problému.",
+      "Povinná pole podle typu.",
+      "Odeslání do systému podpory."
     ],
-    "category_note": "Uživatel potřebuje pomoc s nákupem, účtem nebo reklamací."
+    "category_note": "Uživatel potřebuje pomoc s nákupem, účtem nebo reklamací.",
+    "effort": "S"
   },
   {
     "id": "22.3",
@@ -2512,12 +2437,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho se požadavky snadno ztratí nebo řeší duplicitně.",
     "example": "Uživatel vytvoří požadavek na podporu a dostane číslo případu i přehled odpovědí.",
     "build": [
-      "Konkrétní část: Každý požadavek má číslo, stav, prioritu a historii.",
-      "Zobrazit odpovídající kontaktní cestu či nápovědu.",
-      "Přiřadit požadavek k uživateli nebo objednávce a uložit komunikaci.",
-      "Umožnit podpoře vyřídit případ a zaznamenat odpověď i uzavření."
+      "Napojení nebo vlastní systém požadavků (např. Freshdesk, Zendesk).",
+      "Stavy, priority, přiřazení pracovníkům.",
+      "Historie komunikace."
     ],
-    "category_note": "Uživatel potřebuje pomoc s nákupem, účtem nebo reklamací."
+    "category_note": "Uživatel potřebuje pomoc s nákupem, účtem nebo reklamací.",
+    "effort": "M"
   },
   {
     "id": "22.4",
@@ -2525,14 +2450,14 @@ window.BOBINA_FEATURES = [
     "category": "Zákaznická podpora",
     "description": "Uživatel otevře podporu se současným kontextem transakce.",
     "without": "Bez toho uživatel opisuje čísla a vysvětluje celý případ.",
-    "example": "Správce platformy použije možnost „Podpora přímo z objednávky“: uživatel otevře podporu se současným kontextem transakce.",
+    "example": "U konkrétní objednávky klepne „Potřebuji pomoc“ a podpora hned ví, o jakou objednávku jde.",
     "build": [
-      "Konkrétní část: Uživatel otevře podporu se současným kontextem transakce.",
-      "Zobrazit odpovídající kontaktní cestu či nápovědu.",
-      "Přiřadit požadavek k uživateli nebo objednávce a uložit komunikaci.",
-      "Umožnit podpoře vyřídit případ a zaznamenat odpověď i uzavření."
+      "Tlačítko v objednávce.",
+      "Automatické přiložení údajů objednávky.",
+      "Zobrazení odpovědi v aplikaci."
     ],
-    "category_note": "Uživatel potřebuje pomoc s nákupem, účtem nebo reklamací."
+    "category_note": "Uživatel potřebuje pomoc s nákupem, účtem nebo reklamací.",
+    "effort": "S"
   },
   {
     "id": "22.5",
@@ -2540,14 +2465,14 @@ window.BOBINA_FEATURES = [
     "category": "Zákaznická podpora",
     "description": "Operátor má připravené reakce a akce pro typické situace.",
     "without": "Bez toho každý operátor odpovídá jinak a pomaleji.",
-    "example": "Správce platformy použije možnost „Šablony odpovědí a makra“: operátor má připravené reakce a akce pro typické situace.",
+    "example": "Pracovník podpory jedním klepnutím vloží připravenou odpověď „Jak vrátit zboží“.",
     "build": [
-      "Konkrétní část: Operátor má připravené reakce a akce pro typické situace.",
-      "Zobrazit odpovídající kontaktní cestu či nápovědu.",
-      "Přiřadit požadavek k uživateli nebo objednávce a uložit komunikaci.",
-      "Umožnit podpoře vyřídit případ a zaznamenat odpověď i uzavření."
+      "Knihovna odpovědí.",
+      "Vkládání jedním klepnutím.",
+      "Úpravy šablon."
     ],
-    "category_note": "Uživatel potřebuje pomoc s nákupem, účtem nebo reklamací."
+    "category_note": "Uživatel potřebuje pomoc s nákupem, účtem nebo reklamací.",
+    "effort": "S"
   },
   {
     "id": "22.6",
@@ -2555,14 +2480,14 @@ window.BOBINA_FEATURES = [
     "category": "Zákaznická podpora",
     "description": "Systém hlídá dobu odpovědi a předává kritické případy vyšší úrovni.",
     "without": "Bez toho mohou citlivé případy zůstat dlouho bez reakce.",
-    "example": "Správce platformy použije možnost „SLA a eskalace ticketů“: systém hlídá dobu odpovědi a předává kritické případy vyšší úrovni.",
+    "example": "Když na dotaz nikdo neodpoví do 24 hodin, přesune se automaticky vedoucímu podpory.",
     "build": [
-      "Konkrétní část: Systém hlídá dobu odpovědi a předává kritické případy vyšší úrovni.",
-      "Zobrazit odpovídající kontaktní cestu či nápovědu.",
-      "Přiřadit požadavek k uživateli nebo objednávce a uložit komunikaci.",
-      "Umožnit podpoře vyřídit případ a zaznamenat odpověď i uzavření."
+      "Lhůty podle priority.",
+      "Upozornění při překročení.",
+      "Předání vedoucímu."
     ],
-    "category_note": "Uživatel potřebuje pomoc s nákupem, účtem nebo reklamací."
+    "category_note": "Uživatel potřebuje pomoc s nákupem, účtem nebo reklamací.",
+    "effort": "S"
   },
   {
     "id": "23.1",
@@ -2570,14 +2495,14 @@ window.BOBINA_FEATURES = [
     "category": "Administrace",
     "description": "Interní přehled uživatelů, objednávek, sporů, peněz a stavu systému.",
     "without": "Bez něj se systém nedá efektivně provozovat ve větším měřítku.",
-    "example": "Správce platformy použije možnost „Admin dashboard“: interní přehled uživatelů, objednávek, sporů, peněz a stavu systému.",
+    "example": "Majitelka ráno otevře přehled: 120 nových objednávek, 3 spory, 2 nahlášené inzeráty.",
     "build": [
-      "Konkrétní část: Interní přehled uživatelů, objednávek, sporů, peněz a stavu systému.",
-      "Vytvořit příslušnou administrátorskou obrazovku a ovládání.",
-      "Zajistit oprávnění zaměstnanců, filtrování a bezpečné změny dat.",
-      "Uložit auditní záznam, kdo a proč změnu provedl."
+      "Hlavní přehled s čísly za den.",
+      "Rozcestník do všech částí administrace.",
+      "Přístup jen pro zaměstnance."
     ],
-    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci."
+    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci.",
+    "effort": "M"
   },
   {
     "id": "23.2",
@@ -2585,14 +2510,14 @@ window.BOBINA_FEATURES = [
     "category": "Administrace",
     "description": "Admin vyhledá účet, zkontroluje historii, ověření, blokace a poznámky.",
     "without": "Bez toho je řešení konkrétního uživatele velmi pomalé.",
-    "example": "Správce platformy použije možnost „Správa uživatelů“: admin vyhledá účet, zkontroluje historii, ověření, blokace a poznámky.",
+    "example": "Podpora najde uživatele podle e-mailu a vidí jeho objednávky, hodnocení a blokace.",
     "build": [
-      "Konkrétní část: Admin vyhledá účet, zkontroluje historii, ověření, blokace a poznámky.",
-      "Vytvořit příslušnou administrátorskou obrazovku a ovládání.",
-      "Zajistit oprávnění zaměstnanců, filtrování a bezpečné změny dat.",
-      "Uložit auditní záznam, kdo a proč změnu provedl."
+      "Hledání a detail uživatele.",
+      "Blokace, poznámky, historie.",
+      "Záznam všech zásahů."
     ],
-    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci."
+    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci.",
+    "effort": "M"
   },
   {
     "id": "23.3",
@@ -2600,14 +2525,14 @@ window.BOBINA_FEATURES = [
     "category": "Administrace",
     "description": "Admin může nabídku skrýt, smazat nebo upravit její stav.",
     "without": "Bez toho není možné rychle odstranit závadný obsah.",
-    "example": "Správce platformy použije možnost „Správa nabídek“: admin může nabídku skrýt, smazat nebo upravit její stav.",
+    "example": "Moderátor skryje inzerát s nevhodnou fotkou.",
     "build": [
-      "Konkrétní část: Admin může nabídku skrýt, smazat nebo upravit její stav.",
-      "Vytvořit příslušnou administrátorskou obrazovku a ovládání.",
-      "Zajistit oprávnění zaměstnanců, filtrování a bezpečné změny dat.",
-      "Uložit auditní záznam, kdo a proč změnu provedl."
+      "Hledání a detail inzerátu.",
+      "Skrytí, smazání, změna stavu.",
+      "Odůvodnění zásahu uživateli."
     ],
-    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci."
+    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci.",
+    "effort": "S"
   },
   {
     "id": "23.4",
@@ -2617,12 +2542,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho support nedokáže transakci efektivně opravit.",
     "example": "Administrátor otevře konkrétní problematickou objednávku a vidí její události.",
     "build": [
-      "Konkrétní část: Admin vidí časovou osu transakce a může provést povolené servisní zásahy.",
-      "Vytvořit příslušnou administrátorskou obrazovku a ovládání.",
-      "Zajistit oprávnění zaměstnanců, filtrování a bezpečné změny dat.",
-      "Uložit auditní záznam, kdo a proč změnu provedl."
+      "Detail objednávky s časovou osou.",
+      "Povolené zásahy (storno, prodloužení).",
+      "Záznam zásahů."
     ],
-    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci."
+    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci.",
+    "effort": "M"
   },
   {
     "id": "23.5",
@@ -2630,14 +2555,14 @@ window.BOBINA_FEATURES = [
     "category": "Administrace",
     "description": "Interní fronta sporů s důkazy, rozhodnutím a historií.",
     "without": "Bez toho se spory řeší v e-mailu nebo tabulkách.",
-    "example": "Správce platformy použije možnost „Správa sporů“: interní fronta sporů s důkazy, rozhodnutím a historií.",
+    "example": "Moderátor otevře spor, prohlédne fotky od kupujícího a rozhodne o vrácení peněz.",
     "build": [
-      "Konkrétní část: Interní fronta sporů s důkazy, rozhodnutím a historií.",
-      "Vytvořit příslušnou administrátorskou obrazovku a ovládání.",
-      "Zajistit oprávnění zaměstnanců, filtrování a bezpečné změny dat.",
-      "Uložit auditní záznam, kdo a proč změnu provedl."
+      "Fronta sporů s prioritou.",
+      "Důkazy a komunikace na jednom místě.",
+      "Rozhodnutí a jeho provedení."
     ],
-    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci."
+    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci.",
+    "effort": "M"
   },
   {
     "id": "23.6",
@@ -2645,14 +2570,14 @@ window.BOBINA_FEATURES = [
     "category": "Administrace",
     "description": "Oprávněný pracovník může spustit nebo schválit refundaci.",
     "without": "Bez toho musí každou výjimku řešit vývojář nebo platební provider.",
-    "example": "Správce platformy použije možnost „Správa refundací“: oprávněný pracovník může spustit nebo schválit refundaci.",
+    "example": "Pracovník financí schválí vrácení 420 Kč kupujícímu.",
     "build": [
-      "Konkrétní část: Oprávněný pracovník může spustit nebo schválit refundaci.",
-      "Vytvořit příslušnou administrátorskou obrazovku a ovládání.",
-      "Zajistit oprávnění zaměstnanců, filtrování a bezpečné změny dat.",
-      "Uložit auditní záznam, kdo a proč změnu provedl."
+      "Seznam žádostí o vrácení.",
+      "Schválení podle oprávnění.",
+      "Napojení na platební bránu."
     ],
-    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci."
+    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci.",
+    "effort": "S"
   },
   {
     "id": "23.7",
@@ -2660,14 +2585,14 @@ window.BOBINA_FEATURES = [
     "category": "Administrace",
     "description": "Obsahový tým mění katalog bez nasazení nové verze aplikace.",
     "without": "Bez toho každá změna vyžaduje programátora.",
-    "example": "Správce platformy použije možnost „Správa kategorií, značek a atributů“: obsahový tým mění katalog bez nasazení nové verze aplikace.",
+    "example": "Majitelka přidá novou značku nebo kategorii „Svatební šaty“ sama v administraci, bez programátora.",
     "build": [
-      "Konkrétní část: Obsahový tým mění katalog bez nasazení nové verze aplikace.",
-      "Vytvořit příslušnou administrátorskou obrazovku a ovládání.",
-      "Zajistit oprávnění zaměstnanců, filtrování a bezpečné změny dat.",
-      "Uložit auditní záznam, kdo a proč změnu provedl."
+      "Úpravy kategorií, značek a atributů.",
+      "Okamžité promítnutí do aplikace.",
+      "Kontrola dopadu na existující inzeráty."
     ],
-    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci."
+    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci.",
+    "effort": "M"
   },
   {
     "id": "23.8",
@@ -2675,14 +2600,14 @@ window.BOBINA_FEATURES = [
     "category": "Administrace",
     "description": "Marketing mění bannery, promo sekce a texty.",
     "without": "Bez toho je i jednoduchá změna marketingu technický úkol.",
-    "example": "Správce platformy použije možnost „Správa bannerů a obsahu“: marketing mění bannery, promo sekce a texty.",
+    "example": "Majitelka změní úvodní banner na „Podzimní kolekce“ sama v administraci.",
     "build": [
-      "Konkrétní část: Marketing mění bannery, promo sekce a texty.",
-      "Vytvořit příslušnou administrátorskou obrazovku a ovládání.",
-      "Zajistit oprávnění zaměstnanců, filtrování a bezpečné změny dat.",
-      "Uložit auditní záznam, kdo a proč změnu provedl."
+      "Nahrání banneru a plánování zobrazení.",
+      "Promo sekce na úvodní stránce.",
+      "Náhled před zveřejněním."
     ],
-    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci."
+    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci.",
+    "effort": "S"
   },
   {
     "id": "23.9",
@@ -2690,149 +2615,104 @@ window.BOBINA_FEATURES = [
     "category": "Administrace",
     "description": "Admin konfiguruje sazby, minimum, maximum a vybraná obchodní pravidla.",
     "without": "Bez toho je změna obchodního modelu závislá na vývoji.",
-    "example": "Správce platformy použije možnost „Správa poplatků a limitů“: admin konfiguruje sazby, minimum, maximum a vybraná obchodní pravidla.",
+    "example": "Majitelka změní poplatek pro kupující z 5 % na 4 % sama v administraci.",
     "build": [
-      "Konkrétní část: Admin konfiguruje sazby, minimum, maximum a vybraná obchodní pravidla.",
-      "Vytvořit příslušnou administrátorskou obrazovku a ovládání.",
-      "Zajistit oprávnění zaměstnanců, filtrování a bezpečné změny dat.",
-      "Uložit auditní záznam, kdo a proč změnu provedl."
+      "Formulář sazeb a limitů.",
+      "Platnost od data.",
+      "Historie změn."
     ],
-    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci."
+    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci.",
+    "effort": "S"
   },
   {
     "id": "23.10",
-    "title": "Audit log administrace",
-    "category": "Administrace",
-    "description": "Zapisuje, kdo, kdy a co změnil v citlivých datech.",
-    "without": "Bez toho nelze spolehlivě dohledat chybný nebo zneužitý zásah.",
-    "example": "Správce platformy použije možnost „Audit log administrace“: zapisuje, kdo, kdy a co změnil v citlivých datech.",
-    "build": [
-      "Konkrétní část: Zapisuje, kdo, kdy a co změnil v citlivých datech.",
-      "Vytvořit příslušnou administrátorskou obrazovku a ovládání.",
-      "Zajistit oprávnění zaměstnanců, filtrování a bezpečné změny dat.",
-      "Uložit auditní záznam, kdo a proč změnu provedl."
-    ],
-    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci."
-  },
-  {
-    "id": "23.11",
     "title": "Role a oprávnění zaměstnanců",
     "category": "Administrace",
     "description": "Odděluje přístup supportu, moderátorů, financí a superadmina.",
     "without": "Bez toho má příliš mnoho lidí zbytečně vysoká oprávnění.",
-    "example": "Správce platformy použije možnost „Role a oprávnění zaměstnanců“: odděluje přístup supportu, moderátorů, financí a superadmina.",
+    "example": "Pracovník podpory vidí objednávky, ale nemůže vracet peníze; to smí jen účetní.",
     "build": [
-      "Konkrétní část: Odděluje přístup supportu, moderátorů, financí a superadmina.",
-      "Vytvořit příslušnou administrátorskou obrazovku a ovládání.",
-      "Zajistit oprávnění zaměstnanců, filtrování a bezpečné změny dat.",
-      "Uložit auditní záznam, kdo a proč změnu provedl."
+      "Role (podpora, moderátor, finance, admin).",
+      "Omezení přístupu podle role.",
+      "Správa zaměstnanců."
     ],
-    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci."
+    "category_note": "Pracovník BOBINA spravuje provoz přes oddělenou administraci.",
+    "effort": "M"
   },
   {
     "id": "24.1",
-    "title": "Produktová analytika",
-    "category": "Statistiky a reporting",
-    "description": "Měří registrace, aktivitu, vyhledávání, oblíbené, chat a další události.",
-    "without": "Bez analytiky budou změny založené na pocitu.",
-    "example": "Správce platformy použije možnost „Produktová analytika“: měří registrace, aktivitu, vyhledávání, oblíbené, chat a další události.",
-    "build": [
-      "Konkrétní část: Měří registrace, aktivitu, vyhledávání, oblíbené, chat a další události.",
-      "Přesně definovat metriky a odkud se počítají.",
-      "Zaznamenávat odpovídající události a zobrazovat srozumitelný přehled.",
-      "Umožnit filtrování podle období a ověřovat úplnost dat."
-    ],
-    "category_note": "Vedení platformy sleduje čísla a rozhoduje podle reálného provozu."
-  },
-  {
-    "id": "24.2",
     "title": "Funnel nákupu",
     "category": "Statistiky a reporting",
     "description": "Sleduje detail → checkout → platba → dokončená objednávka.",
     "without": "Bez něj není jasné, proč je nízká konverze.",
-    "example": "Správce platformy použije možnost „Funnel nákupu“: sleduje detail → checkout → platba → dokončená objednávka.",
+    "example": "Přehled ukáže, že 1 000 lidí otevřelo inzerát, 200 kliklo na „Koupit“ a 150 zaplatilo.",
     "build": [
-      "Konkrétní část: Sleduje detail → checkout → platba → dokončená objednávka.",
-      "Přesně definovat metriky a odkud se počítají.",
-      "Zaznamenávat odpovídající události a zobrazovat srozumitelný přehled.",
-      "Umožnit filtrování podle období a ověřovat úplnost dat."
+      "Měření kroků od detailu k zaplacení.",
+      "Graf, kde lidé odpadají.",
+      "Srovnání v čase."
     ],
-    "category_note": "Vedení platformy sleduje čísla a rozhoduje podle reálného provozu."
+    "category_note": "Vedení platformy sleduje čísla a rozhoduje podle reálného provozu.",
+    "effort": "M"
   },
   {
-    "id": "24.3",
+    "id": "24.2",
     "title": "Funnel prodeje",
     "category": "Statistiky a reporting",
     "description": "Sleduje registraci prodejce → vystavení → zobrazení → prodej.",
     "without": "Bez něj se těžko pozná, proč na marketplace chybí nabídka.",
-    "example": "Správce platformy použije možnost „Funnel prodeje“: sleduje registraci prodejce → vystavení → zobrazení → prodej.",
+    "example": "Přehled ukáže, kolik nových prodávajících vystavilo první věc a kolik z nich opravdu prodalo.",
     "build": [
-      "Konkrétní část: Sleduje registraci prodejce → vystavení → zobrazení → prodej.",
-      "Přesně definovat metriky a odkud se počítají.",
-      "Zaznamenávat odpovídající události a zobrazovat srozumitelný přehled.",
-      "Umožnit filtrování podle období a ověřovat úplnost dat."
+      "Měření kroků od registrace k prodeji.",
+      "Graf, kde prodejci odpadají.",
+      "Srovnání v čase."
     ],
-    "category_note": "Vedení platformy sleduje čísla a rozhoduje podle reálného provozu."
+    "category_note": "Vedení platformy sleduje čísla a rozhoduje podle reálného provozu.",
+    "effort": "M"
   },
   {
-    "id": "24.4",
+    "id": "24.3",
     "title": "GMV a tržby platformy",
     "category": "Statistiky a reporting",
     "description": "Měří celkovou hodnotu obchodů a skutečný příjem platformy.",
     "without": "Bez toho nelze přesně řídit ekonomiku produktu.",
     "example": "Vedení sleduje hodnotu obchodů a skutečné příjmy z provizí zvlášť.",
     "build": [
-      "Konkrétní část: Měří celkovou hodnotu obchodů a skutečný příjem platformy.",
-      "Přesně definovat metriky a odkud se počítají.",
-      "Zaznamenávat odpovídající události a zobrazovat srozumitelný přehled.",
-      "Umožnit filtrování podle období a ověřovat úplnost dat."
+      "Výpočet obratu a příjmů platformy.",
+      "Přehled po dnech a měsících.",
+      "Napojení na účetnictví."
     ],
-    "category_note": "Vedení platformy sleduje čísla a rozhoduje podle reálného provozu."
+    "category_note": "Vedení platformy sleduje čísla a rozhoduje podle reálného provozu.",
+    "effort": "M"
   },
   {
-    "id": "24.5",
-    "title": "Retence a cohorty",
-    "category": "Statistiky a reporting",
-    "description": "Ukazuje, kolik uživatelů se vrací po týdnech a měsících.",
-    "without": "Bez toho se sledují jen registrace, ne kvalita růstu.",
-    "example": "Správce platformy použije možnost „Retence a cohorty“: ukazuje, kolik uživatelů se vrací po týdnech a měsících.",
-    "build": [
-      "Konkrétní část: Ukazuje, kolik uživatelů se vrací po týdnech a měsících.",
-      "Přesně definovat metriky a odkud se počítají.",
-      "Zaznamenávat odpovídající události a zobrazovat srozumitelný přehled.",
-      "Umožnit filtrování podle období a ověřovat úplnost dat."
-    ],
-    "category_note": "Vedení platformy sleduje čísla a rozhoduje podle reálného provozu."
-  },
-  {
-    "id": "24.6",
+    "id": "24.4",
     "title": "Fraud a moderation reporting",
     "category": "Statistiky a reporting",
     "description": "Měří podvody, blokace, padělky, storna a reklamace.",
     "without": "Bez toho nelze poznat, zda riziko roste.",
-    "example": "Správce platformy použije možnost „Fraud a moderation reporting“: měří podvody, blokace, padělky, storna a reklamace.",
+    "example": "Přehled ukáže 12 zablokovaných podvodníků a 3 padělky tento měsíc.",
     "build": [
-      "Konkrétní část: Měří podvody, blokace, padělky, storna a reklamace.",
-      "Přesně definovat metriky a odkud se počítají.",
-      "Zaznamenávat odpovídající události a zobrazovat srozumitelný přehled.",
-      "Umožnit filtrování podle období a ověřovat úplnost dat."
+      "Počty podvodů, blokací a reklamací.",
+      "Trendy v čase.",
+      "Podklady pro zprávu podle DSA."
     ],
-    "category_note": "Vedení platformy sleduje čísla a rozhoduje podle reálného provozu."
+    "category_note": "Vedení platformy sleduje čísla a rozhoduje podle reálného provozu.",
+    "effort": "M"
   },
   {
-    "id": "24.7",
+    "id": "24.5",
     "title": "Export reportů",
     "category": "Statistiky a reporting",
     "description": "Vybraná data lze exportovat do CSV/XLSX nebo účetních nástrojů.",
     "without": "Bez exportu jsou týmy odkázány jen na interní dashboard.",
-    "example": "Správce platformy použije možnost „Export reportů“: vybraná data lze exportovat do CSV/XLSX nebo účetních nástrojů.",
+    "example": "Účetní si stáhne přehled poplatků za měsíc do Excelu.",
     "build": [
-      "Konkrétní část: Vybraná data lze exportovat do CSV/XLSX nebo účetních nástrojů.",
-      "Přesně definovat metriky a odkud se počítají.",
-      "Zaznamenávat odpovídající události a zobrazovat srozumitelný přehled.",
-      "Umožnit filtrování podle období a ověřovat úplnost dat."
+      "Export do CSV / Excelu.",
+      "Výběr období a údajů.",
+      "Pravidelné automatické zasílání."
     ],
-    "category_note": "Vedení platformy sleduje čísla a rozhoduje podle reálného provozu."
+    "category_note": "Vedení platformy sleduje čísla a rozhoduje podle reálného provozu.",
+    "effort": "S"
   },
   {
     "id": "25.1",
@@ -2840,14 +2720,14 @@ window.BOBINA_FEATURES = [
     "category": "Právo a soukromí",
     "description": "Definují vztah mezi platformou a uživateli.",
     "without": "Bez nich je provoz právně zásadně rizikový.",
-    "example": "Správce platformy použije možnost „Obchodní podmínky“: definují vztah mezi platformou a uživateli.",
+    "example": "Při registraci uživatelka odsouhlasí obchodní podmínky Bobiny.",
     "build": [
-      "Konkrétní část: Definují vztah mezi platformou a uživateli.",
-      "Připravit příslušný text nebo uživatelský proces s právním specialistou.",
-      "Zajistit ukládání relevantních souhlasů, žádostí či verzí.",
-      "Zajistit dostupnost a dohledatelnost údajů a zákonné lhůty."
+      "Sepsání podmínek s právníkem.",
+      "Stránka v aplikaci a na webu.",
+      "Odsouhlasení při registraci a po změně."
     ],
-    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele."
+    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele.",
+    "effort": "M"
   },
   {
     "id": "25.2",
@@ -2855,14 +2735,14 @@ window.BOBINA_FEATURES = [
     "category": "Právo a soukromí",
     "description": "Informují, jaká data se zpracovávají a proč.",
     "without": "Bez nich hrozí právní a reputační problém.",
-    "example": "Správce platformy použije možnost „Zásady ochrany osobních údajů“: informují, jaká data se zpracovávají a proč.",
+    "example": "V aplikaci je stránka, která vysvětluje, jaké údaje Bobina o uživatelce ukládá a proč.",
     "build": [
-      "Konkrétní část: Informují, jaká data se zpracovávají a proč.",
-      "Připravit příslušný text nebo uživatelský proces s právním specialistou.",
-      "Zajistit ukládání relevantních souhlasů, žádostí či verzí.",
-      "Zajistit dostupnost a dohledatelnost údajů a zákonné lhůty."
+      "Sepsání zásad s právníkem (GDPR).",
+      "Stránka v aplikaci a na webu.",
+      "Kontakt pro dotazy k osobním údajům."
     ],
-    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele."
+    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele.",
+    "effort": "M"
   },
   {
     "id": "25.3",
@@ -2872,12 +2752,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez něj mohou být analytické/marketingové cookies používány nesprávně.",
     "example": "Při první návštěvě webu si návštěvník zvolí analytické a marketingové cookies.",
     "build": [
-      "Konkrétní část: Uživatel nastaví analytické a marketingové cookies.",
-      "Připravit příslušný text nebo uživatelský proces s právním specialistou.",
-      "Zajistit ukládání relevantních souhlasů, žádostí či verzí.",
-      "Zajistit dostupnost a dohledatelnost údajů a zákonné lhůty."
+      "Lišta se souhlasem a nastavením.",
+      "Spouštění měřicích nástrojů až po souhlasu.",
+      "Uložení volby."
     ],
-    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele."
+    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele.",
+    "effort": "S"
   },
   {
     "id": "25.4",
@@ -2885,14 +2765,14 @@ window.BOBINA_FEATURES = [
     "category": "Právo a soukromí",
     "description": "Uživatel může získat kopii svých dat.",
     "without": "Bez něj se žádosti musí zpracovávat ručně.",
-    "example": "Správce platformy použije možnost „Export osobních údajů“: uživatel může získat kopii svých dat.",
+    "example": "Uživatelka si v nastavení stáhne všechna svá data v jednom souboru.",
     "build": [
-      "Konkrétní část: Uživatel může získat kopii svých dat.",
-      "Připravit příslušný text nebo uživatelský proces s právním specialistou.",
-      "Zajistit ukládání relevantních souhlasů, žádostí či verzí.",
-      "Zajistit dostupnost a dohledatelnost údajů a zákonné lhůty."
+      "Sestavení všech dat uživatele do souboru.",
+      "Bezpečné stažení.",
+      "Lhůta pro vyřízení podle GDPR."
     ],
-    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele."
+    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele.",
+    "effort": "M"
   },
   {
     "id": "25.5",
@@ -2900,14 +2780,14 @@ window.BOBINA_FEATURES = [
     "category": "Právo a soukromí",
     "description": "Řídí mazání nebo anonymizaci dat při zachování zákonných povinností.",
     "without": "Bez procesu vzniká chaos mezi GDPR a účetními povinnostmi.",
-    "example": "Správce platformy použije možnost „Žádost o výmaz osobních údajů“: řídí mazání nebo anonymizaci dat při zachování zákonných povinností.",
+    "example": "Uživatelka požádá o smazání svých údajů a Bobina je smaže, kromě toho, co musí ze zákona uchovat.",
     "build": [
-      "Konkrétní část: Řídí mazání nebo anonymizaci dat při zachování zákonných povinností.",
-      "Připravit příslušný text nebo uživatelský proces s právním specialistou.",
-      "Zajistit ukládání relevantních souhlasů, žádostí či verzí.",
-      "Zajistit dostupnost a dohledatelnost údajů a zákonné lhůty."
+      "Žádost v nastavení.",
+      "Smazání nebo anonymizace ve všech systémech.",
+      "Výjimky podle zákona."
     ],
-    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele."
+    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele.",
+    "effort": "M"
   },
   {
     "id": "25.6",
@@ -2915,14 +2795,14 @@ window.BOBINA_FEATURES = [
     "category": "Právo a soukromí",
     "description": "Nastaví minimální věk nebo zvláštní režim pro nezletilé.",
     "without": "Bez toho může platforma přijímat uživatele, pro které není právně připravena.",
-    "example": "Správce platformy použije možnost „Věkové omezení a souhlas zákonného zástupce“: nastaví minimální věk nebo zvláštní režim pro nezletilé.",
+    "example": "Při registraci aplikace pustí jen lidi od 18 let, nebo mladší se souhlasem rodiče.",
     "build": [
-      "Konkrétní část: Nastaví minimální věk nebo zvláštní režim pro nezletilé.",
-      "Připravit příslušný text nebo uživatelský proces s právním specialistou.",
-      "Zajistit ukládání relevantních souhlasů, žádostí či verzí.",
-      "Zajistit dostupnost a dohledatelnost údajů a zákonné lhůty."
+      "Kontrola věku při registraci.",
+      "Pravidla pro nezletilé.",
+      "Zablokování podezřelých účtů."
     ],
-    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele."
+    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele.",
+    "effort": "S"
   },
   {
     "id": "25.7",
@@ -2930,29 +2810,74 @@ window.BOBINA_FEATURES = [
     "category": "Právo a soukromí",
     "description": "Systém eviduje relevantní prodejní údaje a limity pro zákonné reportování.",
     "without": "Bez toho bude compliance založená na ručním dohledávání dat.",
-    "example": "Správce platformy použije možnost „Daňové / regulatorní reporty pro prodejce“: systém eviduje relevantní prodejní údaje a limity pro zákonné reportování.",
+    "example": "Prodávající, který prodá víc než 30 věcí za rok, se musí podle zákona nahlásit finančnímu úřadu; aplikace to hlídá.",
     "build": [
-      "Konkrétní část: Systém eviduje relevantní prodejní údaje a limity pro zákonné reportování.",
-      "Připravit příslušný text nebo uživatelský proces s právním specialistou.",
-      "Zajistit ukládání relevantních souhlasů, žádostí či verzí.",
-      "Zajistit dostupnost a dohledatelnost údajů a zákonné lhůty."
+      "Sledování počtu a obratu prodejů každého uživatele (DAC7).",
+      "Sběr údajů od prodejců nad limitem.",
+      "Roční hlášení finanční správě."
     ],
-    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele."
+    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele.",
+    "effort": "L"
   },
   {
     "id": "25.8",
-    "title": "Evidence souhlasů a verzí dokumentů",
+    "title": "Práva spotřebitele u PRO prodejců (14 dní na vrácení)",
     "category": "Právo a soukromí",
-    "description": "Systém ví, jakou verzi podmínek uživatel odsouhlasil.",
-    "without": "Bez toho nelze prokázat, co uživatel v daném čase přijal.",
-    "example": "Správce platformy použije možnost „Evidence souhlasů a verzí dokumentů“: systém ví, jakou verzi podmínek uživatel odsouhlasil.",
+    "description": "U nákupu od firemního prodejce má kupující zákonná práva spotřebitele, např. vrátit zboží do 14 dnů bez udání důvodu.",
+    "example": "Kupující koupí šaty od second handu s PRO účtem a do 14 dnů je může vrátit, i když jsou v pořádku.",
+    "without": "Bez toho by firemní prodej v aplikaci nesplňoval pravidla ochrany spotřebitele.",
     "build": [
-      "Konkrétní část: Systém ví, jakou verzi podmínek uživatel odsouhlasil.",
-      "Připravit příslušný text nebo uživatelský proces s právním specialistou.",
-      "Zajistit ukládání relevantních souhlasů, žádostí či verzí.",
-      "Zajistit dostupnost a dohledatelnost údajů a zákonné lhůty."
+      "Odlišení nákupu od soukromé osoby a od firmy.",
+      "Proces odstoupení do 14 dnů.",
+      "Informace kupujícímu před nákupem."
     ],
-    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele."
+    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele.",
+    "effort": "M"
+  },
+  {
+    "id": "25.9",
+    "title": "Faktury od PRO prodejců",
+    "category": "Právo a soukromí",
+    "description": "Firemní prodejce vystaví kupujícímu doklad o koupi a platforma vystavuje doklady za své poplatky.",
+    "example": "Kupující dostane k šatům od firemního prodejce fakturu v PDF a uživatelka dostane doklad za zaplacené topování.",
+    "without": "Bez dokladů nemůže firma v aplikaci legálně prodávat a uživatelé nemají potvrzení plateb.",
+    "build": [
+      "Generování dokladů v PDF.",
+      "Doklady za poplatky platformy.",
+      "Archiv ke stažení."
+    ],
+    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele.",
+    "effort": "M"
+  },
+  {
+    "id": "25.10",
+    "title": "Ověření firemních prodejců",
+    "category": "Právo a soukromí",
+    "description": "Než firma začne prodávat, doloží své údaje (IČO, sídlo, kontakt) a platforma je ověří.",
+    "example": "Second hand „Retro Brno“ zadá IČO, aplikace ho ověří v rejstříku a teprve pak může prodávat jako PRO.",
+    "without": "Bez toho by mohl kdokoli vystupovat jako firma bez dohledatelných údajů.",
+    "build": [
+      "Formulář firemních údajů.",
+      "Ověření v obchodním rejstříku.",
+      "Zobrazení údajů firmy kupujícím."
+    ],
+    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele.",
+    "effort": "M"
+  },
+  {
+    "id": "25.11",
+    "title": "Povinnosti platformy podle DSA",
+    "category": "Právo a soukromí",
+    "description": "Evropské nařízení o digitálních službách: oznámení nezákonného obsahu, vysvětlení každého zásahu moderace a pravidelná zpráva o moderaci.",
+    "example": "Bobina smaže inzerát a uživatelka dostane vysvětlení „proč a podle jakého pravidla“ s možností odvolání.",
+    "without": "Bez toho platforma nesplní povinnosti, které pro online tržiště v EU platí.",
+    "build": [
+      "Formulář pro oznámení nezákonného obsahu.",
+      "Odůvodnění každého zásahu a odvolání.",
+      "Podklady pro zprávu o transparentnosti."
+    ],
+    "category_note": "Platforma musí dodržovat závazná pravidla a informovat uživatele.",
+    "effort": "M"
   },
   {
     "id": "26.1",
@@ -2960,14 +2885,14 @@ window.BOBINA_FEATURES = [
     "category": "Mezinárodní provoz",
     "description": "Aplikace zobrazuje rozhraní podle jazyka uživatele.",
     "without": "Bez toho je produkt prakticky omezen na jeden jazykový trh.",
-    "example": "Uživatel použije možnost „Vícejazyčnost“: aplikace zobrazuje rozhraní podle jazyka uživatele.",
+    "example": "Slovenská uživatelka vidí aplikaci ve slovenštině, česká v češtině.",
     "build": [
-      "Konkrétní část: Aplikace zobrazuje rozhraní podle jazyka uživatele.",
-      "Vytvořit nastavení jazyka či země a příslušné uživatelské rozhraní.",
-      "Provázat správný obsah, nabídky, platby a dopravce s konkrétní zemí.",
-      "Ošetřit nedostupné služby a rozdíly místních pravidel."
+      "Všechny texty aplikace v souborech pro překlad.",
+      "Překlad do každého jazyka.",
+      "Volba jazyka a formáty dat a cen."
     ],
-    "category_note": "Uživatel nakupuje v jiném jazyce, zemi nebo měně."
+    "category_note": "Uživatel nakupuje v jiném jazyce, zemi nebo měně.",
+    "effort": "M"
   },
   {
     "id": "26.2",
@@ -2975,14 +2900,14 @@ window.BOBINA_FEATURES = [
     "category": "Mezinárodní provoz",
     "description": "Zprávy lze automaticky přeložit mezi jazyky.",
     "without": "Bez toho bude mezinárodní komunikace horší.",
-    "example": "Uživatel použije možnost „Automatický překlad chatu“: zprávy lze automaticky přeložit mezi jazyky.",
+    "example": "Česká kupující píše slovenské prodejkyni a obě vidí zprávy přeložené do svého jazyka.",
     "build": [
-      "Konkrétní část: Zprávy lze automaticky přeložit mezi jazyky.",
-      "Vytvořit nastavení jazyka či země a příslušné uživatelské rozhraní.",
-      "Provázat správný obsah, nabídky, platby a dopravce s konkrétní zemí.",
-      "Ošetřit nedostupné služby a rozdíly místních pravidel."
+      "Napojení překladové služby (placená podle objemu).",
+      "Tlačítko Přeložit u zprávy.",
+      "Ukládání překladů kvůli nákladům."
     ],
-    "category_note": "Uživatel nakupuje v jiném jazyce, zemi nebo měně."
+    "category_note": "Uživatel nakupuje v jiném jazyce, zemi nebo měně.",
+    "effort": "M"
   },
   {
     "id": "26.3",
@@ -2992,12 +2917,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho zahraniční produkty zůstanou pro část uživatelů nesrozumitelné.",
     "example": "Německý kupující si nechá zobrazit český popis inzerátu přeložený do němčiny.",
     "build": [
-      "Konkrétní část: Zobrazí strojový překlad inzerátu.",
-      "Vytvořit nastavení jazyka či země a příslušné uživatelské rozhraní.",
-      "Provázat správný obsah, nabídky, platby a dopravce s konkrétní zemí.",
-      "Ošetřit nedostupné služby a rozdíly místních pravidel."
+      "Napojení překladové služby.",
+      "Překlad na detailu inzerátu.",
+      "Ukládání překladů."
     ],
-    "category_note": "Uživatel nakupuje v jiném jazyce, zemi nebo měně."
+    "category_note": "Uživatel nakupuje v jiném jazyce, zemi nebo měně.",
+    "effort": "M"
   },
   {
     "id": "26.4",
@@ -3005,14 +2930,14 @@ window.BOBINA_FEATURES = [
     "category": "Mezinárodní provoz",
     "description": "Zobrazuje a zpracovává ceny v podporovaných měnách.",
     "without": "Bez toho musí být všechny země v jedné měně nebo oddělené.",
-    "example": "Uživatel použije možnost „Více měn“: zobrazuje a zpracovává ceny v podporovaných měnách.",
+    "example": "Na Slovensku se ceny ukazují v eurech, v Česku v korunách.",
     "build": [
-      "Konkrétní část: Zobrazuje a zpracovává ceny v podporovaných měnách.",
-      "Vytvořit nastavení jazyka či země a příslušné uživatelské rozhraní.",
-      "Provázat správný obsah, nabídky, platby a dopravce s konkrétní zemí.",
-      "Ošetřit nedostupné služby a rozdíly místních pravidel."
+      "Kurzy a přepočty měn.",
+      "Platby v různých měnách přes bránu.",
+      "Zaokrouhlení a zobrazení."
     ],
-    "category_note": "Uživatel nakupuje v jiném jazyce, zemi nebo měně."
+    "category_note": "Uživatel nakupuje v jiném jazyce, zemi nebo měně.",
+    "effort": "M"
   },
   {
     "id": "26.5",
@@ -3020,14 +2945,14 @@ window.BOBINA_FEATURES = [
     "category": "Mezinárodní provoz",
     "description": "Definuje, mezi kterými zeměmi lze vytvořit zásilku.",
     "without": "Bez ní zůstávají země oddělené marketplace.",
-    "example": "Uživatel použije možnost „Přeshraniční doprava“: definuje, mezi kterými zeměmi lze vytvořit zásilku.",
+    "example": "Kupující z Prahy si objedná bundu od prodejkyně z Bratislavy a doprava se vyřeší v aplikaci.",
     "build": [
-      "Konkrétní část: Definuje, mezi kterými zeměmi lze vytvořit zásilku.",
-      "Vytvořit nastavení jazyka či země a příslušné uživatelské rozhraní.",
-      "Provázat správný obsah, nabídky, platby a dopravce s konkrétní zemí.",
-      "Ošetřit nedostupné služby a rozdíly místních pravidel."
+      "Dopravci mezi zeměmi a jejich ceny.",
+      "Pravidla pro clo a zakázané zboží.",
+      "Sledování mezinárodních zásilek."
     ],
-    "category_note": "Uživatel nakupuje v jiném jazyce, zemi nebo měně."
+    "category_note": "Uživatel nakupuje v jiném jazyce, zemi nebo měně.",
+    "effort": "L"
   },
   {
     "id": "26.6",
@@ -3035,14 +2960,14 @@ window.BOBINA_FEATURES = [
     "category": "Mezinárodní provoz",
     "description": "Funkce, kategorie a dopravci se mohou lišit podle trhu.",
     "without": "Bez toho musí všechny země podporovat přesně stejné funkce.",
-    "example": "Uživatel použije možnost „Pravidla dostupnosti podle země“: funkce, kategorie a dopravci se mohou lišit podle trhu.",
+    "example": "Na Slovensku je k dispozici jiný dopravce než v Česku a aplikace to sama hlídá.",
     "build": [
-      "Konkrétní část: Funkce, kategorie a dopravci se mohou lišit podle trhu.",
-      "Vytvořit nastavení jazyka či země a příslušné uživatelské rozhraní.",
-      "Provázat správný obsah, nabídky, platby a dopravce s konkrétní zemí.",
-      "Ošetřit nedostupné služby a rozdíly místních pravidel."
+      "Nastavení funkcí podle země.",
+      "Dopravci a platby podle země.",
+      "Správa v administraci."
     ],
-    "category_note": "Uživatel nakupuje v jiném jazyce, zemi nebo měně."
+    "category_note": "Uživatel nakupuje v jiném jazyce, zemi nebo měně.",
+    "effort": "M"
   },
   {
     "id": "27.1",
@@ -3050,14 +2975,14 @@ window.BOBINA_FEATURES = [
     "category": "Mobilní aplikace a přístupnost",
     "description": "Nativní nebo cross-platform aplikace pro iPhone.",
     "without": "Bez iOS přijde platforma o velkou část trhu.",
-    "example": "Uživatel použije možnost „iOS aplikace“: nativní nebo cross-platform aplikace pro iPhone.",
+    "example": "Uživatelka si stáhne Bobinu z App Store na iPhone.",
     "build": [
-      "Konkrétní část: Nativní nebo cross-platform aplikace pro iPhone.",
-      "Připravit odpovídající rozhraní a navigaci pro cílové zařízení.",
-      "Zajistit přihlášení, sdílení odkazů a průchod nákupním procesem.",
-      "Testovat konkrétní platformy, velikosti displeje a přístupnost."
+      "Vývoj aplikace pro iPhone (všechny obrazovky).",
+      "Vývojářský účet Apple a schválení v App Store.",
+      "Aktualizace a podpora nových verzí iOS."
     ],
-    "category_note": "Kupující používá BOBINA na telefonu nebo na počítači."
+    "category_note": "Kupující používá BOBINA na telefonu nebo na počítači.",
+    "effort": "L"
   },
   {
     "id": "27.2",
@@ -3065,14 +2990,14 @@ window.BOBINA_FEATURES = [
     "category": "Mobilní aplikace a přístupnost",
     "description": "Aplikace pro telefony s Androidem.",
     "without": "Bez Androidu je zásah výrazně omezený.",
-    "example": "Uživatel použije možnost „Android aplikace“: aplikace pro telefony s Androidem.",
+    "example": "Uživatelka si stáhne Bobinu z Google Play na telefon s Androidem.",
     "build": [
-      "Konkrétní část: Aplikace pro telefony s Androidem.",
-      "Připravit odpovídající rozhraní a navigaci pro cílové zařízení.",
-      "Zajistit přihlášení, sdílení odkazů a průchod nákupním procesem.",
-      "Testovat konkrétní platformy, velikosti displeje a přístupnost."
+      "Vývoj aplikace pro Android (všechny obrazovky).",
+      "Účet Google Play a schválení.",
+      "Testování na různých telefonech."
     ],
-    "category_note": "Kupující používá BOBINA na telefonu nebo na počítači."
+    "category_note": "Kupující používá BOBINA na telefonu nebo na počítači.",
+    "effort": "L"
   },
   {
     "id": "27.3",
@@ -3080,74 +3005,59 @@ window.BOBINA_FEATURES = [
     "category": "Mobilní aplikace a přístupnost",
     "description": "Marketplace funguje také v prohlížeči.",
     "without": "Bez webu je celý produkt závislý na instalaci aplikace.",
-    "example": "Uživatel použije možnost „Webová verze“: marketplace funguje také v prohlížeči.",
+    "example": "Bobina jde otevřít i na počítači v prohlížeči, bez stahování.",
     "build": [
-      "Konkrétní část: Marketplace funguje také v prohlížeči.",
-      "Připravit odpovídající rozhraní a navigaci pro cílové zařízení.",
-      "Zajistit přihlášení, sdílení odkazů a průchod nákupním procesem.",
-      "Testovat konkrétní platformy, velikosti displeje a přístupnost."
+      "Web se všemi funkcemi aplikace.",
+      "Funguje na počítači i mobilu.",
+      "Vyhledávače (SEO) – inzeráty dohledatelné na Googlu."
     ],
-    "category_note": "Kupující používá BOBINA na telefonu nebo na počítači."
+    "category_note": "Kupující používá BOBINA na telefonu nebo na počítači.",
+    "effort": "L"
   },
   {
     "id": "27.4",
-    "title": "Deep links",
-    "category": "Mobilní aplikace a přístupnost",
-    "description": "Odkaz otevře přímo konkrétní produkt, profil nebo objednávku v aplikaci.",
-    "without": "Bez toho uživatel po kliknutí skončí pouze na úvodní obrazovce.",
-    "example": "Odkaz na konkrétní boty otevře v mobilu přímo detail v aplikaci.",
-    "build": [
-      "Konkrétní část: Odkaz otevře přímo konkrétní produkt, profil nebo objednávku v aplikaci.",
-      "Připravit odpovídající rozhraní a navigaci pro cílové zařízení.",
-      "Zajistit přihlášení, sdílení odkazů a průchod nákupním procesem.",
-      "Testovat konkrétní platformy, velikosti displeje a přístupnost."
-    ],
-    "category_note": "Kupující používá BOBINA na telefonu nebo na počítači."
-  },
-  {
-    "id": "27.5",
     "title": "Biometrické odemknutí citlivých funkcí",
     "category": "Mobilní aplikace a přístupnost",
     "description": "Face ID / Touch ID může chránit peněženku nebo změnu údajů.",
     "without": "Bez toho se citlivé akce chrání pouze heslem / relací.",
-    "example": "Uživatel použije možnost „Biometrické odemknutí citlivých funkcí“: face ID / Touch ID může chránit peněženku nebo změnu údajů.",
+    "example": "Před výběrem peněz z peněženky aplikace chce Face ID nebo otisk prstu.",
     "build": [
-      "Konkrétní část: Face ID / Touch ID může chránit peněženku nebo změnu údajů.",
-      "Připravit odpovídající rozhraní a navigaci pro cílové zařízení.",
-      "Zajistit přihlášení, sdílení odkazů a průchod nákupním procesem.",
-      "Testovat konkrétní platformy, velikosti displeje a přístupnost."
+      "Face ID / otisk prstu v aplikaci.",
+      "Vyžadování u citlivých akcí.",
+      "Záložní ověření heslem."
     ],
-    "category_note": "Kupující používá BOBINA na telefonu nebo na počítači."
+    "category_note": "Kupující používá BOBINA na telefonu nebo na počítači.",
+    "effort": "S"
   },
   {
-    "id": "27.6",
+    "id": "27.5",
     "title": "Dark mode",
     "category": "Mobilní aplikace a přístupnost",
     "description": "Rozhraní podporuje světlé a tmavé téma.",
     "without": "Bez něj aplikace funguje normálně, jen s menší mírou personalizace.",
-    "example": "Uživatel použije možnost „Dark mode“: rozhraní podporuje světlé a tmavé téma.",
+    "example": "Večer se aplikace přepne do tmavých barev, aby neoslňovala.",
     "build": [
-      "Konkrétní část: Rozhraní podporuje světlé a tmavé téma.",
-      "Připravit odpovídající rozhraní a navigaci pro cílové zařízení.",
-      "Zajistit přihlášení, sdílení odkazů a průchod nákupním procesem.",
-      "Testovat konkrétní platformy, velikosti displeje a přístupnost."
+      "Druhá barevná sada.",
+      "Přepnutí podle telefonu nebo ručně.",
+      "Kontrola všech obrazovek."
     ],
-    "category_note": "Kupující používá BOBINA na telefonu nebo na počítači."
+    "category_note": "Kupující používá BOBINA na telefonu nebo na počítači.",
+    "effort": "S"
   },
   {
-    "id": "27.7",
+    "id": "27.6",
     "title": "Přístupnost",
     "category": "Mobilní aplikace a přístupnost",
     "description": "Podpora čteček obrazovky, kontrastu, velikosti textu a ovládání.",
     "without": "Bez ní část uživatelů aplikaci nebude schopna pohodlně používat.",
-    "example": "Uživatel použije možnost „Přístupnost“: podpora čteček obrazovky, kontrastu, velikosti textu a ovládání.",
+    "example": "Nevidomý uživatel si nechá aplikaci předčítat a zvětší si písmo.",
     "build": [
-      "Konkrétní část: Podpora čteček obrazovky, kontrastu, velikosti textu a ovládání.",
-      "Připravit odpovídající rozhraní a navigaci pro cílové zařízení.",
-      "Zajistit přihlášení, sdílení odkazů a průchod nákupním procesem.",
-      "Testovat konkrétní platformy, velikosti displeje a přístupnost."
+      "Popisky pro čtečky obrazovky.",
+      "Kontrast a zvětšení písma.",
+      "Ovládání bez myši a test s nástroji."
     ],
-    "category_note": "Kupující používá BOBINA na telefonu nebo na počítači."
+    "category_note": "Kupující používá BOBINA na telefonu nebo na počítači.",
+    "effort": "M"
   },
   {
     "id": "28.1",
@@ -3155,14 +3065,14 @@ window.BOBINA_FEATURES = [
     "category": "AI funkce",
     "description": "Automaticky vyčistí pozadí produktové fotky.",
     "without": "Bez toho uživatel nahrává běžné fotografie.",
-    "example": "Uživatel použije možnost „AI odstranění pozadí fotografie“: automaticky vyčistí pozadí produktové fotky.",
+    "example": "Prodávající vyfotí svetr na posteli a AI pozadí vymaže na čistě bílé.",
     "build": [
-      "Konkrétní část: Automaticky vyčistí pozadí produktové fotky.",
-      "Nastavit vhodný model, jeho vstupy, výstupy a případnou externí službu.",
-      "Přidat možnost návrh zkontrolovat a ručně opravit.",
-      "Omezit chyby, zavádějící výsledky, zneužití a neočekávané náklady."
+      "Napojení AI služby na odstranění pozadí (placená za fotku).",
+      "Tlačítko v editoru fotek.",
+      "Uložení původní i upravené verze."
     ],
-    "category_note": "Uživatel získá automatickou pomoc při prodeji nebo výběru zboží."
+    "category_note": "Uživatel získá automatickou pomoc při prodeji nebo výběru zboží.",
+    "effort": "M"
   },
   {
     "id": "28.2",
@@ -3170,14 +3080,14 @@ window.BOBINA_FEATURES = [
     "category": "AI funkce",
     "description": "Z fotografie nebo názvu navrhne kategorii produktu.",
     "without": "Bez toho vše vybírá prodávající ručně.",
-    "example": "Uživatel použije možnost „AI automatické rozpoznání kategorie“: z fotografie nebo názvu navrhne kategorii produktu.",
+    "example": "Prodávající nahraje fotku tenisek a aplikace sama navrhne kategorii „Ženy › Boty › Tenisky“.",
     "build": [
-      "Konkrétní část: Z fotografie nebo názvu navrhne kategorii produktu.",
-      "Nastavit vhodný model, jeho vstupy, výstupy a případnou externí službu.",
-      "Přidat možnost návrh zkontrolovat a ručně opravit.",
-      "Omezit chyby, zavádějící výsledky, zneužití a neočekávané náklady."
+      "Napojení AI na rozpoznání z fotky / názvu.",
+      "Návrh kategorie při vystavení.",
+      "Měření přesnosti a opravy."
     ],
-    "category_note": "Uživatel získá automatickou pomoc při prodeji nebo výběru zboží."
+    "category_note": "Uživatel získá automatickou pomoc při prodeji nebo výběru zboží.",
+    "effort": "M"
   },
   {
     "id": "28.3",
@@ -3187,12 +3097,12 @@ window.BOBINA_FEATURES = [
     "without": "Bez toho uživatel vše píše ručně.",
     "example": "Prodejce nahraje fotografii bot a AI navrhne název i popis, které před publikací opraví.",
     "build": [
-      "Konkrétní část: Z fotek a parametrů vytvoří návrh textu inzerátu.",
-      "Nastavit vhodný model, jeho vstupy, výstupy a případnou externí službu.",
-      "Přidat možnost návrh zkontrolovat a ručně opravit.",
-      "Omezit chyby, zavádějící výsledky, zneužití a neočekávané náklady."
+      "Napojení jazykového modelu (placený za použití).",
+      "Návrh textu z fotek a parametrů.",
+      "Úprava návrhu uživatelem."
     ],
-    "category_note": "Uživatel získá automatickou pomoc při prodeji nebo výběru zboží."
+    "category_note": "Uživatel získá automatickou pomoc při prodeji nebo výběru zboží.",
+    "effort": "M"
   },
   {
     "id": "28.4",
@@ -3200,14 +3110,14 @@ window.BOBINA_FEATURES = [
     "category": "AI funkce",
     "description": "Navrhne cenu podle podobných prodaných a aktivních nabídek.",
     "without": "Bez toho cenu určuje uživatel bez datové podpory.",
-    "example": "Uživatel použije možnost „AI odhad ceny“: navrhne cenu podle podobných prodaných a aktivních nabídek.",
+    "example": "AI navrhne cenu 380 Kč podle toho, za kolik se podobné svetry skutečně prodaly.",
     "build": [
-      "Konkrétní část: Navrhne cenu podle podobných prodaných a aktivních nabídek.",
-      "Nastavit vhodný model, jeho vstupy, výstupy a případnou externí službu.",
-      "Přidat možnost návrh zkontrolovat a ručně opravit.",
-      "Omezit chyby, zavádějící výsledky, zneužití a neočekávané náklady."
+      "Model z dat o prodejích.",
+      "Návrh ceny při vystavení.",
+      "Průběžné učení na nových prodejích."
     ],
-    "category_note": "Uživatel získá automatickou pomoc při prodeji nebo výběru zboží."
+    "category_note": "Uživatel získá automatickou pomoc při prodeji nebo výběru zboží.",
+    "effort": "M"
   },
   {
     "id": "28.5",
@@ -3215,14 +3125,14 @@ window.BOBINA_FEATURES = [
     "category": "AI funkce",
     "description": "Před publikací upozorní na rozmazání, screenshot, duplicitu nebo problém.",
     "without": "Bez toho se nekvalitní obsah řeší až po publikaci.",
-    "example": "Uživatel použije možnost „AI detekce nekvalitní / duplicitní fotografie“: před publikací upozorní na rozmazání, screenshot, duplicitu nebo problém.",
+    "example": "Fotka je rozmazaná; aplikace upozorní „Fotka je neostrá, zkuste ji vyfotit znovu“.",
     "build": [
-      "Konkrétní část: Před publikací upozorní na rozmazání, screenshot, duplicitu nebo problém.",
-      "Nastavit vhodný model, jeho vstupy, výstupy a případnou externí službu.",
-      "Přidat možnost návrh zkontrolovat a ručně opravit.",
-      "Omezit chyby, zavádějící výsledky, zneužití a neočekávané náklady."
+      "Rozpoznání rozmazaných a duplicitních fotek.",
+      "Upozornění při nahrání.",
+      "Pravidla pro screenshoty a stažené fotky."
     ],
-    "category_note": "Uživatel získá automatickou pomoc při prodeji nebo výběru zboží."
+    "category_note": "Uživatel získá automatickou pomoc při prodeji nebo výběru zboží.",
+    "effort": "M"
   },
   {
     "id": "28.6",
@@ -3230,373 +3140,549 @@ window.BOBINA_FEATURES = [
     "category": "AI funkce",
     "description": "Automaticky skóruje rizikový obsah a předává ho k ruční kontrole.",
     "without": "Bez toho výrazně roste potřeba manuální moderace.",
-    "example": "Uživatel použije možnost „AI moderace textu a obrázků“: automaticky skóruje rizikový obsah a předává ho k ruční kontrole.",
+    "example": "AI pozná nevhodnou fotku nebo urážlivý text dřív, než ho uvidí ostatní.",
     "build": [
-      "Konkrétní část: Automaticky skóruje rizikový obsah a předává ho k ruční kontrole.",
-      "Nastavit vhodný model, jeho vstupy, výstupy a případnou externí službu.",
-      "Přidat možnost návrh zkontrolovat a ručně opravit.",
-      "Omezit chyby, zavádějící výsledky, zneužití a neočekávané náklady."
+      "Napojení AI kontroly textu a obrázků.",
+      "Skóre rizika a fronta pro moderátora.",
+      "Měření chyb a ladění."
     ],
-    "category_note": "Uživatel získá automatickou pomoc při prodeji nebo výběru zboží."
+    "category_note": "Uživatel získá automatickou pomoc při prodeji nebo výběru zboží.",
+    "effort": "M"
   },
   {
     "id": "28.7",
-    "title": "AI doporučovací systém",
-    "category": "AI funkce",
-    "description": "Model vybírá produkty podle chování a podobnosti.",
-    "without": "Bez něj lze začít jednoduššími pravidly a řazením.",
-    "example": "Uživatel použije možnost „AI doporučovací systém“: model vybírá produkty podle chování a podobnosti.",
-    "build": [
-      "Konkrétní část: Model vybírá produkty podle chování a podobnosti.",
-      "Nastavit vhodný model, jeho vstupy, výstupy a případnou externí službu.",
-      "Přidat možnost návrh zkontrolovat a ručně opravit.",
-      "Omezit chyby, zavádějící výsledky, zneužití a neočekávané náklady."
-    ],
-    "category_note": "Uživatel získá automatickou pomoc při prodeji nebo výběru zboží."
-  },
-  {
-    "id": "28.8",
     "title": "AI detekce podvodných transakcí",
     "category": "AI funkce",
     "description": "Vyhodnocuje kombinaci signálů účtu, chatu, plateb a objednávek.",
     "without": "Bez něj je nutné spoléhat na pravidla a ruční kontrolu.",
-    "example": "Uživatel použije možnost „AI detekce podvodných transakcí“: vyhodnocuje kombinaci signálů účtu, chatu, plateb a objednávek.",
+    "example": "AI si všimne, že nový účet kupuje drahé věci a hned mění adresu, a zastaví objednávku ke kontrole.",
     "build": [
-      "Konkrétní část: Vyhodnocuje kombinaci signálů účtu, chatu, plateb a objednávek.",
-      "Nastavit vhodný model, jeho vstupy, výstupy a případnou externí službu.",
-      "Přidat možnost návrh zkontrolovat a ručně opravit.",
-      "Omezit chyby, zavádějící výsledky, zneužití a neočekávané náklady."
+      "Sběr signálů z účtů, chatu a plateb.",
+      "Model rizika a pravidla.",
+      "Zastavení podezřelých objednávek ke kontrole."
     ],
-    "category_note": "Uživatel získá automatickou pomoc při prodeji nebo výběru zboží."
+    "category_note": "Uživatel získá automatickou pomoc při prodeji nebo výběru zboží.",
+    "effort": "L"
   },
   {
     "id": "29.1",
-    "title": "Logování chyb a crash reporting",
-    "category": "Technický provoz a škálování",
-    "description": "Automaticky sbírá technické chyby aplikace.",
-    "without": "Bez toho se o chybách dozví až z podpory nebo recenzí.",
-    "example": "Správce platformy použije možnost „Logování chyb a crash reporting“: automaticky sbírá technické chyby aplikace.",
-    "build": [
-      "Konkrétní část: Automaticky sbírá technické chyby aplikace.",
-      "Definovat cílové technické limity a konkrétní provozní scénář.",
-      "Připravit potřebnou infrastrukturu, monitoring a bezpečnostní kontrolu.",
-      "Prokázat výsledky zálohování, obnovy nebo zátěžovým testem."
-    ],
-    "category_note": "Uživatel očekává dostupnou aplikaci i při výpadku nebo vysokém provozu."
-  },
-  {
-    "id": "29.2",
-    "title": "Monitoring dostupnosti",
-    "category": "Technický provoz a škálování",
-    "description": "Hlídá API, databázi, platby a klíčové služby.",
-    "without": "Bez monitoringu může problém běžet dlouho bez povšimnutí.",
-    "example": "Správce platformy použije možnost „Monitoring dostupnosti“: hlídá API, databázi, platby a klíčové služby.",
-    "build": [
-      "Konkrétní část: Hlídá API, databázi, platby a klíčové služby.",
-      "Definovat cílové technické limity a konkrétní provozní scénář.",
-      "Připravit potřebnou infrastrukturu, monitoring a bezpečnostní kontrolu.",
-      "Prokázat výsledky zálohování, obnovy nebo zátěžovým testem."
-    ],
-    "category_note": "Uživatel očekává dostupnou aplikaci i při výpadku nebo vysokém provozu."
-  },
-  {
-    "id": "29.3",
-    "title": "Audit transakčních událostí",
-    "category": "Technický provoz a škálování",
-    "description": "Ukládá důležitou časovou osu změn objednávky a financí.",
-    "without": "Bez toho může být nemožné zpětně zjistit, co se skutečně stalo.",
-    "example": "Správce platformy použije možnost „Audit transakčních událostí“: ukládá důležitou časovou osu změn objednávky a financí.",
-    "build": [
-      "Konkrétní část: Ukládá důležitou časovou osu změn objednávky a financí.",
-      "Definovat cílové technické limity a konkrétní provozní scénář.",
-      "Připravit potřebnou infrastrukturu, monitoring a bezpečnostní kontrolu.",
-      "Prokázat výsledky zálohování, obnovy nebo zátěžovým testem."
-    ],
-    "category_note": "Uživatel očekává dostupnou aplikaci i při výpadku nebo vysokém provozu."
-  },
-  {
-    "id": "29.4",
-    "title": "Zálohy databáze",
-    "category": "Technický provoz a škálování",
-    "description": "Pravidelné bezpečné zálohy dat a test obnovy.",
-    "without": "Bez záloh může incident znamenat nevratnou ztrátu dat.",
-    "example": "Po chybě databáze lze obnovit data z ověřené zálohy bez nekontrolované ztráty objednávek.",
-    "build": [
-      "Konkrétní část: Pravidelné bezpečné zálohy dat a test obnovy.",
-      "Definovat cílové technické limity a konkrétní provozní scénář.",
-      "Připravit potřebnou infrastrukturu, monitoring a bezpečnostní kontrolu.",
-      "Prokázat výsledky zálohování, obnovy nebo zátěžovým testem."
-    ],
-    "category_note": "Uživatel očekává dostupnou aplikaci i při výpadku nebo vysokém provozu."
-  },
-  {
-    "id": "29.5",
-    "title": "Škálování infrastruktury",
-    "category": "Technický provoz a škálování",
-    "description": "Systém zvládne růst uživatelů, obrázků, zpráv a objednávek.",
-    "without": "Bez připravenosti na růst začne aplikace při úspěchu zpomalovat nebo padat.",
-    "example": "Správce platformy použije možnost „Škálování infrastruktury“: systém zvládne růst uživatelů, obrázků, zpráv a objednávek.",
-    "build": [
-      "Konkrétní část: Systém zvládne růst uživatelů, obrázků, zpráv a objednávek.",
-      "Definovat cílové technické limity a konkrétní provozní scénář.",
-      "Připravit potřebnou infrastrukturu, monitoring a bezpečnostní kontrolu.",
-      "Prokázat výsledky zálohování, obnovy nebo zátěžovým testem."
-    ],
-    "category_note": "Uživatel očekává dostupnou aplikaci i při výpadku nebo vysokém provozu."
-  },
-  {
-    "id": "29.6",
-    "title": "CDN pro obrázky",
-    "category": "Technický provoz a škálování",
-    "description": "Fotografie se doručují z distribuované infrastruktury a ve správné velikosti.",
-    "without": "Bez CDN budou obrázky pomalejší a server více zatížený.",
-    "example": "Správce platformy použije možnost „CDN pro obrázky“: fotografie se doručují z distribuované infrastruktury a ve správné velikosti.",
-    "build": [
-      "Konkrétní část: Fotografie se doručují z distribuované infrastruktury a ve správné velikosti.",
-      "Definovat cílové technické limity a konkrétní provozní scénář.",
-      "Připravit potřebnou infrastrukturu, monitoring a bezpečnostní kontrolu.",
-      "Prokázat výsledky zálohování, obnovy nebo zátěžovým testem."
-    ],
-    "category_note": "Uživatel očekává dostupnou aplikaci i při výpadku nebo vysokém provozu."
-  },
-  {
-    "id": "29.7",
-    "title": "Ochrana API a rate limits",
-    "category": "Technický provoz a škálování",
-    "description": "Backend omezuje zneužití, roboty a nadměrné požadavky.",
-    "without": "Bez toho je API snadno zneužitelné.",
-    "example": "Správce platformy použije možnost „Ochrana API a rate limits“: backend omezuje zneužití, roboty a nadměrné požadavky.",
-    "build": [
-      "Konkrétní část: Backend omezuje zneužití, roboty a nadměrné požadavky.",
-      "Definovat cílové technické limity a konkrétní provozní scénář.",
-      "Připravit potřebnou infrastrukturu, monitoring a bezpečnostní kontrolu.",
-      "Prokázat výsledky zálohování, obnovy nebo zátěžovým testem."
-    ],
-    "category_note": "Uživatel očekává dostupnou aplikaci i při výpadku nebo vysokém provozu."
-  },
-  {
-    "id": "29.8",
-    "title": "Oddělené testovací a produkční prostředí",
-    "category": "Technický provoz a škálování",
-    "description": "Vývoj, testování a ostrý provoz běží odděleně.",
-    "without": "Bez toho se testuje přímo na produkci, což je nepřijatelné riziko.",
-    "example": "Správce platformy použije možnost „Oddělené testovací a produkční prostředí“: vývoj, testování a ostrý provoz běží odděleně.",
-    "build": [
-      "Konkrétní část: Vývoj, testování a ostrý provoz běží odděleně.",
-      "Definovat cílové technické limity a konkrétní provozní scénář.",
-      "Připravit potřebnou infrastrukturu, monitoring a bezpečnostní kontrolu.",
-      "Prokázat výsledky zálohování, obnovy nebo zátěžovým testem."
-    ],
-    "category_note": "Uživatel očekává dostupnou aplikaci i při výpadku nebo vysokém provozu."
-  },
-  {
-    "id": "29.9",
-    "title": "Enterprise kapacita: špička až 250 000 současně aktivních uživatelů",
-    "category": "Technický provoz a škálování",
-    "description": "Definuje cílovou architekturu a výkonový profil pro mimořádně vysokou souběžnou zátěž, včetně oddělení kritických služeb a kapacitního modelu.",
-    "without": "Bez této položky se garantuje pouze běžná škálovatelná architektura, nikoli smluvní připravenost na takto extrémní souběh.",
-    "example": "Během extrémní špičky se ověří, kolik uživatelů skutečně může provádět nákupní operace souběžně.",
-    "build": [
-      "Konkrétní část: Definuje cílovou architekturu a výkonový profil pro mimořádně vysokou souběžnou zátěž, včetně oddělení kritických služeb a kapacitního modelu.",
-      "Definovat cílové technické limity a konkrétní provozní scénář.",
-      "Připravit potřebnou infrastrukturu, monitoring a bezpečnostní kontrolu.",
-      "Prokázat výsledky zálohování, obnovy nebo zátěžovým testem."
-    ],
-    "category_note": "Uživatel očekává dostupnou aplikaci i při výpadku nebo vysokém provozu."
-  },
-  {
-    "id": "29.10",
-    "title": "Distribuovaná cache, fronty a asynchronní zpracování",
-    "category": "Technický provoz a škálování",
-    "description": "Oddělí pomalé a náročné operace do front, využije cache pro často čtená data a zabrání zahlcení hlavních služeb.",
-    "without": "Při špičce mohou růst latence, vznikat timeouty a přetížení databáze.",
-    "example": "Správce platformy použije možnost „Distribuovaná cache, fronty a asynchronní zpracování“: oddělí pomalé a náročné operace do front, využije cache pro často čtená data a zabrání zahlcení hlavních služeb.",
-    "build": [
-      "Konkrétní část: Oddělí pomalé a náročné operace do front, využije cache pro často čtená data a zabrání zahlcení hlavních služeb.",
-      "Definovat cílové technické limity a konkrétní provozní scénář.",
-      "Připravit potřebnou infrastrukturu, monitoring a bezpečnostní kontrolu.",
-      "Prokázat výsledky zálohování, obnovy nebo zátěžovým testem."
-    ],
-    "category_note": "Uživatel očekává dostupnou aplikaci i při výpadku nebo vysokém provozu."
-  },
-  {
-    "id": "29.11",
-    "title": "Horizontální autoscaling a stateless aplikační vrstva",
-    "category": "Technický provoz a škálování",
-    "description": "Umožní automaticky přidávat a ubírat aplikační instance podle zátěže bez závislosti na jednom serveru.",
-    "without": "Kapacita systému bude pevnější a při náporu může dojít k výpadkům nebo dlouhým odezvám. Strana 30 KLIENTSKÝ VÝBĚR FUNKCÍ - MARKETPLACE TYPU VINTED FUNKCE / VYSVĚTLENÍ CENA CHCI",
-    "example": "Správce platformy použije možnost „Horizontální autoscaling a stateless aplikační vrstva“: umožní automaticky přidávat a ubírat aplikační instance podle zátěže bez závislosti na jednom serveru.",
-    "build": [
-      "Konkrétní část: Umožní automaticky přidávat a ubírat aplikační instance podle zátěže bez závislosti na jednom serveru.",
-      "Definovat cílové technické limity a konkrétní provozní scénář.",
-      "Připravit potřebnou infrastrukturu, monitoring a bezpečnostní kontrolu.",
-      "Prokázat výsledky zálohování, obnovy nebo zátěžovým testem."
-    ],
-    "category_note": "Uživatel očekává dostupnou aplikaci i při výpadku nebo vysokém provozu."
-  },
-  {
-    "id": "29.12",
-    "title": "Databázové škálování, read replicas a optimalizace vysoké zátěže",
-    "category": "Technický provoz a škálování",
-    "description": "Řeší indexaci, connection pooling, oddělení čtecí zátěže, repliky a případné dělení dat podle skutečného provozu.",
-    "without": "Databáze se může stát úzkým hrdlem i v případě, že aplikační servery mají dostatečný výkon.",
-    "example": "Správce platformy použije možnost „Databázové škálování, read replicas a optimalizace vysoké zátěže“: řeší indexaci, connection pooling, oddělení čtecí zátěže, repliky a případné dělení dat podle skutečného provozu.",
-    "build": [
-      "Konkrétní část: Řeší indexaci, connection pooling, oddělení čtecí zátěže, repliky a případné dělení dat podle skutečného provozu.",
-      "Definovat cílové technické limity a konkrétní provozní scénář.",
-      "Připravit potřebnou infrastrukturu, monitoring a bezpečnostní kontrolu.",
-      "Prokázat výsledky zálohování, obnovy nebo zátěžovým testem."
-    ],
-    "category_note": "Uživatel očekává dostupnou aplikaci i při výpadku nebo vysokém provozu."
-  },
-  {
-    "id": "29.13",
-    "title": "Load, stress a soak testy včetně výkonových limitů",
-    "category": "Technický provoz a škálování",
-    "description": "Simuluje definované scénáře provozu, měří odezvy, propustnost a chování systému při dlouhodobé i nárazové zátěži.",
-    "without": "Kapacita zůstane pouze předpokladem bez testem doložených výsledků.",
-    "example": "Správce platformy použije možnost „Load, stress a soak testy včetně výkonových limitů“: simuluje definované scénáře provozu, měří odezvy, propustnost a chování systému při dlouhodobé i nárazové zátěži.",
-    "build": [
-      "Konkrétní část: Simuluje definované scénáře provozu, měří odezvy, propustnost a chování systému při dlouhodobé i nárazové zátěži.",
-      "Definovat cílové technické limity a konkrétní provozní scénář.",
-      "Připravit potřebnou infrastrukturu, monitoring a bezpečnostní kontrolu.",
-      "Prokázat výsledky zálohování, obnovy nebo zátěžovým testem."
-    ],
-    "category_note": "Uživatel očekává dostupnou aplikaci i při výpadku nebo vysokém provozu."
-  },
-  {
-    "id": "29.14",
-    "title": "High availability, failover a disaster recovery",
-    "category": "Technický provoz a škálování",
-    "description": "Navrhne redundanci kritických komponent, obnovu po havárii, postupy failoveru a ověřené zálohování.",
-    "without": "Selhání jedné kritické komponenty může způsobit delší nedostupnost nebo ztrátu provozních dat.",
-    "example": "Správce platformy použije možnost „High availability, failover a disaster recovery“: navrhne redundanci kritických komponent, obnovu po havárii, postupy failoveru a ověřené zálohování.",
-    "build": [
-      "Konkrétní část: Navrhne redundanci kritických komponent, obnovu po havárii, postupy failoveru a ověřené zálohování.",
-      "Definovat cílové technické limity a konkrétní provozní scénář.",
-      "Připravit potřebnou infrastrukturu, monitoring a bezpečnostní kontrolu.",
-      "Prokázat výsledky zálohování, obnovy nebo zátěžovým testem."
-    ],
-    "category_note": "Uživatel očekává dostupnou aplikaci i při výpadku nebo vysokém provozu."
-  },
-  {
-    "id": "30.1",
     "title": "Rezervace předmětu",
     "category": "Nadstandardní volitelné funkce",
     "description": "Prodávající dočasně označí nabídku pro konkrétního kupujícího.",
     "without": "Bez toho může předmět mezitím koupit někdo jiný.",
-    "example": "Uživatel použije možnost „Rezervace předmětu“: prodávající dočasně označí nabídku pro konkrétního kupujícího.",
+    "example": "Prodávající podrží svetr pro kupující, která zaplatí zítra, aby ho mezitím nekoupil nikdo jiný.",
     "build": [
-      "Konkrétní část: Prodávající dočasně označí nabídku pro konkrétního kupujícího.",
-      "Navrhnout příslušné ovládání a vysvětlit pravidla uživatelům.",
-      "Propojit změny s objednávkou, účty a relevantními omezeními.",
-      "Ošetřit storno, konfliktní situace a administrátorské zásahy."
+      "Rezervace pro vybraného kupujícího na dobu.",
+      "Skrytí tlačítka Koupit ostatním.",
+      "Automatické zrušení po vypršení."
     ],
-    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost."
+    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost.",
+    "effort": "S"
   },
   {
-    "id": "30.2",
+    "id": "29.2",
     "title": "Cenové nabídky více zájemců",
     "category": "Nadstandardní volitelné funkce",
     "description": "Prodávající spravuje více nabídek ceny na jednom místě.",
     "without": "Bez toho řeší nabídky jednotlivě v chatech.",
-    "example": "Uživatel použije možnost „Cenové nabídky více zájemců“: prodávající spravuje více nabídek ceny na jednom místě.",
+    "example": "Na kabelku přišly 3 nabídky ceny a prodávající je vidí vedle sebe a vybere nejlepší.",
     "build": [
-      "Konkrétní část: Prodávající spravuje více nabídek ceny na jednom místě.",
-      "Navrhnout příslušné ovládání a vysvětlit pravidla uživatelům.",
-      "Propojit změny s objednávkou, účty a relevantními omezeními.",
-      "Ošetřit storno, konfliktní situace a administrátorské zásahy."
+      "Přehled všech nabídek ceny k inzerátu.",
+      "Přijetí jedné a odmítnutí ostatních.",
+      "Upozornění zájemcům."
     ],
-    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost."
+    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost.",
+    "effort": "M"
   },
   {
-    "id": "30.3",
+    "id": "29.3",
     "title": "Aukční režim",
     "category": "Nadstandardní volitelné funkce",
     "description": "Cena se určí příhozy do určitého času.",
     "without": "Bez toho zůstane pouze pevná cena a vyjednávání.",
     "example": "Uživatel přihazuje cenu v aukci a před ukončením vidí aktuální nejvyšší nabídku.",
     "build": [
-      "Konkrétní část: Cena se určí příhozy do určitého času.",
-      "Navrhnout příslušné ovládání a vysvětlit pravidla uživatelům.",
-      "Propojit změny s objednávkou, účty a relevantními omezeními.",
-      "Ošetřit storno, konfliktní situace a administrátorské zásahy."
+      "Příhozy, minimální krok a konec aukce.",
+      "Ochrana proti robotům a posledním vteřinám.",
+      "Povinnost vítěze zaplatit."
     ],
-    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost."
+    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost.",
+    "effort": "L"
   },
   {
-    "id": "30.4",
-    "title": "Osobní předání s potvrzovacím kódem",
-    "category": "Nadstandardní volitelné funkce",
-    "description": "Při osobním předání obě strany potvrdí dokončení kódem.",
-    "without": "Bez toho se osobní předání odehrává mimo ochranu platformy.",
-    "example": "Uživatel použije možnost „Osobní předání s potvrzovacím kódem“: při osobním předání obě strany potvrdí dokončení kódem.",
-    "build": [
-      "Konkrétní část: Při osobním předání obě strany potvrdí dokončení kódem.",
-      "Navrhnout příslušné ovládání a vysvětlit pravidla uživatelům.",
-      "Propojit změny s objednávkou, účty a relevantními omezeními.",
-      "Ošetřit storno, konfliktní situace a administrátorské zásahy."
-    ],
-    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost."
-  },
-  {
-    "id": "30.5",
+    "id": "29.4",
     "title": "Věrnostní program",
     "category": "Nadstandardní volitelné funkce",
     "description": "Odměňuje aktivitu body, kredity nebo výhodami.",
     "without": "Bez něj zůstává retence založená na nabídce a notifikacích.",
-    "example": "Uživatel použije možnost „Věrnostní program“: odměňuje aktivitu body, kredity nebo výhodami.",
+    "example": "Za každý nákup dostane uživatelka body a za 500 bodů slevu 50 Kč.",
     "build": [
-      "Konkrétní část: Odměňuje aktivitu body, kredity nebo výhodami.",
-      "Navrhnout příslušné ovládání a vysvětlit pravidla uživatelům.",
-      "Propojit změny s objednávkou, účty a relevantními omezeními.",
-      "Ošetřit storno, konfliktní situace a administrátorské zásahy."
+      "Body za nákupy a aktivitu.",
+      "Výměna bodů za slevy.",
+      "Pravidla a ochrana proti zneužití."
     ],
-    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost."
+    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost.",
+    "effort": "M"
   },
   {
-    "id": "30.6",
+    "id": "29.5",
     "title": "Referral program",
     "category": "Nadstandardní volitelné funkce",
     "description": "Uživatel získá odměnu za přivedení nového uživatele.",
     "without": "Bez něj platforma nemá vestavěnou referral smyčku.",
-    "example": "Uživatel použije možnost „Referral program“: uživatel získá odměnu za přivedení nového uživatele.",
+    "example": "Klára pozve kamarádku; když kamarádka poprvé nakoupí, obě dostanou 100 Kč.",
     "build": [
-      "Konkrétní část: Uživatel získá odměnu za přivedení nového uživatele.",
-      "Navrhnout příslušné ovládání a vysvětlit pravidla uživatelům.",
-      "Propojit změny s objednávkou, účty a relevantními omezeními.",
-      "Ošetřit storno, konfliktní situace a administrátorské zásahy."
+      "Osobní pozvánkový odkaz.",
+      "Odměna po prvním nákupu pozvaného.",
+      "Ochrana proti falešným účtům."
     ],
-    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost."
+    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost.",
+    "effort": "M"
   },
   {
-    "id": "30.7",
+    "id": "29.6",
     "title": "Firemní API",
     "category": "Nadstandardní volitelné funkce",
     "description": "Externí prodejce nebo partner může napojit sklad či nabídky.",
     "without": "Bez něj je správa pouze ručně přes aplikaci nebo web.",
     "example": "Schválený obchodník přes zabezpečené API automaticky aktualizuje nabídky a jejich dostupnost.",
     "build": [
-      "Konkrétní část: Externí prodejce nebo partner může napojit sklad či nabídky.",
-      "Navrhnout příslušné ovládání a vysvětlit pravidla uživatelům.",
-      "Propojit změny s objednávkou, účty a relevantními omezeními.",
-      "Ošetřit storno, konfliktní situace a administrátorské zásahy."
+      "Rozhraní pro hromadné nahrávání a správu inzerátů.",
+      "Klíče a oprávnění pro firmy.",
+      "Dokumentace a limity."
     ],
-    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost."
+    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost.",
+    "effort": "L"
   },
   {
-    "id": "30.8",
+    "id": "29.7",
     "title": "Partnerský / affiliate program",
     "category": "Nadstandardní volitelné funkce",
     "description": "Externí weby a tvůrci mohou přivádět objednávky za odměnu.",
     "without": "Bez něj se růst opírá o jiné marketingové kanály.",
-    "example": "Uživatel použije možnost „Partnerský / affiliate program“: externí weby a tvůrci mohou přivádět objednávky za odměnu.",
+    "example": "Módní blogerka dá na svůj web odkaz na Bobinu a za každý nákup přes něj dostane odměnu.",
     "build": [
-      "Konkrétní část: Externí weby a tvůrci mohou přivádět objednávky za odměnu.",
-      "Navrhnout příslušné ovládání a vysvětlit pravidla uživatelům.",
-      "Propojit změny s objednávkou, účty a relevantními omezeními.",
-      "Ošetřit storno, konfliktní situace a administrátorské zásahy."
+      "Partnerské odkazy a sledování nákupů.",
+      "Výpočet a výplata odměn.",
+      "Přehled pro partnery."
     ],
-    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost."
+    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost.",
+    "effort": "M"
+  },
+  {
+    "id": "29.8",
+    "title": "Výměna předmětů",
+    "category": "Nadstandardní volitelné funkce",
+    "description": "Dva uživatelé si místo prodeje vymění věc za věc.",
+    "example": "Petra nabídne své šaty za Janinu kabelku, obě souhlasí a pošlou si je navzájem.",
+    "without": "Bez toho jde věc jen prodat nebo koupit, ne vyměnit.",
+    "build": [
+      "Návrh výměny s výběrem vlastního předmětu.",
+      "Doprava oběma směry.",
+      "Řešení sporů, když jedna strana nepošle."
+    ],
+    "category_note": "Platforma rozšíří standardní způsob nákupu o speciální obchodní možnost.",
+    "effort": "L"
+  },
+  {
+    "id": "30.1",
+    "type": "info",
+    "title": "Ve kterých zemích má BOBINA začít?",
+    "category": "Upřesnění: vaše představa",
+    "description": "Kde se bude prodávat při spuštění a kam se případně rozšíří později.",
+    "example": "Příklad odpovědi: Na začátku jen Česko, do roka Slovensko.",
+    "options": [
+      "Jen Česko",
+      "Česko a Slovensko",
+      "Později další země EU"
+    ],
+    "without": "",
+    "build": [],
+    "category_note": "Otevřené otázky. Odpovězte vlastními slovy nebo klepněte na nabídnuté možnosti. Podle těchto odpovědí se nastaví čísla, dopravci, platby a rozsah prvního spuštění."
+  },
+  {
+    "id": "30.2",
+    "type": "info",
+    "title": "Jazyky a měny",
+    "category": "Upřesnění: vaše představa",
+    "description": "V jakém jazyce a v jaké měně bude aplikace na začátku.",
+    "example": "Příklad odpovědi: Čeština, ceny v Kč.",
+    "options": [
+      "Čeština",
+      "Slovenština",
+      "Angličtina",
+      "Koruny (Kč)",
+      "Eura (€)"
+    ],
+    "without": "",
+    "build": [],
+    "category_note": "Otevřené otázky. Odpovězte vlastními slovy nebo klepněte na nabídnuté možnosti. Podle těchto odpovědí se nastaví čísla, dopravci, platby a rozsah prvního spuštění."
+  },
+  {
+    "id": "30.3",
+    "type": "info",
+    "title": "Co se bude prodávat?",
+    "category": "Upřesnění: vaše představa",
+    "description": "Které druhy zboží mají být v nabídce od začátku a které ne.",
+    "example": "Příklad odpovědi: Hlavně dámské a dětské oblečení, boty a doplňky. Elektroniku zatím ne.",
+    "options": [
+      "Dámské oblečení",
+      "Pánské oblečení",
+      "Dětské oblečení",
+      "Boty a doplňky",
+      "Bydlení",
+      "Elektronika",
+      "Knihy a hry",
+      "Kosmetika"
+    ],
+    "without": "",
+    "build": [],
+    "category_note": "Otevřené otázky. Odpovězte vlastními slovy nebo klepněte na nabídnuté možnosti. Podle těchto odpovědí se nastaví čísla, dopravci, platby a rozsah prvního spuštění."
+  },
+  {
+    "id": "30.4",
+    "type": "info",
+    "title": "Kteří dopravci?",
+    "category": "Upřesnění: vaše představa",
+    "description": "S jakými přepravními službami má aplikace umět posílat zásilky.",
+    "example": "Příklad odpovědi: Zásilkovna a Balíkovna, později PPL.",
+    "options": [
+      "Zásilkovna",
+      "Balíkovna / Česká pošta",
+      "PPL",
+      "DPD",
+      "GLS",
+      "Osobní předání"
+    ],
+    "without": "",
+    "build": [],
+    "category_note": "Otevřené otázky. Odpovězte vlastními slovy nebo klepněte na nabídnuté možnosti. Podle těchto odpovědí se nastaví čísla, dopravci, platby a rozsah prvního spuštění."
+  },
+  {
+    "id": "30.5",
+    "type": "info",
+    "title": "Jak se bude platit?",
+    "category": "Upřesnění: vaše představa",
+    "description": "Které způsoby platby mají kupující mít.",
+    "example": "Příklad odpovědi: Karta a Apple Pay / Google Pay.",
+    "options": [
+      "Platební karta",
+      "Apple Pay",
+      "Google Pay",
+      "Bankovní převod",
+      "Zůstatek v peněžence"
+    ],
+    "without": "",
+    "build": [],
+    "category_note": "Otevřené otázky. Odpovězte vlastními slovy nebo klepněte na nabídnuté možnosti. Podle těchto odpovědí se nastaví čísla, dopravci, platby a rozsah prvního spuštění."
+  },
+  {
+    "id": "30.6",
+    "type": "info",
+    "title": "Poplatky: kdo platí a kolik?",
+    "category": "Upřesnění: vaše představa",
+    "description": "Z čeho bude BOBINA vydělávat – poplatek kupujícího, provize prodávajícího, placené topování… a přibližně kolik.",
+    "example": "Příklad odpovědi: Jako Vinted: kupující platí 5 % + 15 Kč za ochranu, prodávající nic.",
+    "options": [
+      "Platí kupující",
+      "Platí prodávající",
+      "Platí oba",
+      "Placené topování"
+    ],
+    "without": "",
+    "build": [],
+    "category_note": "Otevřené otázky. Odpovězte vlastními slovy nebo klepněte na nabídnuté možnosti. Podle těchto odpovědí se nastaví čísla, dopravci, platby a rozsah prvního spuštění."
+  },
+  {
+    "id": "30.7",
+    "type": "info",
+    "title": "Nejnižší a nejvyšší cena předmětu",
+    "category": "Upřesnění: vaše představa",
+    "description": "Pokud chcete omezit ceny, napište nejnižší a nejvyšší povolenou cenu.",
+    "example": "Příklad odpovědi: Minimum 20 Kč, maximum 30 000 Kč.",
+    "options": [
+      "Bez omezení",
+      "Minimum 20 Kč",
+      "Maximum 50 000 Kč"
+    ],
+    "without": "",
+    "build": [],
+    "category_note": "Otevřené otázky. Odpovězte vlastními slovy nebo klepněte na nabídnuté možnosti. Podle těchto odpovědí se nastaví čísla, dopravci, platby a rozsah prvního spuštění."
+  },
+  {
+    "id": "30.8",
+    "type": "info",
+    "title": "Jak velká má BOBINA být?",
+    "category": "Upřesnění: vaše představa",
+    "description": "Kolik uživatelů a inzerátů čekáte v prvním roce. Podle toho se navrhne technika i náklady na provoz.",
+    "example": "Příklad odpovědi: V prvním roce asi 5 000 uživatelů a 20 000 inzerátů.",
+    "options": [
+      "Do 1 000 uživatelů",
+      "Do 10 000 uživatelů",
+      "Do 100 000 uživatelů",
+      "Víc"
+    ],
+    "without": "",
+    "build": [],
+    "category_note": "Otevřené otázky. Odpovězte vlastními slovy nebo klepněte na nabídnuté možnosti. Podle těchto odpovědí se nastaví čísla, dopravci, platby a rozsah prvního spuštění."
+  },
+  {
+    "id": "30.9",
+    "type": "info",
+    "title": "Kdy spustit a co musí být hotové jako první?",
+    "category": "Upřesnění: vaše představa",
+    "description": "Termín spuštění a funkce, bez kterých nemá smysl začínat. Ostatní může přijít později.",
+    "example": "Příklad odpovědi: Do půl roku: vystavení, hledání, nákup s platbou a Zásilkovnou. Zbytek později.",
+    "options": [
+      "Co nejdřív",
+      "Do 3 měsíců",
+      "Do půl roku",
+      "Nejdřív web",
+      "Nejdřív mobilní aplikace"
+    ],
+    "without": "",
+    "build": [],
+    "category_note": "Otevřené otázky. Odpovězte vlastními slovy nebo klepněte na nabídnuté možnosti. Podle těchto odpovědí se nastaví čísla, dopravci, platby a rozsah prvního spuštění."
+  },
+  {
+    "id": "30.10",
+    "type": "info",
+    "title": "Čím se má BOBINA lišit od Vintedu?",
+    "category": "Upřesnění: vaše představa",
+    "description": "Co vám na Vintedu vadí, co chcete udělat jinak a pro koho hlavně BOBINA je.",
+    "example": "Příklad odpovědi: Nižší poplatky, jen pro ženy a děti, hezčí design a česká podpora.",
+    "options": [],
+    "without": "",
+    "build": [],
+    "category_note": "Otevřené otázky. Odpovězte vlastními slovy nebo klepněte na nabídnuté možnosti. Podle těchto odpovědí se nastaví čísla, dopravci, platby a rozsah prvního spuštění."
+  }
+];
+window.BOBINA_RULES = [
+  {
+    "if": "15.1",
+    "need": [
+      "12.1",
+      "12.3"
+    ],
+    "msg": "Ochrana kupujícího („Mám problém“) funguje jen tehdy, když se platí v aplikaci a peníze se drží do doručení."
+  },
+  {
+    "if": "15.4",
+    "need": [
+      "12.3"
+    ],
+    "msg": "Pozastavit výplatu při sporu jde jen tehdy, když aplikace peníze drží do dokončení obchodu."
+  },
+  {
+    "if": "12.3",
+    "need": [
+      "12.1"
+    ],
+    "msg": "Držet peníze do dokončení obchodu jde jen při platbě v aplikaci."
+  },
+  {
+    "if": "12.4",
+    "need": [
+      "12.1"
+    ],
+    "msg": "Peněženka prodávajícího potřebuje platby v aplikaci."
+  },
+  {
+    "if": "12.5",
+    "need": [
+      "12.4"
+    ],
+    "msg": "Výběr na bankovní účet potřebuje peněženku prodávajícího."
+  },
+  {
+    "if": "12.9",
+    "need": [
+      "12.4"
+    ],
+    "msg": "Placení zůstatkem potřebuje peněženku."
+  },
+  {
+    "if": "12.7",
+    "need": [
+      "12.1"
+    ],
+    "msg": "Vracet peníze jde jen u plateb přes aplikaci."
+  },
+  {
+    "if": "12.8",
+    "need": [
+      "12.1"
+    ],
+    "msg": "Vracet část peněz jde jen u plateb přes aplikaci."
+  },
+  {
+    "if": "18.4",
+    "need": [
+      "12.1"
+    ],
+    "msg": "Poplatek za ochranu kupujícího se vybírá při platbě v aplikaci."
+  },
+  {
+    "if": "18.5",
+    "need": [
+      "12.1"
+    ],
+    "msg": "Provizi z prodeje lze strhnout jen z platby v aplikaci."
+  },
+  {
+    "if": "13.2",
+    "need": [
+      "13.1"
+    ],
+    "msg": "Automatický štítek potřebuje napojení na dopravce."
+  },
+  {
+    "if": "13.3",
+    "need": [
+      "13.1"
+    ],
+    "msg": "Mapa výdejních míst potřebuje napojení na dopravce."
+  },
+  {
+    "if": "13.4",
+    "need": [
+      "13.1"
+    ],
+    "msg": "Sledování zásilky potřebuje napojení na dopravce."
+  },
+  {
+    "if": "26.5",
+    "need": [
+      "13.1"
+    ],
+    "msg": "Přeshraniční doprava potřebuje napojení na dopravce."
+  },
+  {
+    "if": "13.6",
+    "need": [
+      "13.5"
+    ],
+    "msg": "Prodloužení lhůty dává smysl jen s lhůtou na odeslání."
+  },
+  {
+    "if": "13.7",
+    "need": [
+      "13.5"
+    ],
+    "msg": "Automatické storno potřebuje lhůtu na odeslání."
+  },
+  {
+    "if": "21.1",
+    "need": [
+      "12.3",
+      "21.4"
+    ],
+    "msg": "Ověření pravosti potřebuje držení peněz a cestu zásilky přes ověřovací centrum."
+  },
+  {
+    "if": "21.2",
+    "need": [
+      "12.3",
+      "21.4"
+    ],
+    "msg": "Ověření elektroniky potřebuje držení peněz a cestu zásilky přes ověřovací centrum."
+  },
+  {
+    "if": "11.3",
+    "need": [
+      "11.2"
+    ],
+    "msg": "Sleva na balíček potřebuje nákup více věcí najednou."
+  },
+  {
+    "if": "8.6",
+    "need": [
+      "10.4"
+    ],
+    "msg": "Tlačítko „Nabídnout cenu“ potřebuje nabídku ceny v chatu."
+  },
+  {
+    "if": "10.5",
+    "need": [
+      "10.4"
+    ],
+    "msg": "Protinabídka potřebuje nabídku ceny."
+  },
+  {
+    "if": "7.11",
+    "need": [
+      "7.10"
+    ],
+    "msg": "Upozornění na nové výsledky potřebuje uložené vyhledávání."
+  },
+  {
+    "if": "9.2",
+    "need": [
+      "9.1"
+    ],
+    "msg": "Upozornění na změnu ceny potřebuje oblíbené předměty."
+  },
+  {
+    "if": "9.3",
+    "need": [
+      "9.1"
+    ],
+    "msg": "Upozornění na prodej potřebuje oblíbené předměty."
+  },
+  {
+    "if": "3.6",
+    "need": [
+      "3.5"
+    ],
+    "msg": "Počet sledujících dává smysl jen se sledováním."
+  },
+  {
+    "if": "16.2",
+    "need": [
+      "16.1"
+    ],
+    "msg": "Hvězdičky potřebují hodnocení po obchodu."
+  },
+  {
+    "if": "16.3",
+    "need": [
+      "16.1"
+    ],
+    "msg": "Textová recenze potřebuje hodnocení po obchodu."
+  },
+  {
+    "if": "16.6",
+    "need": [
+      "16.1"
+    ],
+    "msg": "Odpověď na hodnocení potřebuje hodnocení."
+  },
+  {
+    "if": "18.6",
+    "need": [
+      "1.2"
+    ],
+    "msg": "Předplatné PRO potřebuje firemní prodejce."
+  },
+  {
+    "if": "25.8",
+    "need": [
+      "1.2"
+    ],
+    "msg": "Práva spotřebitele u firem se týkají jen firemních prodejců."
+  },
+  {
+    "if": "25.9",
+    "need": [
+      "1.2"
+    ],
+    "msg": "Faktury od firem se týkají jen firemních prodejců."
+  },
+  {
+    "if": "25.10",
+    "need": [
+      "1.2"
+    ],
+    "msg": "Ověření firem se týká jen firemních prodejců."
   }
 ];
